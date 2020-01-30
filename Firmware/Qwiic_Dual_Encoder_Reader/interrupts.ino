@@ -42,13 +42,13 @@ void updateEncoder() {
 
   if (lastEncoded1 == 0b01001011) //One indent clockwise
   {
-    registerMap.encoderCount++;
-    // If rotationLimit feature turned on, don't let the encoderCount go past this value
+    registerMap.encoder1Count++;
+    // If rotationLimit feature turned on, don't let the encoder1Count go past this value
     if (registerMap.rotationLimit)
     {
-      if (registerMap.encoderCount >= (int16_t)registerMap.rotationLimit)
+      if (registerMap.encoder1Count >= (int16_t)registerMap.rotationLimit)
       {
-        registerMap.encoderCount = 0;
+        registerMap.encoder1Count = 0;
       }
     }
     registerMap.encoderDifference++;
@@ -60,13 +60,13 @@ void updateEncoder() {
   }
   else if (lastEncoded1 == 0b10000111) //One indent counter clockwise
   {
-    registerMap.encoderCount--;
-    // If rotationLimit feature turned on, don't let the encoderCount go below zero
+    registerMap.encoder1Count--;
+    // If rotationLimit feature turned on, don't let the encoder1Count go below zero
     if (registerMap.rotationLimit)
     {
-      if (registerMap.encoderCount < 0)
+      if (registerMap.encoder1Count < 0)
       {
-        registerMap.encoderCount = registerMap.rotationLimit;
+        registerMap.encoder1Count = registerMap.rotationLimit;
       }
     }
     registerMap.encoderDifference--;
@@ -145,7 +145,6 @@ void requestEvent()
 {
   //Calculate time stamps before we start sending bytes via I2C
   if (lastEncoderTwistTime > 0) registerMap.timeSinceLastMovement = millis() - lastEncoderTwistTime;
-  if (lastButtonTime > 0) registerMap.timeSinceLastButton = millis() - lastButtonTime;
 
   //This will write the entire contents of the register map struct starting from
   //the register the user requested, and when it reaches the end the master

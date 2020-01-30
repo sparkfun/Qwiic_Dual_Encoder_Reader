@@ -82,16 +82,9 @@ struct memoryMap {
   byte firmwareMajor;
   byte firmwareMinor;
   byte interruptEnable;
-  int16_t encoderCount;
+  int16_t encoder1Count;
   int16_t encoderDifference;
   uint16_t timeSinceLastMovement;
-  uint16_t timeSinceLastButton;
-  byte ledBrightnessRed;
-  byte ledBrightnessGreen;
-  byte ledBrightnessBlue;
-  int16_t ledConnectRed;
-  int16_t ledConnectGreen;
-  int16_t ledConnectBlue;
   uint16_t turnInterruptTimeout;
   byte i2cAddress;
   uint16_t rotationLimit;
@@ -111,16 +104,9 @@ volatile memoryMap registerMap = {
   .firmwareMajor =              0x01, // 0x02         Firmware version. Helpful for tech support.
   .firmwareMinor =              0x02, // 0x03
   .interruptEnable =            0x03, // 0x04         1 - button interrupt, 0 - encoder interrupt
-  .encoderCount =             0x0000, // 0x05, 0x06
+  .encoder1Count =             0x0000, // 0x05, 0x06
   .encoderDifference =        0x0000, // 0x07, 0x08
   .timeSinceLastMovement =    0x0000, // 0x09, 0x0A
-  .timeSinceLastButton =      0x0000, // 0x0B, 0x0C
-  .ledBrightnessRed =           0xFF, // 0x0D
-  .ledBrightnessGreen =         0xFF, // 0x0E
-  .ledBrightnessBlue =          0xFF, // 0x0F
-  .ledConnectRed =            0x0000, // 0x10, 0x11
-  .ledConnectGreen =          0x0000, // 0x12, 0x13
-  .ledConnectBlue =           0x0000, // 0x14, 0x15
   .turnInterruptTimeout =        250, // 0x16, 0x17
   .i2cAddress =  I2C_ADDRESS_DEFAULT, // 0x18
   .rotationLimit =                 0, // 0x19, 0x1A   0 means disable this feature (disabled by default)
@@ -133,16 +119,9 @@ memoryMap protectionMap = {
   .firmwareMajor = 0x00,
   .firmwareMinor = 0x00,
   .interruptEnable = (1 << enableInterruptButtonBit) | (1 << enableInterruptEncoderBit), //1 - button int enable, 0 - encoder int enable
-  .encoderCount = (int16_t)0xFFFF,
+  .encoder1Count = (int16_t)0xFFFF,
   .encoderDifference = (int16_t)0xFFFF,
   .timeSinceLastMovement = (uint16_t)0xFFFF,
-  .timeSinceLastButton = (uint16_t)0xFFFF,
-  .ledBrightnessRed = 0xFF,
-  .ledBrightnessGreen = 0xFF,
-  .ledBrightnessBlue = 0xFF,
-  .ledConnectRed = (int16_t)0xFFFF,
-  .ledConnectGreen = (int16_t)0xFFFF,
-  .ledConnectBlue = (int16_t)0xFFFF,
   .turnInterruptTimeout = (uint16_t)0xFFFF,
   .i2cAddress = 0xFF,
   .rotationLimit = 0xFFFF,
@@ -265,7 +244,7 @@ void loop(void)
 
 #if defined(__AVR_ATmega328P__)
   Serial.print("Encoder: ");
-  Serial.print(registerMap.encoderCount);
+  Serial.print(registerMap.encoder1Count);
 
   Serial.print(" Diff: ");
   Serial.print(registerMap.encoderDifference);
@@ -310,21 +289,6 @@ void recordSystemSettings(void)
     EEPROM.put(LOCATION_INTERRUPTS, (byte)registerMap.interruptEnable);
 
 
-  //Connect amounts are ints
-  int16_t setting;
-
-  EEPROM.get(LOCATION_RED_CONNECT_AMOUNT, setting);
-  if (setting != registerMap.ledConnectRed)
-    EEPROM.put(LOCATION_RED_CONNECT_AMOUNT, (int16_t)registerMap.ledConnectRed);
-
-  EEPROM.get(LOCATION_GREEN_CONNECT_AMOUNT, setting);
-  if (setting != registerMap.ledConnectGreen)
-    EEPROM.put(LOCATION_GREEN_CONNECT_AMOUNT, (int16_t)registerMap.ledConnectGreen);
-
-  EEPROM.get(LOCATION_BLUE_CONNECT_AMOUNT, setting);
-  if (setting != registerMap.ledConnectBlue)
-    EEPROM.put(LOCATION_BLUE_CONNECT_AMOUNT, (int16_t)registerMap.ledConnectBlue);
-
   //Turn Timeout is uint16_t
   uint16_t timeout;
 
@@ -334,7 +298,6 @@ void recordSystemSettings(void)
 
   //If the user has zero'd out the timestamps then reflect that in the globals
   if (registerMap.timeSinceLastMovement == 0) lastEncoderTwistTime = 0;
-  if (registerMap.timeSinceLastButton == 0) lastButtonTime = 0;
 
   //Rotation Limit is uint16_t
   uint16_t rotationLim;
@@ -375,29 +338,6 @@ void readSystemSettings(void)
     EEPROM.write(LOCATION_INTERRUPTS, registerMap.interruptEnable);
   }
 
-  //Read the connection value for red color
-  //There are 24 pulses per rotation on the encoder
-  //For each pulse, how much does the user want red to go up (or down)
-  discard = EEPROM.get(LOCATION_RED_CONNECT_AMOUNT, registerMap.ledConnectRed); //16-bit
-  if ((uint16_t)registerMap.ledConnectRed == 0xFFFF) //Blank
-  {
-    registerMap.ledConnectRed = 0; //Default to no connection
-    EEPROM.put(LOCATION_RED_CONNECT_AMOUNT, (int16_t)registerMap.ledConnectRed);
-  }
-
-  discard = EEPROM.get(LOCATION_GREEN_CONNECT_AMOUNT, registerMap.ledConnectGreen);
-  if ((uint16_t)registerMap.ledConnectGreen == 0xFFFF)
-  {
-    registerMap.ledConnectGreen = 0; //Default to no connection
-    EEPROM.put(LOCATION_GREEN_CONNECT_AMOUNT, (int16_t)registerMap.ledConnectGreen);
-  }
-
-  discard = EEPROM.get(LOCATION_BLUE_CONNECT_AMOUNT, registerMap.ledConnectBlue);
-  if ((uint16_t)registerMap.ledConnectBlue == 0xFFFF)
-  {
-    registerMap.ledConnectBlue = 0; //Default to no connection
-    EEPROM.put(LOCATION_BLUE_CONNECT_AMOUNT, (int16_t)registerMap.ledConnectBlue);
-  }
 
   discard = EEPROM.get(LOCATION_TURN_INTERRUPT_TIMEOUT_AMOUNT, registerMap.turnInterruptTimeout);
   if ((uint16_t)registerMap.turnInterruptTimeout == 0xFFFF)

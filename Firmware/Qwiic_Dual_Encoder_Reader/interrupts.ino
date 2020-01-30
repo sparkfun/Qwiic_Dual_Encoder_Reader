@@ -2,21 +2,45 @@
 //Based on http://bildr.org/2012/08/rotary-encoder-arduino/
 //Adam - I owe you many beers for bildr
 void updateEncoder() {
-  byte MSB = digitalRead(encoderAPin); //MSB = most significant bit
-  byte LSB = digitalRead(encoderBPin); //LSB = least significant bit
 
-  byte encoded = (MSB << 1) | LSB; //Convert the 2 pin value to single number
-  lastEncoded = (lastEncoded << 2) | encoded; //Add this to the previous readings
+  byte MSB1 = 0;
+  byte LSB1 = 0;
+  byte MSB2 = 0;
+  byte LSB2 = 0;  
+
+#if defined(__AVR_ATmega328P__)
+  byte fullPortReadValue = PIND;// Read entire port D, encoders are on D2, D3, D4 and D5, so bits: 00?? ??00 (aka PD2, PD3, PD4, PD5)
+
+  // pull out MSB1 and LSM from full port on both encoders.
+  // encoder1 is on 2 and 3, so B0000??00
+  if (fullPortReadValue & B00000100) MSB1 = 1;
+  if (fullPortReadValue & B00001000) LSB1 = 1;
+  // encoder2 is on 4 and 5, so B00??0000
+  if (fullPortReadValue & B00010000) MSB2 = 1;
+  if (fullPortReadValue & B00100000) LSB2 = 1;
+
+#elif defined(__AVR_ATtiny84__)
+  byte fullPortReadValue = PINA; // A
+
+  // pull out MSB1 and LSM from full port on both encoders.
+
+#endif
+
+  //  MSB1 = digitalRead(encoder1APin); //MSB1 = most significant bit
+  //  LSB1 = digitalRead(encoder1BPin); //LSB1 = least significant bit
+
+  byte encoded = (MSB1 << 1) | LSB1; //Convert the 2 pin value to single number
+  lastEncoded1 = (lastEncoded1 << 2) | encoded; //Add this to the previous readings
 
   //A complete indent occurs across four interrupts and looks like:
   //ABAB.ABAB = 01001011 for CW
   //ABAB.ABAB = 10000111 for CCW
 
-  //lastEncoded could be many things but by looking for two unique values
+  //lastEncoded1 could be many things but by looking for two unique values
   //we filter out corrupted and partially dropped encoder readings
   //Gaurantees we will not get partial indent readings
 
-  if (lastEncoded == 0b01001011) //One indent clockwise
+  if (lastEncoded1 == 0b01001011) //One indent clockwise
   {
     registerMap.encoderCount++;
     // If rotationLimit feature turned on, don't let the encoderCount go past this value
@@ -29,40 +53,12 @@ void updateEncoder() {
     }
     registerMap.encoderDifference++;
 
-    //If the user has enabled connection between a color and the knob, change LED brightness here
-    if (registerMap.ledConnectRed != 0)
-    {
-      int newRed = registerMap.ledBrightnessRed + registerMap.ledConnectRed; //May go negative if setting is <0
-      if (newRed > 255) newRed = 255; //Cap at max
-      if (newRed < 0) newRed = 0; //Cap at min
-      registerMap.ledBrightnessRed = newRed;
-
-      analogWrite(ledRedPin, 255 - registerMap.ledBrightnessRed);
-    }
-    if (registerMap.ledConnectGreen != 0)
-    {
-      int newGreen = registerMap.ledBrightnessGreen + registerMap.ledConnectGreen; //May go negative if setting is <0
-      if (newGreen > 255) newGreen = 255; //Cap at max
-      if (newGreen < 0) newGreen = 0; //Cap at min
-      registerMap.ledBrightnessGreen = newGreen;
-
-      analogWrite(ledGreenPin, 255 - registerMap.ledBrightnessGreen);
-    }
-    if (registerMap.ledConnectBlue != 0)
-    {
-      int newBlue = registerMap.ledBrightnessBlue + registerMap.ledConnectBlue; //May go negative if setting is <0
-      if (newBlue > 255) newBlue = 255; //Cap at max
-      if (newBlue < 0) newBlue = 0; //Cap at min
-      registerMap.ledBrightnessBlue = newBlue;
-
-      analogWrite(ledBluePin, 255 - registerMap.ledBrightnessBlue);
-    }
 
     //We have moved one full tick so update moved bit and timestamp
     registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
     lastEncoderTwistTime = millis(); //Timestamp this event
   }
-  else if (lastEncoded == 0b10000111) //One indent counter clockwise
+  else if (lastEncoded1 == 0b10000111) //One indent counter clockwise
   {
     registerMap.encoderCount--;
     // If rotationLimit feature turned on, don't let the encoderCount go below zero
@@ -74,35 +70,6 @@ void updateEncoder() {
       }
     }
     registerMap.encoderDifference--;
-
-    //If the user has enabled connection between a color and the knob, change LED brightness here
-    if (registerMap.ledConnectRed != 0)
-    {
-      int newRed = registerMap.ledBrightnessRed - registerMap.ledConnectRed; //May increase if setting is <0
-      if (newRed > 255) newRed = 255; //Cap at max
-      if (newRed < 0) newRed = 0; //Cap at min
-      registerMap.ledBrightnessRed = newRed;
-
-      analogWrite(ledRedPin, 255 - registerMap.ledBrightnessRed);
-    }
-    if (registerMap.ledConnectGreen != 0)
-    {
-      int newGreen = registerMap.ledBrightnessGreen - registerMap.ledConnectGreen; //May increase if setting is <0
-      if (newGreen > 255) newGreen = 255; //Cap at max
-      if (newGreen < 0) newGreen = 0; //Cap at min
-      registerMap.ledBrightnessGreen = newGreen;
-
-      analogWrite(ledGreenPin, 255 - registerMap.ledBrightnessGreen);
-    }
-    if (registerMap.ledConnectBlue != 0)
-    {
-      int newBlue = registerMap.ledBrightnessBlue - registerMap.ledConnectBlue; //May increase if setting is <0
-      if (newBlue > 255) newBlue = 255; //Cap at max
-      if (newBlue < 0) newBlue = 0; //Cap at min
-      registerMap.ledBrightnessBlue = newBlue;
-
-      analogWrite(ledBluePin, 255 - registerMap.ledBrightnessBlue);
-    }
 
     //We have moved one full tick so update moved bit and timestamp
     registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
@@ -121,13 +88,14 @@ void setupInterrupts()
 
 #if defined(__AVR_ATtiny84__)
   //To make this line work you have to comment out https://github.com/NicoHood/PinChangeInterrupt/blob/master/src/PinChangeInterruptSettings.h#L228
-  attachPCINT(digitalPinToPCINT(encoderAPin), updateEncoder, CHANGE); //Doesn't work
+  attachPCINT(digitalPinToPCINT(encoder1APin), updateEncoder, CHANGE); //Doesn't work
 
-  attachPCINT(digitalPinToPCINT(encoderBPin), updateEncoder, CHANGE);
+  attachPCINT(digitalPinToPCINT(encoder1BPin), updateEncoder, CHANGE);
 #endif
 
-  //Attach interrupt to switch
-  attachPCINT(digitalPinToPCINT(switchPin), buttonInterrupt, CHANGE);
+  //Attach interrupt to encoder 2 pins -- needs pinchangeinterrupt library style interrupts
+  attachPCINT(digitalPinToPCINT(encoder2APin), updateEncoder, CHANGE);
+  attachPCINT(digitalPinToPCINT(encoder2BPin), updateEncoder, CHANGE);
 }
 
 //When Twist receives data bytes from Master, this function is called as an interrupt
@@ -153,10 +121,10 @@ void receiveEvent(int numberOfBytesReceived)
   if (interruptState == STATE_INT_INDICATED)
   {
     //If the user has cleared all the interrupt bits then clear interrupt pin
-    if ( (registerMap.status & (1 << statusButtonClickedBit)) == 0 
-      && (registerMap.status & (1 << statusButtonPressedBit)) == 0
-      && (registerMap.status & (1 << statusEncoderMovedBit)) == 0
-      )
+    if ( (registerMap.status & (1 << statusButtonClickedBit)) == 0
+         && (registerMap.status & (1 << statusButtonPressedBit)) == 0
+         && (registerMap.status & (1 << statusEncoderMovedBit)) == 0
+       )
     {
       //This will set the int pin to high impedance (aka pulled high by external resistor)
       digitalWrite(interruptPin, LOW); //Push pin to disable internal pull-ups
@@ -183,26 +151,4 @@ void requestEvent()
   //the register the user requested, and when it reaches the end the master
   //will read 0xFFs.
   Wire.write((registerPointer + registerNumber), sizeof(memoryMap) - registerNumber);
-}
-
-//Called any time the pin changes state
-void buttonInterrupt()
-{
-  registerMap.status ^= (1 << statusButtonPressedBit); //Toggle the status bit to indicate button interaction
-
-  if (digitalRead(switchPin) == LOW) //User has released the button, we have completed a click cycle
-  {
-    registerMap.status |= (1 << statusButtonClickedBit); //Set the clicked bit
-    lastButtonTime = millis();
-  }
-
-  //Only change states if we are in a no-interrupt state.
-  if (interruptState == STATE_INT_CLEARED)
-  {
-    //Check if button interrupt is enabled
-    if ( (registerMap.interruptEnable & (1 << enableInterruptButtonBit) ) )
-    {
-      interruptState = STATE_BUTTON_INT;
-    }
-  }
 }

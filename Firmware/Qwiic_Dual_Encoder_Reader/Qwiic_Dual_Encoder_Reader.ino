@@ -47,27 +47,24 @@
 
 #include <avr/sleep.h> //Needed for sleep_mode
 #include <avr/power.h> //Needed for powering down perihperals such as the ADC/TWI and Timers
+#include <avr/io.h>    //Needed for reading the entire port in one instruction, for faster reading of all encoder pins
 
 #if defined(__AVR_ATmega328P__)
 //Hardware connections while developing with an Uno
 const byte addressPin = 6;
-const byte ledRedPin = 9; //PWM
-const byte ledGreenPin = 10; //PWM
-const byte ledBluePin = 5; //PWM
-const byte switchPin = 4;
-const byte encoderBPin = 3; //Encoder must be on 2/3 on Uno
-const byte encoderAPin = 2;
-const byte interruptPin = 7; //Pin goes low when a button event is available
+const byte encoder2BPin = 5; 
+const byte encoder2APin = 4;
+const byte encoder1BPin = 3;
+const byte encoder1APin = 2;
+const byte interruptPin = 7;
 
 #elif defined(__AVR_ATtiny84__)
 //Hardware connections for the final design
 const byte addressPin = 9;
-const byte ledRedPin = 8; //PWM
-const byte ledGreenPin = 7; //PWM
-const byte ledBluePin = 5; //PWM
-const byte switchPin = 3;
-const byte encoderBPin = 2;
-const byte encoderAPin = 10;
+const byte encoder2BPin = 7; // all encoder pins on PORTA (different than the twist), for faster reading
+const byte encoder2APin = 5;
+const byte encoder1BPin = 3;
+const byte encoder1APin = 2;
 const byte interruptPin = 0;
 #endif
 
@@ -159,7 +156,9 @@ volatile byte registerNumber; //Gets set when user writes an address. We then se
 
 volatile boolean updateOutputs = false; //Goes true when we receive new bytes from user. Causes LEDs and things to update in main loop.
 
-volatile byte lastEncoded = 0; //Used to compare encoder readings between interrupts. Helps detect turn direction.
+volatile byte lastEncoded1 = 0; //Used to compare encoder readings between interrupts. Helps detect turn direction.
+
+volatile byte lastEncoded2 = 0; //Used to compare encoder readings between interrupts. Helps detect turn direction.
 
 volatile unsigned long lastButtonTime; //Time stamp of last button event
 
@@ -181,22 +180,18 @@ volatile byte interruptState = STATE_INT_CLEARED;
 void setup(void)
 {
   pinMode(addressPin, INPUT_PULLUP);
-  pinMode(ledRedPin, OUTPUT);
-  pinMode(ledGreenPin, OUTPUT);
-  pinMode(ledBluePin, OUTPUT);
-  pinMode(switchPin, INPUT); //No pull-up. It's pulled low with 10k
-  pinMode(encoderBPin, INPUT); //No pull-up. External 10k
-  pinMode(encoderAPin, INPUT); //No pull-up. External 10k
+  pinMode(encoder2BPin, INPUT); //No pull-up. External 10k
+  pinMode(encoder2APin, INPUT); //No pull-up. External 10k
+  pinMode(encoder1BPin, INPUT); //No pull-up. External 10k
+  pinMode(encoder1APin, INPUT); //No pull-up. External 10k
   pinMode(interruptPin, INPUT); //Interrupt is high-impedance until we have int (and then go low). Pulled high with 10k with cuttable jumper.
 
 #if defined(__AVR_ATmega328P__)
   pinMode(addressPin, INPUT_PULLUP);
-  pinMode(ledRedPin, OUTPUT);
-  pinMode(ledGreenPin, OUTPUT);
-  pinMode(ledBluePin, OUTPUT);
-  pinMode(switchPin, INPUT); //No pull-up. It's pulled low with 10k
-  pinMode(encoderBPin, INPUT_PULLUP);
-  pinMode(encoderAPin, INPUT_PULLUP);
+  pinMode(encoder2BPin, INPUT_PULLUP);
+  pinMode(encoder2APin, INPUT_PULLUP);
+  pinMode(encoder1BPin, INPUT_PULLUP);
+  pinMode(encoder1APin, INPUT_PULLUP);
   pinMode(interruptPin, INPUT); //Interrupt is high-impedance until we have int (and then go low). Optional external pull up.
 #endif
 
@@ -213,7 +208,7 @@ void setup(void)
 
 #if defined(__AVR_ATmega328P__)
   Serial.begin(9600);
-  Serial.println("Qwiic Twist");
+  Serial.println("Qwiic Dual Encoder Reader");
   Serial.print("Address: 0x");
 
   if (digitalRead(addressPin) == HIGH) //Default is HIGH, the address jumper is open
@@ -272,12 +267,6 @@ void loop(void)
   Serial.print("Encoder: ");
   Serial.print(registerMap.encoderCount);
 
-  Serial.print(" Red: ");
-  Serial.print(registerMap.ledBrightnessRed);
-
-  Serial.print(" Blue: ");
-  Serial.print(registerMap.ledBrightnessBlue);
-
   Serial.print(" Diff: ");
   Serial.print(registerMap.encoderDifference);
 
@@ -320,23 +309,6 @@ void recordSystemSettings(void)
   if (intBits != registerMap.interruptEnable)
     EEPROM.put(LOCATION_INTERRUPTS, (byte)registerMap.interruptEnable);
 
-  //LED values are bytes
-  byte ledBrightness;
-
-  EEPROM.get(LOCATION_RED_BRIGHTNESS, ledBrightness);
-  if (ledBrightness != registerMap.ledBrightnessRed)
-    EEPROM.put(LOCATION_RED_BRIGHTNESS, (byte)registerMap.ledBrightnessRed);
-  analogWrite(ledRedPin, 255 - registerMap.ledBrightnessRed); //Change LED brightness
-
-  EEPROM.get(LOCATION_GREEN_BRIGHTNESS, ledBrightness);
-  if (ledBrightness != registerMap.ledBrightnessGreen)
-    EEPROM.put(LOCATION_GREEN_BRIGHTNESS, (byte)registerMap.ledBrightnessGreen);
-  analogWrite(ledGreenPin, 255 - registerMap.ledBrightnessGreen); //Change LED brightness
-
-  EEPROM.get(LOCATION_BLUE_BRIGHTNESS, ledBrightness);
-  if (ledBrightness != registerMap.ledBrightnessBlue)
-    EEPROM.put(LOCATION_BLUE_BRIGHTNESS, (byte)registerMap.ledBrightnessBlue);
-  analogWrite(ledBluePin, 255 - registerMap.ledBrightnessBlue); //Change LED brightness
 
   //Connect amounts are ints
   int16_t setting;
@@ -402,18 +374,6 @@ void readSystemSettings(void)
     registerMap.interruptEnable = 0x03; //By default, enable the click and encoder interrupts
     EEPROM.write(LOCATION_INTERRUPTS, registerMap.interruptEnable);
   }
-
-  //Read the starting value for the red LED
-  registerMap.ledBrightnessRed = EEPROM.read(LOCATION_RED_BRIGHTNESS);
-  analogWrite(ledRedPin, 255 - registerMap.ledBrightnessRed);
-
-  //Read the starting value for the green LED
-  registerMap.ledBrightnessGreen = EEPROM.read(LOCATION_GREEN_BRIGHTNESS);
-  analogWrite(ledGreenPin, 255 - registerMap.ledBrightnessGreen);
-
-  //Read the starting value for the blue LED
-  registerMap.ledBrightnessBlue = EEPROM.read(LOCATION_BLUE_BRIGHTNESS);
-  analogWrite(ledBluePin, 255 - registerMap.ledBrightnessBlue);
 
   //Read the connection value for red color
   //There are 24 pulses per rotation on the encoder

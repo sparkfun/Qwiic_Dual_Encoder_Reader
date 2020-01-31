@@ -42,7 +42,7 @@
 #include "nvm.h"
 
 #include "PinChangeInterrupt.h" //Nico Hood's library: https://github.com/NicoHood/PinChangeInterrupt/
-//Used for pin change interrupts on ATtinys (encoder button causes interrupt)
+//Used for pin change interrupts on ATtinys (encoder turns cause interrupt)
 //Note: To make this code work with Nico's library you have to comment out https://github.com/NicoHood/PinChangeInterrupt/blob/master/src/PinChangeInterruptSettings.h#L228
 
 #include <avr/sleep.h> //Needed for sleep_mode
@@ -83,44 +83,46 @@ struct memoryMap {
   byte firmwareMinor;
   byte interruptEnable;
   int16_t encoder1Count;
-  int16_t encoderDifference;
+  int16_t encoder1Difference;
+  int16_t encoder2Count;
+  int16_t encoder2Difference;  
   uint16_t timeSinceLastMovement;
   uint16_t turnInterruptTimeout;
   byte i2cAddress;
   uint16_t rotationLimit;
 };
 
-const byte statusButtonClickedBit = 2;
-const byte statusButtonPressedBit = 1;
 const byte statusEncoderMovedBit = 0;
-
-const byte enableInterruptButtonBit = 1;
 const byte enableInterruptEncoderBit = 0;
 
 //These are the defaults for all settings
 volatile memoryMap registerMap = {
   .id =                         0x5C, // 0x00  
-  .status =                     0x00, // 0x01         2 - button clicked, 1 - button pressed, 0 - encoder moved
+  .status =                     0x00, // 0x01         0 - encoder moved
   .firmwareMajor =              0x01, // 0x02         Firmware version. Helpful for tech support.
   .firmwareMinor =              0x02, // 0x03
-  .interruptEnable =            0x03, // 0x04         1 - button interrupt, 0 - encoder interrupt
+  .interruptEnable =            0x03, // 0x04         0 - encoder interrupt
   .encoder1Count =             0x0000, // 0x05, 0x06
-  .encoderDifference =        0x0000, // 0x07, 0x08
-  .timeSinceLastMovement =    0x0000, // 0x09, 0x0A
-  .turnInterruptTimeout =        250, // 0x16, 0x17
-  .i2cAddress =  I2C_ADDRESS_DEFAULT, // 0x18
-  .rotationLimit =                 0, // 0x19, 0x1A   0 means disable this feature (disabled by default)
+  .encoder1Difference =        0x0000, // 0x07, 0x08
+  .encoder2Count =             0x0000, // 0x09, 0x0A
+  .encoder2Difference =        0x0000, // 0x0B, 0x0C  
+  .timeSinceLastMovement =    0x0000, // 0x0D, 0x0E
+  .turnInterruptTimeout =        250, // 0x0F, 0x10
+  .i2cAddress =  I2C_ADDRESS_DEFAULT, // 0x11
+  .rotationLimit =                 0, // 0x12, 0x13   0 means disable this feature (disabled by default)
 };
 
 //This defines which of the registers are read-only (0) vs read-write (1)
 memoryMap protectionMap = {
   .id = 0x00,
-  .status = (1 << statusButtonClickedBit) | (1 << statusEncoderMovedBit), //2 - button clicked, 1 - button pressed, 0 - encoder moved
+  .status = (1 << statusEncoderMovedBit), //0 - encoder moved
   .firmwareMajor = 0x00,
   .firmwareMinor = 0x00,
-  .interruptEnable = (1 << enableInterruptButtonBit) | (1 << enableInterruptEncoderBit), //1 - button int enable, 0 - encoder int enable
+  .interruptEnable = (1 << enableInterruptEncoderBit), //1 - button int enable, 0 - encoder int enable
   .encoder1Count = (int16_t)0xFFFF,
-  .encoderDifference = (int16_t)0xFFFF,
+  .encoder1Difference = (int16_t)0xFFFF,
+  .encoder2Count = (int16_t)0xFFFF,
+  .encoder2Difference = (int16_t)0xFFFF,  
   .timeSinceLastMovement = (uint16_t)0xFFFF,
   .turnInterruptTimeout = (uint16_t)0xFFFF,
   .i2cAddress = 0xFF,
@@ -133,13 +135,11 @@ uint8_t *protectionPointer = (uint8_t *)&protectionMap;
 
 volatile byte registerNumber; //Gets set when user writes an address. We then serve the spot the user requested.
 
-volatile boolean updateOutputs = false; //Goes true when we receive new bytes from user. Causes LEDs and things to update in main loop.
+volatile boolean updateOutputs = false; //Goes true when we receive new bytes from user. Causes things to update in main loop.
 
 volatile byte lastEncoded1 = 0; //Used to compare encoder readings between interrupts. Helps detect turn direction.
 
 volatile byte lastEncoded2 = 0; //Used to compare encoder readings between interrupts. Helps detect turn direction.
-
-volatile unsigned long lastButtonTime; //Time stamp of last button event
 
 volatile unsigned long lastEncoderTwistTime; //Time stamp of last knob movement
 
@@ -147,7 +147,6 @@ volatile unsigned long lastEncoderTwistTime; //Time stamp of last knob movement
 //turns off when interrupts are cleared by command
 enum State {
   STATE_ENCODER_INT = 0,
-  STATE_BUTTON_INT,
   STATE_INT_CLEARED,
   STATE_INT_INDICATED,
 };
@@ -181,7 +180,6 @@ void setup(void)
   setupInterrupts(); //Enable pin change interrupts for I2C, encoder, switch, etc
 
   lastEncoderTwistTime = 0; //User has not yet twisted the encoder. Used for firing int pin.
-  lastButtonTime = 0; //User has not yet pressed the encoder button.
 
   startI2C(); //Determine the I2C address we should be using and begin listening on I2C bus
 
@@ -202,9 +200,8 @@ void setup(void)
 void loop(void)
 {
   //Interrupt pin state machine
-  //There are four states: Encoder Int, Button Int, Int Cleared, Int Indicated
+  //There are four states: Encoder Int, Int Cleared, Int Indicated
   //ENCODER_INT state is set here once user has stopped turning encoder
-  //BUTTON_INT state is set if user presses button
   //INT_CLEARED state is set in the I2C interrupt when Clear Ints command is received.
   //INT_INDICATED state is set once we change the INT pin to go low
   if (interruptState == STATE_INT_CLEARED)
@@ -224,8 +221,8 @@ void loop(void)
     }
   }
 
-  //If we are in either encoder or button interrupt state, then set INT low
-  if(interruptState == STATE_ENCODER_INT || interruptState == STATE_BUTTON_INT)
+  //If we are in encoder state, then set INT low
+  if(interruptState == STATE_ENCODER_INT)
   {
     //Set the interrupt pin low to indicate interrupt
     pinMode(interruptPin, OUTPUT);
@@ -237,23 +234,26 @@ void loop(void)
   {
     updateOutputs = false;
 
-    //Record anything new to EEPROM like connection values and LED values
+    //Record anything new to EEPROM
     //It can take ~3.4ms to write EEPROM byte so we do that here instead of in interrupt
     recordSystemSettings();
   }
 
 #if defined(__AVR_ATmega328P__)
-  Serial.print("Encoder: ");
+  Serial.print("Encoder1: ");
   Serial.print(registerMap.encoder1Count);
 
-  Serial.print(" Diff: ");
-  Serial.print(registerMap.encoderDifference);
+  Serial.print("\tDiff1: ");
+  Serial.print(registerMap.encoder1Difference);
 
-  Serial.print(" Reg: ");
+  Serial.print("\tEncoder2: ");
+  Serial.print(registerMap.encoder2Count);
+
+  Serial.print("\tDiff2: ");
+  Serial.print(registerMap.encoder2Difference);  
+
+  Serial.print("\tReg: ");
   Serial.print(registerNumber);
-
-  if (registerMap.status & (1 << statusButtonClickedBit) )
-    Serial.print(" Click");
 
   Serial.println();
 #endif

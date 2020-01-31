@@ -29,8 +29,11 @@ void updateEncoder() {
   //  MSB1 = digitalRead(encoder1APin); //MSB1 = most significant bit
   //  LSB1 = digitalRead(encoder1BPin); //LSB1 = least significant bit
 
-  byte encoded = (MSB1 << 1) | LSB1; //Convert the 2 pin value to single number
-  lastEncoded1 = (lastEncoded1 << 2) | encoded; //Add this to the previous readings
+  byte encoded1 = (MSB1 << 1) | LSB1; //Convert the 2 pin value to single number
+  lastEncoded1 = (lastEncoded1 << 2) | encoded1; //Add this to the previous readings
+
+  byte encoded2 = (MSB2 << 1) | LSB2; //Convert the 2 pin value to single number
+  lastEncoded2 = (lastEncoded2 << 2) | encoded2; //Add this to the previous readings  
 
   //A complete indent occurs across four interrupts and looks like:
   //ABAB.ABAB = 01001011 for CW
@@ -51,7 +54,7 @@ void updateEncoder() {
         registerMap.encoder1Count = 0;
       }
     }
-    registerMap.encoderDifference++;
+    registerMap.encoder1Difference++;
 
 
     //We have moved one full tick so update moved bit and timestamp
@@ -69,12 +72,48 @@ void updateEncoder() {
         registerMap.encoder1Count = registerMap.rotationLimit;
       }
     }
-    registerMap.encoderDifference--;
+    registerMap.encoder1Difference--;
 
     //We have moved one full tick so update moved bit and timestamp
     registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
     lastEncoderTwistTime = millis(); //Timestamp this event
   }
+
+  if (lastEncoded2 == 0b01001011) //One indent clockwise
+  {
+    registerMap.encoder2Count++;
+    // If rotationLimit feature turned on, don't let the encoder2Count go past this value
+    if (registerMap.rotationLimit)
+    {
+      if (registerMap.encoder2Count >= (int16_t)registerMap.rotationLimit)
+      {
+        registerMap.encoder2Count = 0;
+      }
+    }
+    registerMap.encoder2Difference++;
+
+
+    //We have moved one full tick so update moved bit and timestamp
+    registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
+    lastEncoderTwistTime = millis(); //Timestamp this event
+  }
+  else if (lastEncoded2 == 0b10000111) //One indent counter clockwise
+  {
+    registerMap.encoder2Count--;
+    // If rotationLimit feature turned on, don't let the encoder2Count go below zero
+    if (registerMap.rotationLimit)
+    {
+      if (registerMap.encoder2Count < 0)
+      {
+        registerMap.encoder2Count = registerMap.rotationLimit;
+      }
+    }
+    registerMap.encoder2Difference--;
+
+    //We have moved one full tick so update moved bit and timestamp
+    registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
+    lastEncoderTwistTime = millis(); //Timestamp this event
+  }  
 }
 
 //Turn on interrupts for the various pins
@@ -121,10 +160,7 @@ void receiveEvent(int numberOfBytesReceived)
   if (interruptState == STATE_INT_INDICATED)
   {
     //If the user has cleared all the interrupt bits then clear interrupt pin
-    if ( (registerMap.status & (1 << statusButtonClickedBit)) == 0
-         && (registerMap.status & (1 << statusButtonPressedBit)) == 0
-         && (registerMap.status & (1 << statusEncoderMovedBit)) == 0
-       )
+    if ( (registerMap.status & (1 << statusEncoderMovedBit)) == 0)
     {
       //This will set the int pin to high impedance (aka pulled high by external resistor)
       digitalWrite(interruptPin, LOW); //Push pin to disable internal pull-ups

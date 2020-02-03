@@ -67,37 +67,37 @@ void updateEncoder1() {
   if (lastEncoded1 == 0b01001011) //One indent clockwise
   {
     registerMap.encoder1Count++;
-    // If rotationLimit feature turned on, don't let the encoder1Count go past this value
-    //    if (registerMap.rotationLimit)
-    //    {
-    //      if (registerMap.encoder1Count >= (int16_t)registerMap.rotationLimit)
-    //      {
-    //        registerMap.encoder1Count = 0;
-    //      }
-    //    }
-    //    registerMap.encoder1Difference++;
-    //
-    //
-    //    //We have moved one full tick so update moved bit and timestamp
-    //    registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
-    //    lastEncoderTwistTime = millis(); //Timestamp this event
+        //If rotationLimit feature turned on, don't let the encoder1Count go past this value
+        if (registerMap.rotationLimit)
+        {
+          if (registerMap.encoder1Count >= (int16_t)registerMap.rotationLimit)
+          {
+            registerMap.encoder1Count = 0;
+          }
+        }
+        registerMap.encoder1Difference++;
+    
+    
+        //We have moved one full tick so update moved bit and timestamp
+        registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
+        lastEncoderTwistTime = millis(); //Timestamp this event
   }
   else if (lastEncoded1 == 0b10000111) //One indent counter clockwise
   {
     registerMap.encoder1Count--;
-    //    // If rotationLimit feature turned on, don't let the encoder1Count go below zero
-    //    if (registerMap.rotationLimit)
-    //    {
-    //      if (registerMap.encoder1Count < 0)
-    //      {
-    //        registerMap.encoder1Count = registerMap.rotationLimit;
-    //      }
-    //    }
-    //    registerMap.encoder1Difference--;
-    //
-    //    //We have moved one full tick so update moved bit and timestamp
-    //    registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
-    //    lastEncoderTwistTime = millis(); //Timestamp this event
+        // If rotationLimit feature turned on, don't let the encoder1Count go below zero
+        if (registerMap.rotationLimit)
+        {
+          if (registerMap.encoder1Count < 0)
+          {
+            registerMap.encoder1Count = registerMap.rotationLimit;
+          }
+        }
+        registerMap.encoder1Difference--;
+    
+        //We have moved one full tick so update moved bit and timestamp
+        registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
+        lastEncoderTwistTime = millis(); //Timestamp this event
   }
 
 }
@@ -136,37 +136,37 @@ void updateEncoder2() {
   if (lastEncoded2 == 0b01001011) //One indent clockwise
   {
     registerMap.encoder2Count++;
-    //    // If rotationLimit feature turned on, don't let the encoder2Count go past this value
-    //    if (registerMap.rotationLimit)
-    //    {
-    //      if (registerMap.encoder2Count >= (int16_t)registerMap.rotationLimit)
-    //      {
-    //        registerMap.encoder2Count = 0;
-    //      }
-    //    }
-    //    registerMap.encoder2Difference++;
-    //
-    //
-    //    //We have moved one full tick so update moved bit and timestamp
-    //    registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
-    //    lastEncoderTwistTime = millis(); //Timestamp this event
+        // If rotationLimit feature turned on, don't let the encoder2Count go past this value
+        if (registerMap.rotationLimit)
+        {
+          if (registerMap.encoder2Count >= (int16_t)registerMap.rotationLimit)
+          {
+            registerMap.encoder2Count = 0;
+          }
+        }
+        registerMap.encoder2Difference++;
+    
+    
+        //We have moved one full tick so update moved bit and timestamp
+        registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
+        lastEncoderTwistTime = millis(); //Timestamp this event
   }
   else if (lastEncoded2 == 0b10000111) //One indent counter clockwise
   {
     registerMap.encoder2Count--;
-    //    // If rotationLimit feature turned on, don't let the encoder2Count go below zero
-    //    if (registerMap.rotationLimit)
-    //    {
-    //      if (registerMap.encoder2Count < 0)
-    //      {
-    //        registerMap.encoder2Count = registerMap.rotationLimit;
-    //      }
-    //    }
-    //    registerMap.encoder2Difference--;
-    //
-    //    //We have moved one full tick so update moved bit and timestamp
-    //    registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
-    //    lastEncoderTwistTime = millis(); //Timestamp this event
+        // If rotationLimit feature turned on, don't let the encoder2Count go below zero
+        if (registerMap.rotationLimit)
+        {
+          if (registerMap.encoder2Count < 0)
+          {
+            registerMap.encoder2Count = registerMap.rotationLimit;
+          }
+        }
+        registerMap.encoder2Difference--;
+    
+        //We have moved one full tick so update moved bit and timestamp
+        registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
+        lastEncoderTwistTime = millis(); //Timestamp this event
   }
 
 }

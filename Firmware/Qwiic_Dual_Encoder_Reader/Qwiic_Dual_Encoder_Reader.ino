@@ -61,10 +61,10 @@ const byte interruptPin = 7;
 #elif defined(__AVR_ATtiny84__)
 //Hardware connections for the final design
 const byte addressPin = 9;
-const byte encoder2BPin = 7; // all encoder pins on PORTA (different than the twist), for faster reading
-const byte encoder2APin = 5;
-const byte encoder1BPin = 3;
-const byte encoder1APin = 2;
+const byte encoder2BPin = 8;
+const byte encoder2APin = 7;
+const byte encoder1BPin = 2;
+const byte encoder1APin = 10;
 const byte interruptPin = 0;
 #endif
 

@@ -6,7 +6,7 @@ void updateEncoder() {
   byte MSB1 = 0;
   byte LSB1 = 0;
   byte MSB2 = 0;
-  byte LSB2 = 0;  
+  byte LSB2 = 0;
 
 #if defined(__AVR_ATmega328P__)
   byte fullPortReadValue = PIND;// Read entire port D, encoders are on D2, D3, D4 and D5, so bits: 00?? ??00 (aka PD2, PD3, PD4, PD5)
@@ -20,20 +20,50 @@ void updateEncoder() {
   if (fullPortReadValue & B00100000) LSB2 = 1;
 
 #elif defined(__AVR_ATtiny84__)
-  byte fullPortReadValue = PINA; // A
+
+  /*
+     In order to keep the interrupts and pin selections (port reads) straight on the ATTiny84,
+     Here is the table from the library...
+
+     PinChangeInterrupt Table
+
+     Pins with * are not broken out/deactivated by default. You may activate them in the setting file (advanced).
+     Each row section represents a port(0-3). Not all MCUs have all Ports/Pins physically available.
+
+    | PCINT |     Attiny 84   |   Encoder Pins   |
+    | ----- |  -------------- | ---------------- |
+    |     0 |  0       (PA0)  |                  |
+    |     1 |  1       (PA1)  |                  |
+    |     2 |  2       (PA2)  |  Encoder 1 B     |
+    |     3 |  3       (PA3)  |                  |
+    |     4 |  4 SCK   (PA4)  |                  |
+    |     5 |  5 MISO  (PA5)  |                  |
+    |     6 |  6 MOSI  (PA6)  |                  |
+    |     7 |  7       (PA7)  |  Encoder 2 A     |
+    | ----- | ---------------
+    |     8 | 10 XTAL1 (PB0)* |  Encoder 1 A     |
+    |     9 |  9 XTAL2 (PB1)* |                  |
+    |    10 |  8 INT0  (PB2)* |  Encoder 2 B     |
+    |    11 |  RST     (PB3)* |                  |
+  */
+
+  // read in full port values for port A and port B on the ATTINY
+  byte fullPortA = PINA;
+  byte fullPortB = PINB;
 
   // pull out MSB1 and LSM from full port on both encoders.
+  if (fullPortB & B00000001) MSB1 = 1;  // Encoder 1 A (D10) (PB0)
+  if (fullPortA & B00000100) LSB1 = 1;  // Encoder 1 B (D2)  (PA2)
+  if (fullPortA & B10000000) MSB2 = 1;  // Encoder 2 A (D7)  (PA7)
+  if (fullPortB & B00000100) LSB2 = 1;  // Encoder 2 B (D8)  (PB2)
 
 #endif
-
-  //  MSB1 = digitalRead(encoder1APin); //MSB1 = most significant bit
-  //  LSB1 = digitalRead(encoder1BPin); //LSB1 = least significant bit
 
   byte encoded1 = (MSB1 << 1) | LSB1; //Convert the 2 pin value to single number
   lastEncoded1 = (lastEncoded1 << 2) | encoded1; //Add this to the previous readings
 
   byte encoded2 = (MSB2 << 1) | LSB2; //Convert the 2 pin value to single number
-  lastEncoded2 = (lastEncoded2 << 2) | encoded2; //Add this to the previous readings  
+  lastEncoded2 = (lastEncoded2 << 2) | encoded2; //Add this to the previous readings
 
   //A complete indent occurs across four interrupts and looks like:
   //ABAB.ABAB = 01001011 for CW
@@ -43,6 +73,7 @@ void updateEncoder() {
   //we filter out corrupted and partially dropped encoder readings
   //Gaurantees we will not get partial indent readings
 
+  // Encoder 1
   if (lastEncoded1 == 0b01001011) //One indent clockwise
   {
     registerMap.encoder1Count++;
@@ -79,6 +110,7 @@ void updateEncoder() {
     lastEncoderTwistTime = millis(); //Timestamp this event
   }
 
+  // Encoder 2
   if (lastEncoded2 == 0b01001011) //One indent clockwise
   {
     registerMap.encoder2Count++;
@@ -113,7 +145,7 @@ void updateEncoder() {
     //We have moved one full tick so update moved bit and timestamp
     registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
     lastEncoderTwistTime = millis(); //Timestamp this event
-  }  
+  }
 }
 
 //Turn on interrupts for the various pins

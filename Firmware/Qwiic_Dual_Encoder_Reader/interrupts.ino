@@ -1,12 +1,10 @@
 //Called every time the encoder is twisted
 //Based on http://bildr.org/2012/08/rotary-encoder-arduino/
 //Adam - I owe you many beers for bildr
-void updateEncoder() {
+void updateEncoder1() {
 
   byte MSB1 = 0;
   byte LSB1 = 0;
-  byte MSB2 = 0;
-  byte LSB2 = 0;
 
 #if defined(__AVR_ATmega328P__)
   byte fullPortReadValue = PIND;// Read entire port D, encoders are on D2, D3, D4 and D5, so bits: 00?? ??00 (aka PD2, PD3, PD4, PD5)
@@ -15,12 +13,8 @@ void updateEncoder() {
   // encoder1 is on 2 and 3, so B0000??00
   if (fullPortReadValue & B00000100) MSB1 = 1;
   if (fullPortReadValue & B00001000) LSB1 = 1;
-  // encoder2 is on 4 and 5, so B00??0000
-  if (fullPortReadValue & B00010000) MSB2 = 1;
-  if (fullPortReadValue & B00100000) LSB2 = 1;
 
 #elif defined(__AVR_ATtiny84__)
-
   /*
      In order to keep the interrupts and pin selections (port reads) straight on the ATTiny84,
      Here is the table from the library...
@@ -54,16 +48,9 @@ void updateEncoder() {
   // pull out MSB1 and LSM from full port on both encoders.
   if (fullPortB & B00000001) MSB1 = 1;  // Encoder 1 A (D10) (PB0)
   if (fullPortA & B00000100) LSB1 = 1;  // Encoder 1 B (D2)  (PA2)
-  if (fullPortA & B10000000) MSB2 = 1;  // Encoder 2 A (D7)  (PA7)
-  if (fullPortB & B00000100) LSB2 = 1;  // Encoder 2 B (D8)  (PB2)
 
 #endif
 
-  byte encoded1 = (MSB1 << 1) | LSB1; //Convert the 2 pin value to single number
-  lastEncoded1 = (lastEncoded1 << 2) | encoded1; //Add this to the previous readings
-
-  byte encoded2 = (MSB2 << 1) | LSB2; //Convert the 2 pin value to single number
-  lastEncoded2 = (lastEncoded2 << 2) | encoded2; //Add this to the previous readings
 
   //A complete indent occurs across four interrupts and looks like:
   //ABAB.ABAB = 01001011 for CW
@@ -73,100 +60,135 @@ void updateEncoder() {
   //we filter out corrupted and partially dropped encoder readings
   //Gaurantees we will not get partial indent readings
 
+  byte encoded1 = (MSB1 << 1) | LSB1; //Convert the 2 pin value to single number
+  lastEncoded1 = (lastEncoded1 << 2) | encoded1; //Add this to the previous readings
+
   // Encoder 1
   if (lastEncoded1 == 0b01001011) //One indent clockwise
   {
     registerMap.encoder1Count++;
     // If rotationLimit feature turned on, don't let the encoder1Count go past this value
-    if (registerMap.rotationLimit)
-    {
-      if (registerMap.encoder1Count >= (int16_t)registerMap.rotationLimit)
-      {
-        registerMap.encoder1Count = 0;
-      }
-    }
-    registerMap.encoder1Difference++;
-
-
-    //We have moved one full tick so update moved bit and timestamp
-    registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
-    lastEncoderTwistTime = millis(); //Timestamp this event
+    //    if (registerMap.rotationLimit)
+    //    {
+    //      if (registerMap.encoder1Count >= (int16_t)registerMap.rotationLimit)
+    //      {
+    //        registerMap.encoder1Count = 0;
+    //      }
+    //    }
+    //    registerMap.encoder1Difference++;
+    //
+    //
+    //    //We have moved one full tick so update moved bit and timestamp
+    //    registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
+    //    lastEncoderTwistTime = millis(); //Timestamp this event
   }
   else if (lastEncoded1 == 0b10000111) //One indent counter clockwise
   {
     registerMap.encoder1Count--;
-    // If rotationLimit feature turned on, don't let the encoder1Count go below zero
-    if (registerMap.rotationLimit)
-    {
-      if (registerMap.encoder1Count < 0)
-      {
-        registerMap.encoder1Count = registerMap.rotationLimit;
-      }
-    }
-    registerMap.encoder1Difference--;
-
-    //We have moved one full tick so update moved bit and timestamp
-    registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
-    lastEncoderTwistTime = millis(); //Timestamp this event
+    //    // If rotationLimit feature turned on, don't let the encoder1Count go below zero
+    //    if (registerMap.rotationLimit)
+    //    {
+    //      if (registerMap.encoder1Count < 0)
+    //      {
+    //        registerMap.encoder1Count = registerMap.rotationLimit;
+    //      }
+    //    }
+    //    registerMap.encoder1Difference--;
+    //
+    //    //We have moved one full tick so update moved bit and timestamp
+    //    registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
+    //    lastEncoderTwistTime = millis(); //Timestamp this event
   }
 
+}
+
+void updateEncoder2() {
+
+  byte MSB2 = 0;
+  byte LSB2 = 0;
+
+#if defined(__AVR_ATmega328P__)
+  byte fullPortReadValue = PIND;// Read entire port D, encoders are on D2, D3, D4 and D5, so bits: 00?? ??00 (aka PD2, PD3, PD4, PD5)
+
+  // pull out MSB and LSM from full port on both encoders.
+  // encoder2 is on 4 and 5, so B00??0000
+  if (fullPortReadValue & B00010000) MSB2 = 1;
+  if (fullPortReadValue & B00100000) LSB2 = 1;
+
+#elif defined(__AVR_ATtiny84__)
+
+  // read in full port values for port A and port B on the ATTINY
+  byte fullPortA = PINA;
+  byte fullPortB = PINB;
+
+  // pull out MSB and LSM from full port on both encoders.
+  if (fullPortA & B10000000) MSB2 = 1;  // Encoder 2 A (D7)  (PA7)
+  if (fullPortB & B00000100) LSB2 = 1;  // Encoder 2 B (D8)  (PB2)
+
+#endif
+
   // Encoder 2
+
+  byte encoded2 = (MSB2 << 1) | LSB2; //Convert the 2 pin value to single number
+  lastEncoded2 = (lastEncoded2 << 2) | encoded2; //Add this to the previous readings
+
+
   if (lastEncoded2 == 0b01001011) //One indent clockwise
   {
     registerMap.encoder2Count++;
-    // If rotationLimit feature turned on, don't let the encoder2Count go past this value
-    if (registerMap.rotationLimit)
-    {
-      if (registerMap.encoder2Count >= (int16_t)registerMap.rotationLimit)
-      {
-        registerMap.encoder2Count = 0;
-      }
-    }
-    registerMap.encoder2Difference++;
-
-
-    //We have moved one full tick so update moved bit and timestamp
-    registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
-    lastEncoderTwistTime = millis(); //Timestamp this event
+    //    // If rotationLimit feature turned on, don't let the encoder2Count go past this value
+    //    if (registerMap.rotationLimit)
+    //    {
+    //      if (registerMap.encoder2Count >= (int16_t)registerMap.rotationLimit)
+    //      {
+    //        registerMap.encoder2Count = 0;
+    //      }
+    //    }
+    //    registerMap.encoder2Difference++;
+    //
+    //
+    //    //We have moved one full tick so update moved bit and timestamp
+    //    registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
+    //    lastEncoderTwistTime = millis(); //Timestamp this event
   }
   else if (lastEncoded2 == 0b10000111) //One indent counter clockwise
   {
     registerMap.encoder2Count--;
-    // If rotationLimit feature turned on, don't let the encoder2Count go below zero
-    if (registerMap.rotationLimit)
-    {
-      if (registerMap.encoder2Count < 0)
-      {
-        registerMap.encoder2Count = registerMap.rotationLimit;
-      }
-    }
-    registerMap.encoder2Difference--;
-
-    //We have moved one full tick so update moved bit and timestamp
-    registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
-    lastEncoderTwistTime = millis(); //Timestamp this event
+    //    // If rotationLimit feature turned on, don't let the encoder2Count go below zero
+    //    if (registerMap.rotationLimit)
+    //    {
+    //      if (registerMap.encoder2Count < 0)
+    //      {
+    //        registerMap.encoder2Count = registerMap.rotationLimit;
+    //      }
+    //    }
+    //    registerMap.encoder2Difference--;
+    //
+    //    //We have moved one full tick so update moved bit and timestamp
+    //    registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
+    //    lastEncoderTwistTime = millis(); //Timestamp this event
   }
-}
 
+}
 //Turn on interrupts for the various pins
 void setupInterrupts()
 {
   //Call updateEncoder() when any high/low changed seen on interrupt 0 (pin 2), or interrupt 1 (pin 3)
 #if defined(__AVR_ATmega328P__)
-  attachInterrupt(0, updateEncoder, CHANGE);
-  attachInterrupt(1, updateEncoder, CHANGE);
+  attachInterrupt(0, updateEncoder1, CHANGE);
+  attachInterrupt(1, updateEncoder1, CHANGE);
 #endif
 
 #if defined(__AVR_ATtiny84__)
   //To make this line work you have to comment out https://github.com/NicoHood/PinChangeInterrupt/blob/master/src/PinChangeInterruptSettings.h#L228
-  attachPCINT(digitalPinToPCINT(encoder1APin), updateEncoder, CHANGE); //Doesn't work
+  attachPCINT(digitalPinToPCINT(encoder1APin), updateEncoder1, CHANGE); //Doesn't work
 
-  attachPCINT(digitalPinToPCINT(encoder1BPin), updateEncoder, CHANGE);
+  attachPCINT(digitalPinToPCINT(encoder1BPin), updateEncoder1, CHANGE);
 #endif
 
   //Attach interrupt to encoder 2 pins -- needs pinchangeinterrupt library style interrupts
-  attachPCINT(digitalPinToPCINT(encoder2APin), updateEncoder, CHANGE);
-  attachPCINT(digitalPinToPCINT(encoder2BPin), updateEncoder, CHANGE);
+  attachPCINT(digitalPinToPCINT(encoder2APin), updateEncoder2, CHANGE);
+  attachPCINT(digitalPinToPCINT(encoder2BPin), updateEncoder2, CHANGE);
 }
 
 //When Twist receives data bytes from Master, this function is called as an interrupt

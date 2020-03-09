@@ -54,7 +54,14 @@ void updateEncoder1() {
 
   //A complete indent occurs across four interrupts and looks like:
   //ABAB.ABAB = 01001011 for CW
+  //ABAB.ABAB = 10110100
+  //ABAB.ABAB = 00101101
+  //ABAB.ABAB = 11010010
+  
   //ABAB.ABAB = 10000111 for CCW
+  //ABAB.ABAB = 01111000
+  //ABAB.ABAB = 00011110
+  //ABAB.ABAB = 11100001
 
   //lastEncoded1 could be many things but by looking for two unique values
   //we filter out corrupted and partially dropped encoder readings
@@ -64,7 +71,10 @@ void updateEncoder1() {
   lastEncoded1 = (lastEncoded1 << 2) | encoded1; //Add this to the previous readings
 
   // Encoder 1
-  if (lastEncoded1 == 0b01001011) //One indent clockwise
+  if ((lastEncoded1 == 0b01001011) || // clockwise
+  (lastEncoded1 == 0b10110100) || 
+  (lastEncoded1 == 0b00101101) || 
+  (lastEncoded1 == 0b11010010)) 
   {
     registerMap.encoder1Count++;
         //If rotationLimit feature turned on, don't let the encoder1Count go past this value
@@ -82,7 +92,10 @@ void updateEncoder1() {
         registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
         lastEncoderTwistTime = millis(); //Timestamp this event
   }
-  else if (lastEncoded1 == 0b10000111) //One indent counter clockwise
+  else if ((lastEncoded1 == 0b10000111) || // counter clockwise
+  (lastEncoded1 == 0b01111000) ||
+  (lastEncoded1 == 0b00011110) ||
+  (lastEncoded1 == 0b11100001)) 
   {
     registerMap.encoder1Count--;
         // If rotationLimit feature turned on, don't let the encoder1Count go below zero
@@ -133,7 +146,10 @@ void updateEncoder2() {
   lastEncoded2 = (lastEncoded2 << 2) | encoded2; //Add this to the previous readings
 
 
-  if (lastEncoded2 == 0b01001011) //One indent clockwise
+  if ((lastEncoded2 == 0b01001011) || // clockwise
+  (lastEncoded2 == 0b10110100) || 
+  (lastEncoded2 == 0b00101101) || 
+  (lastEncoded2 == 0b11010010)) 
   {
     registerMap.encoder2Count++;
         // If rotationLimit feature turned on, don't let the encoder2Count go past this value
@@ -151,7 +167,10 @@ void updateEncoder2() {
         registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
         lastEncoderTwistTime = millis(); //Timestamp this event
   }
-  else if (lastEncoded2 == 0b10000111) //One indent counter clockwise
+  else if ((lastEncoded2 == 0b10000111) || // counter clockwise
+  (lastEncoded2 == 0b01111000) ||
+  (lastEncoded2 == 0b00011110) ||
+  (lastEncoded2 == 0b11100001)) 
   {
     registerMap.encoder2Count--;
         // If rotationLimit feature turned on, don't let the encoder2Count go below zero

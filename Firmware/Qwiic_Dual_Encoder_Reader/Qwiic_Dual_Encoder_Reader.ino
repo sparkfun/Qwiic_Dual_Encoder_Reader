@@ -1,20 +1,22 @@
 /*
-  An I2C based Rotary Encoder
-  By: Nathan Seidle
-  SparkFun Electronics
-  Date: October 27th, 2018
+  An I2C based Dual Encoder Reader
+  By: Pete Lewis
+  SparkFun Electronics 
+  Date: Jan 30th, 2020
   License: This code is public domain but you buy me a beer if you use this and we meet someday (Beerware license).
 
-  Qwiic Twist is an I2C based rotary encoder that tracks how much the dial has been turned.
-  It also offers RGB control of the illumination of the encoder (on applicable models).
+  This code was initially based off of the Qwiic Twist rotary encoder project:
+  By: Nathan Seidle, SparkFun Electronics, October 27th, 2018
+  And then modified again by: Brian Schmalz, May 27th, 2019
+  Read all about it here: https://www.sparkfun.com/products/15083
 
-  For example, if you Wire.request(0x3F, 2) you'll get two bytes from Qwiic Twist and they might read:
-  byte 0: 0x01 - The MSB of a 16-bit signed integer
-  byte 1: 0x5A - The LSB of a 16-bit signed integer
+  Qwiic Dual Encoder Reader is an I2C based encoder reader that tracks how much a pair of quadrature encoders
+  have turned. This is handy when you want to know how much your wheels have turned on a two-wheel robot, but also 
+  useful for any project that might need two separate encoder inputs/sensors.
 
-  0x015A = 346 so the rotary dial has been turned 346 'ticks' since power on
+  This firmware is intened to be used on an ATTiny84, but can also be used on an ATMEGA328 for easier development.
 
-  The Qwiic Twist is best used with the Arduino library found here: http://librarymanager/All#SparkFun_Twist
+  It is used on the ATTINY84 that lives on the SparkFun Auto pHAT for Raspberry Pi.
 
   Feel like supporting our work? Buy a board from SparkFun!
   https://www.sparkfun.com/products/15083
@@ -26,15 +28,6 @@
 
   To support 400kHz I2C communication reliably ATtiny84 needs to run at 8MHz. This requires user to
   click on 'Burn Bootloader' before code is loaded.
-
-  version 1.1:
-    Change the way the interrupt pin goes low. Fixes issue: https://forum.sparkfun.com/viewtopic.php?f=14&t=49095
-  version 1.2: (Brian Schmalz, May 27th, 2019)
-    Added Rotation Limit parameter into memory map. If this value is non-zero, then the Encoder Count will never go
-      above this value, and will never go below 0. For example, if you have a 360 count encoder, and you set
-      Rotation Limit to 359, then you will only get Encoder Count values from 0 to 359 no matter how many rotations
-      the encode actually goes through. Note that Rotation Limit can only go from 0 to 32767, and at 0 (default value)
-      the feature is disabled and thus v1.2 works just like v1.1.
 */
 
 #include <Wire.h>
@@ -74,8 +67,6 @@ const byte interruptPin = 0;
 
 //This is the pseudo register map of the product. If user asks for 0x02 then get the 3rd
 //byte inside the register map.
-//5602/118 on ATtiny84 prior to conversion
-//Approximately 4276/156 on ATtiny84 after conversion
 struct memoryMap {
   byte id;
   byte status;
@@ -141,9 +132,9 @@ volatile byte lastEncoded1 = 0; //Used to compare encoder readings between inter
 
 volatile byte lastEncoded2 = 0; //Used to compare encoder readings between interrupts. Helps detect turn direction.
 
-volatile unsigned long lastEncoderTwistTime; //Time stamp of last knob movement
+volatile unsigned long lastEncoderMoveTime; //Time stamp of last encoder movement
 
-//Interrupt turns on when encoder is moved or button is pressed,
+//Interrupt turns on when encoder is moved
 //turns off when interrupts are cleared by command
 enum State {
   STATE_ENCODER_INT = 0,
@@ -179,7 +170,7 @@ void setup(void)
 
   setupInterrupts(); //Enable pin change interrupts for I2C, encoder, switch, etc
 
-  lastEncoderTwistTime = 0; //User has not yet twisted the encoder. Used for firing int pin.
+  lastEncoderMoveTime = 0; //User has not yet twisted the encoder. Used for firing int pin.
 
   startI2C(); //Determine the I2C address we should be using and begin listening on I2C bus
 
@@ -213,7 +204,7 @@ void loop(void)
       if ( (registerMap.interruptEnable & (1 << enableInterruptEncoderBit) ) )
       {
         //See if enough time has passed since the user has stopped turning the encoder
-        if ( (millis() - lastEncoderTwistTime) > registerMap.turnInterruptTimeout)
+        if ( (millis() - lastEncoderMoveTime) > registerMap.turnInterruptTimeout)
         {
           interruptState = STATE_ENCODER_INT; //Go to next state
         }
@@ -297,7 +288,7 @@ void recordSystemSettings(void)
     EEPROM.put(LOCATION_TURN_INTERRUPT_TIMEOUT_AMOUNT, (int16_t)registerMap.turnInterruptTimeout);
 
   //If the user has zero'd out the timestamps then reflect that in the globals
-  if (registerMap.timeSinceLastMovement == 0) lastEncoderTwistTime = 0;
+  if (registerMap.timeSinceLastMovement == 0) lastEncoderMoveTime = 0;
 
   //Rotation Limit is uint16_t
   uint16_t rotationLim;

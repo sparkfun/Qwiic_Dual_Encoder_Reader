@@ -90,7 +90,7 @@ void updateEncoder1() {
     
         //We have moved one full tick so update moved bit and timestamp
         registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
-        lastEncoderTwistTime = millis(); //Timestamp this event
+        lastEncoderMoveTime = millis(); //Timestamp this event
   }
   else if ((lastEncoded1 == 0b10000111) || // counter clockwise
   (lastEncoded1 == 0b01111000) ||
@@ -110,7 +110,7 @@ void updateEncoder1() {
     
         //We have moved one full tick so update moved bit and timestamp
         registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
-        lastEncoderTwistTime = millis(); //Timestamp this event
+        lastEncoderMoveTime = millis(); //Timestamp this event
   }
 
 }
@@ -165,7 +165,7 @@ void updateEncoder2() {
     
         //We have moved one full tick so update moved bit and timestamp
         registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
-        lastEncoderTwistTime = millis(); //Timestamp this event
+        lastEncoderMoveTime = millis(); //Timestamp this event
   }
   else if ((lastEncoded2 == 0b10000111) || // counter clockwise
   (lastEncoded2 == 0b01111000) ||
@@ -185,7 +185,7 @@ void updateEncoder2() {
     
         //We have moved one full tick so update moved bit and timestamp
         registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
-        lastEncoderTwistTime = millis(); //Timestamp this event
+        lastEncoderMoveTime = millis(); //Timestamp this event
   }
 
 }
@@ -253,7 +253,7 @@ void receiveEvent(int numberOfBytesReceived)
 void requestEvent()
 {
   //Calculate time stamps before we start sending bytes via I2C
-  if (lastEncoderTwistTime > 0) registerMap.timeSinceLastMovement = millis() - lastEncoderTwistTime;
+  if (lastEncoderMoveTime > 0) registerMap.timeSinceLastMovement = millis() - lastEncoderMoveTime;
 
   //This will write the entire contents of the register map struct starting from
   //the register the user requested, and when it reaches the end the master

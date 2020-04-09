@@ -7,5 +7,5 @@ enum eepromLocations {
 };
 
 //Defaults for the I2C address
-const byte I2C_ADDRESS_DEFAULT = 0x3F;
-const byte I2C_FORCED_ADDRESS = 0x3E; //This is the address we go to incase user closes the address jumper
+const byte I2C_ADDRESS_DEFAULT = 0x73;
+const byte I2C_FORCED_ADDRESS = 0x74; //This is the address we go to incase user closes the address jumper

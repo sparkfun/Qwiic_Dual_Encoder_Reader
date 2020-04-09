@@ -1,0 +1,3902 @@
+
+C:\Users\PETE~1.LEW\AppData\Local\Temp\arduino_build_759800/Qwiic_Dual_Encoder_Reader.ino.elf:     file format elf32-avr
+
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+__vectors():
+   0:	2b c0       	rjmp	.+86     	; 0x58 <__ctors_end>
+   2:	45 c0       	rjmp	.+138    	; 0x8e <__bad_interrupt>
+   4:	f9 c3       	rjmp	.+2034   	; 0x7f8 <__vector_2>
+   6:	a6 c3       	rjmp	.+1868   	; 0x754 <__vector_3>
+   8:	42 c0       	rjmp	.+132    	; 0x8e <__bad_interrupt>
+   a:	41 c0       	rjmp	.+130    	; 0x8e <__bad_interrupt>
+   c:	40 c0       	rjmp	.+128    	; 0x8e <__bad_interrupt>
+   e:	3f c0       	rjmp	.+126    	; 0x8e <__bad_interrupt>
+  10:	3e c0       	rjmp	.+124    	; 0x8e <__bad_interrupt>
+  12:	3d c0       	rjmp	.+122    	; 0x8e <__bad_interrupt>
+  14:	3c c0       	rjmp	.+120    	; 0x8e <__bad_interrupt>
+  16:	54 c3       	rjmp	.+1704   	; 0x6c0 <__vector_11>
+  18:	3a c0       	rjmp	.+116    	; 0x8e <__bad_interrupt>
+  1a:	39 c0       	rjmp	.+114    	; 0x8e <__bad_interrupt>
+  1c:	38 c0       	rjmp	.+112    	; 0x8e <__bad_interrupt>
+  1e:	11 c5       	rjmp	.+2594   	; 0xa42 <__vector_15>
+  20:	59 c4       	rjmp	.+2226   	; 0x8d4 <__vector_16>
+
+00000022 <__trampolines_end>:
+__trampolines_start():
+  22:	00 00       	nop
+  24:	39 00       	.word	0x0039	; ????
+  26:	36 00       	.word	0x0036	; ????
+
+00000028 <port_to_mode_PGM>:
+  28:	00 00 3a 00 37 00                                   ..:.7.
+
+0000002e <port_to_output_PGM>:
+  2e:	00 00 3b 00 38 00                                   ..;.8.
+
+00000034 <digital_pin_to_port_PGM>:
+  34:	01 01 01 01 01 01 01 01 02 02 02 02                 ............
+
+00000040 <digital_pin_to_bit_mask_PGM>:
+  40:	01 02 04 08 10 20 40 80 04 02 01 08                 ..... @.....
+
+0000004c <digital_pin_to_timer_PGM>:
+  4c:	00 00 00 00 00 04 03 02 01 00 00 00                 ............
+
+00000058 <__ctors_end>:
+__dtors_end():
+  58:	11 24       	eor	r1, r1
+  5a:	1f be       	out	0x3f, r1	; 63
+  5c:	cf e5       	ldi	r28, 0x5F	; 95
+  5e:	d2 e0       	ldi	r29, 0x02	; 2
+  60:	de bf       	out	0x3e, r29	; 62
+  62:	cd bf       	out	0x3d, r28	; 61
+
+00000064 <__do_copy_data>:
+__do_copy_data():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2409
+  64:	10 e0       	ldi	r17, 0x00	; 0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2410
+  66:	a0 e6       	ldi	r26, 0x60	; 96
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2411
+  68:	b0 e0       	ldi	r27, 0x00	; 0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2412
+  6a:	e8 eb       	ldi	r30, 0xB8	; 184
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2413
+  6c:	fe e0       	ldi	r31, 0x0E	; 14
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2414
+  6e:	02 c0       	rjmp	.+4      	; 0x74 <__do_copy_data+0x10>
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2417
+  70:	05 90       	lpm	r0, Z+
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2422
+  72:	0d 92       	st	X+, r0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2424
+  74:	a2 3a       	cpi	r26, 0xA2	; 162
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2425
+  76:	b1 07       	cpc	r27, r17
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2426
+  78:	d9 f7       	brne	.-10     	; 0x70 <__do_copy_data+0xc>
+
+0000007a <__do_clear_bss>:
+__do_clear_bss():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2441
+  7a:	20 e0       	ldi	r18, 0x00	; 0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2442
+  7c:	a2 ea       	ldi	r26, 0xA2	; 162
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2443
+  7e:	b0 e0       	ldi	r27, 0x00	; 0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2444
+  80:	01 c0       	rjmp	.+2      	; 0x84 <.do_clear_bss_start>
+
+00000082 <.do_clear_bss_loop>:
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2446
+  82:	1d 92       	st	X+, r1
+
+00000084 <.do_clear_bss_start>:
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2448
+  84:	a5 3e       	cpi	r26, 0xE5	; 229
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2449
+  86:	b2 07       	cpc	r27, r18
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2450
+  88:	e1 f7       	brne	.-8      	; 0x82 <.do_clear_bss_loop>
+.do_clear_bss_start():
+  8a:	22 d5       	rcall	.+2628   	; 0xad0 <main>
+  8c:	13 c7       	rjmp	.+3622   	; 0xeb4 <_exit>
+
+0000008e <__bad_interrupt>:
+__vector_1():
+  8e:	b8 cf       	rjmp	.-144    	; 0x0 <__vectors>
+
+00000090 <TwoWire::read() [clone .constprop.7]>:
+_ZN7TwoWire4readEv.constprop.7():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src/Wire.cpp:542
+
+// must be called in:
+// slave rx event callback
+// or after requestFrom(address, numBytes)
+int TwoWire::available(void) {
+  if (BufferLength) {
+  90:	80 91 e4 00 	lds	r24, 0x00E4	; 0x8000e4 <TwoWire::BufferLength>
+  94:	88 23       	and	r24, r24
+  96:	39 f0       	breq	.+14     	; 0xa6 <TwoWire::read() [clone .constprop.7]+0x16>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src/Wire.cpp:543
+    return BufferLength - BufferIndex;
+  98:	20 91 e3 00 	lds	r18, 0x00E3	; 0x8000e3 <TwoWire::BufferIndex>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src/Wire.cpp:556
+// or after requestFrom(address, numBytes)
+int TwoWire::read(void) {
+  int value = -1;
+
+  // get each successive byte on each call
+  if (available()) {
+  9c:	82 13       	cpse	r24, r18
+  9e:	1c c0       	rjmp	.+56     	; 0xd8 <TwoWire::read() [clone .constprop.7]+0x48>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src/Wire.cpp:553
+
+// must be called in:
+// slave rx event callback
+// or after requestFrom(address, numBytes)
+int TwoWire::read(void) {
+  int value = -1;
+  a0:	8f ef       	ldi	r24, 0xFF	; 255
+  a2:	9f ef       	ldi	r25, 0xFF	; 255
+  a4:	08 95       	ret
+USI_TWI_Data_In_Receive_Buffer():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:136
+
+// Check if there is data in the receive buffer.
+unsigned char USI_TWI_Data_In_Receive_Buffer(void)
+{
+  unsigned char tmpRxTail;          // Temporary variable to store volatile
+  tmpRxTail = TWI_RxTail;           // Not necessary, but prevents warnings
+  a6:	90 91 e2 00 	lds	r25, 0x00E2	; 0x8000e2 <TWI_RxTail>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:137
+  return (TWI_RxHead - tmpRxTail) & TWI_RX_BUFFER_MASK; // Return 0 (FALSE) if the receive buffer is empty.
+  aa:	80 91 e1 00 	lds	r24, 0x00E1	; 0x8000e1 <TWI_RxHead>
+  ae:	89 1b       	sub	r24, r25
+  b0:	8f 70       	andi	r24, 0x0F	; 15
+_ZN7TwoWire4readEv.constprop.7():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src/Wire.cpp:556
+
+  // get each successive byte on each call
+  if (available()) {
+  b2:	b1 f3       	breq	.-20     	; 0xa0 <TwoWire::read() [clone .constprop.7]+0x10>
+USI_TWI_Receive_Byte():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:112
+// Returns a byte from the receive buffer. Waits if buffer is empty.
+unsigned char USI_TWI_Receive_Byte(void)
+{
+  unsigned char tmptail;
+  unsigned char tmpRxTail; // Temporary variable to store volatile
+  tmpRxTail = TWI_RxTail;  // Not necessary, but prevents warnings
+  b4:	90 91 e2 00 	lds	r25, 0x00E2	; 0x8000e2 <TWI_RxTail>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:113
+  while (TWI_RxHead == tmpRxTail)
+  b8:	80 91 e1 00 	lds	r24, 0x00E1	; 0x8000e1 <TWI_RxHead>
+  bc:	98 17       	cp	r25, r24
+  be:	e1 f3       	breq	.-8      	; 0xb8 <TwoWire::read() [clone .constprop.7]+0x28>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:115
+    ;
+  tmptail    = (TWI_RxTail + 1) & TWI_RX_BUFFER_MASK; // Calculate buffer index
+  c0:	e0 91 e2 00 	lds	r30, 0x00E2	; 0x8000e2 <TWI_RxTail>
+  c4:	ef 5f       	subi	r30, 0xFF	; 255
+  c6:	ef 70       	andi	r30, 0x0F	; 15
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:116
+  TWI_RxTail = tmptail;                               // Store new index
+  c8:	e0 93 e2 00 	sts	0x00E2, r30	; 0x8000e2 <TWI_RxTail>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:117
+  return TWI_RxBuf[tmptail];                          // Return data from the buffer.
+  cc:	f0 e0       	ldi	r31, 0x00	; 0
+  ce:	ee 55       	subi	r30, 0x5E	; 94
+  d0:	ff 4f       	sbci	r31, 0xFF	; 255
+_ZN7TwoWire4readEv.constprop.7():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src/Wire.cpp:561
+    if (BufferLength) {
+      value = Buffer[BufferIndex];
+      ++BufferIndex;
+    } else {
+      value = USI_TWI_Receive_Byte();
+  d2:	80 81       	ld	r24, Z
+  d4:	90 e0       	ldi	r25, 0x00	; 0
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src/Wire.cpp:566
+    }
+  }
+
+  return value;
+}
+  d6:	08 95       	ret
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src/Wire.cpp:558
+  int value = -1;
+
+  // get each successive byte on each call
+  if (available()) {
+    if (BufferLength) {
+      value = Buffer[BufferIndex];
+  d8:	e2 2f       	mov	r30, r18
+  da:	f0 e0       	ldi	r31, 0x00	; 0
+  dc:	ee 55       	subi	r30, 0x5E	; 94
+  de:	ff 4f       	sbci	r31, 0xFF	; 255
+  e0:	80 81       	ld	r24, Z
+  e2:	90 e0       	ldi	r25, 0x00	; 0
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src/Wire.cpp:559
+      ++BufferIndex;
+  e4:	2f 5f       	subi	r18, 0xFF	; 255
+  e6:	20 93 e3 00 	sts	0x00E3, r18	; 0x8000e3 <TwoWire::BufferIndex>
+  ea:	08 95       	ret
+
+000000ec <pcint_null_callback>:
+pcint_null_callback():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt.cpp:87
+
+// useless function for weak implemented/not used functions, extern c needed for the alias
+extern "C" {
+	void pcint_null_callback(void) {
+		// useless
+	}
+  ec:	08 95       	ret
+
+000000ee <turnOffPWM>:
+turnOffPWM():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:67
+}
+
+static void turnOffPWM(uint8_t timer)
+{
+  #if defined(TCCR0A) && defined(COM0A1)
+  if( timer == TIMER0A){
+  ee:	81 30       	cpi	r24, 0x01	; 1
+  f0:	21 f4       	brne	.+8      	; 0xfa <turnOffPWM+0xc>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:68
+    cbi(TCCR0A, COM0A1);
+  f2:	80 b7       	in	r24, 0x30	; 48
+  f4:	8f 77       	andi	r24, 0x7F	; 127
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:75
+  } else
+  #endif
+
+  #if defined(TCCR0A) && defined(COM0B1)
+  if( timer == TIMER0B){
+    cbi(TCCR0A, COM0B1);
+  f6:	80 bf       	out	0x30, r24	; 48
+  f8:	08 95       	ret
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:74
+    //cbi(TCCR0A, COM0A0);
+  } else
+  #endif
+
+  #if defined(TCCR0A) && defined(COM0B1)
+  if( timer == TIMER0B){
+  fa:	82 30       	cpi	r24, 0x02	; 2
+  fc:	19 f4       	brne	.+6      	; 0x104 <turnOffPWM+0x16>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:75
+    cbi(TCCR0A, COM0B1);
+  fe:	80 b7       	in	r24, 0x30	; 48
+ 100:	8f 7d       	andi	r24, 0xDF	; 223
+ 102:	f9 cf       	rjmp	.-14     	; 0xf6 <turnOffPWM+0x8>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:81
+    //cbi(TCCR0A, COM0B0);
+  } else
+  #endif
+
+  #if defined(TCCR1A) && defined(COM1A1)
+  if( timer == TIMER1A){
+ 104:	83 30       	cpi	r24, 0x03	; 3
+ 106:	21 f4       	brne	.+8      	; 0x110 <turnOffPWM+0x22>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:82
+    cbi(TCCR1A, COM1A1);
+ 108:	8f b5       	in	r24, 0x2f	; 47
+ 10a:	8f 77       	andi	r24, 0x7F	; 127
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:116
+  } else
+  #endif
+
+  #if defined(TCCR1A) && defined(COM1B1)
+  if( timer == TIMER1B){
+    cbi(TCCR1A, COM1B1);
+ 10c:	8f bd       	out	0x2f, r24	; 47
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:134
+  #endif
+
+    {
+    }
+
+}
+ 10e:	08 95       	ret
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:115
+  #endif
+  } else
+  #endif
+
+  #if defined(TCCR1A) && defined(COM1B1)
+  if( timer == TIMER1B){
+ 110:	84 30       	cpi	r24, 0x04	; 4
+ 112:	e9 f7       	brne	.-6      	; 0x10e <turnOffPWM+0x20>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:116
+    cbi(TCCR1A, COM1B1);
+ 114:	8f b5       	in	r24, 0x2f	; 47
+ 116:	8f 7d       	andi	r24, 0xDF	; 223
+ 118:	f9 cf       	rjmp	.-14     	; 0x10c <turnOffPWM+0x1e>
+
+0000011a <digitalWrite.constprop.9>:
+digitalWrite.constprop.9():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:136
+    {
+    }
+
+}
+
+void digitalWrite(uint8_t pin, uint8_t val)
+ 11a:	cf 93       	push	r28
+ 11c:	df 93       	push	r29
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:139
+{
+  if (pin&128) {pin=analogInputToDigitalPin((pin&127));}
+  uint8_t timer = digitalPinToTimer(pin);
+ 11e:	ec e4       	ldi	r30, 0x4C	; 76
+ 120:	f0 e0       	ldi	r31, 0x00	; 0
+ 122:	84 91       	lpm	r24, Z
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:140
+  uint8_t bit = digitalPinToBitMask(pin);
+ 124:	e0 e4       	ldi	r30, 0x40	; 64
+ 126:	f0 e0       	ldi	r31, 0x00	; 0
+ 128:	d4 91       	lpm	r29, Z
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:141
+  uint8_t port = digitalPinToPort(pin);
+ 12a:	e4 e3       	ldi	r30, 0x34	; 52
+ 12c:	f0 e0       	ldi	r31, 0x00	; 0
+ 12e:	c4 91       	lpm	r28, Z
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:144
+  volatile uint8_t *out;
+
+  if (port == NOT_A_PIN) return;
+ 130:	cc 23       	and	r28, r28
+ 132:	91 f0       	breq	.+36     	; 0x158 <digitalWrite.constprop.9+0x3e>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:148
+
+  // If the pin that support PWM output, we need to turn it off
+  // before doing a digital write.
+  if (timer != NOT_ON_TIMER) turnOffPWM(timer);
+ 134:	81 11       	cpse	r24, r1
+ 136:	db df       	rcall	.-74     	; 0xee <turnOffPWM>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:150
+
+  out = portOutputRegister(port);
+ 138:	ec 2f       	mov	r30, r28
+ 13a:	f0 e0       	ldi	r31, 0x00	; 0
+ 13c:	ee 0f       	add	r30, r30
+ 13e:	ff 1f       	adc	r31, r31
+ 140:	e2 5d       	subi	r30, 0xD2	; 210
+ 142:	ff 4f       	sbci	r31, 0xFF	; 255
+ 144:	a5 91       	lpm	r26, Z+
+ 146:	b4 91       	lpm	r27, Z
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:153
+
+  if (val == LOW) {
+    uint8_t oldSREG = SREG;
+ 148:	8f b7       	in	r24, 0x3f	; 63
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:154
+    cli();
+ 14a:	f8 94       	cli
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:155
+    *out &= ~bit;
+ 14c:	9c 91       	ld	r25, X
+ 14e:	ed 2f       	mov	r30, r29
+ 150:	e0 95       	com	r30
+ 152:	e9 23       	and	r30, r25
+ 154:	ec 93       	st	X, r30
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:156
+    SREG = oldSREG;
+ 156:	8f bf       	out	0x3f, r24	; 63
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:163
+    uint8_t oldSREG = SREG;
+    cli();
+    *out |= bit;
+    SREG = oldSREG;
+  }
+}
+ 158:	df 91       	pop	r29
+ 15a:	cf 91       	pop	r28
+ 15c:	08 95       	ret
+
+0000015e <pinMode>:
+pinMode():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:33
+#define ARDUINO_MAIN
+#include "wiring_private.h"
+#include "pins_arduino.h"
+
+void pinMode(uint8_t pin, uint8_t mode)
+{
+ 15e:	cf 93       	push	r28
+ 160:	df 93       	push	r29
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:35
+  if (pin&128) {pin=analogInputToDigitalPin((pin&127));}
+  uint8_t bit = digitalPinToBitMask(pin);
+ 162:	90 e0       	ldi	r25, 0x00	; 0
+ 164:	fc 01       	movw	r30, r24
+ 166:	e0 5c       	subi	r30, 0xC0	; 192
+ 168:	ff 4f       	sbci	r31, 0xFF	; 255
+ 16a:	24 91       	lpm	r18, Z
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:36
+  uint8_t port = digitalPinToPort(pin);
+ 16c:	8c 5c       	subi	r24, 0xCC	; 204
+ 16e:	9f 4f       	sbci	r25, 0xFF	; 255
+ 170:	fc 01       	movw	r30, r24
+ 172:	84 91       	lpm	r24, Z
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:39
+  volatile uint8_t *reg, *out;
+
+  if (port == NOT_A_PIN) return;
+ 174:	88 23       	and	r24, r24
+ 176:	c9 f0       	breq	.+50     	; 0x1aa <pinMode+0x4c>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:41
+
+  reg = portModeRegister(port);
+ 178:	90 e0       	ldi	r25, 0x00	; 0
+ 17a:	88 0f       	add	r24, r24
+ 17c:	99 1f       	adc	r25, r25
+ 17e:	fc 01       	movw	r30, r24
+ 180:	e8 5d       	subi	r30, 0xD8	; 216
+ 182:	ff 4f       	sbci	r31, 0xFF	; 255
+ 184:	a5 91       	lpm	r26, Z+
+ 186:	b4 91       	lpm	r27, Z
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:42
+  out = portOutputRegister(port);
+ 188:	fc 01       	movw	r30, r24
+ 18a:	e2 5d       	subi	r30, 0xD2	; 210
+ 18c:	ff 4f       	sbci	r31, 0xFF	; 255
+ 18e:	c5 91       	lpm	r28, Z+
+ 190:	d4 91       	lpm	r29, Z
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:44
+
+  if (mode == INPUT) {
+ 192:	61 11       	cpse	r22, r1
+ 194:	0d c0       	rjmp	.+26     	; 0x1b0 <pinMode+0x52>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:45
+    uint8_t oldSREG = SREG;
+ 196:	9f b7       	in	r25, 0x3f	; 63
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:46
+                cli();
+ 198:	f8 94       	cli
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:47
+    *reg &= ~bit;
+ 19a:	8c 91       	ld	r24, X
+ 19c:	20 95       	com	r18
+ 19e:	82 23       	and	r24, r18
+ 1a0:	8c 93       	st	X, r24
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:48
+    *out &= ~bit;
+ 1a2:	88 81       	ld	r24, Y
+ 1a4:	28 23       	and	r18, r24
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:54
+    SREG = oldSREG;
+  } else if (mode == INPUT_PULLUP) {
+    uint8_t oldSREG = SREG;
+                cli();
+    *reg &= ~bit;
+    *out |= bit;
+ 1a6:	28 83       	st	Y, r18
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:55
+    SREG = oldSREG;
+ 1a8:	9f bf       	out	0x3f, r25	; 63
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:62
+    uint8_t oldSREG = SREG;
+                cli();
+    *reg |= bit;
+    SREG = oldSREG;
+  }
+}
+ 1aa:	df 91       	pop	r29
+ 1ac:	cf 91       	pop	r28
+ 1ae:	08 95       	ret
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:50
+    uint8_t oldSREG = SREG;
+                cli();
+    *reg &= ~bit;
+    *out &= ~bit;
+    SREG = oldSREG;
+  } else if (mode == INPUT_PULLUP) {
+ 1b0:	62 30       	cpi	r22, 0x02	; 2
+ 1b2:	51 f4       	brne	.+20     	; 0x1c8 <pinMode+0x6a>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:51
+    uint8_t oldSREG = SREG;
+ 1b4:	9f b7       	in	r25, 0x3f	; 63
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:52
+                cli();
+ 1b6:	f8 94       	cli
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:53
+    *reg &= ~bit;
+ 1b8:	3c 91       	ld	r19, X
+ 1ba:	82 2f       	mov	r24, r18
+ 1bc:	80 95       	com	r24
+ 1be:	83 23       	and	r24, r19
+ 1c0:	8c 93       	st	X, r24
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:54
+    *out |= bit;
+ 1c2:	e8 81       	ld	r30, Y
+ 1c4:	2e 2b       	or	r18, r30
+ 1c6:	ef cf       	rjmp	.-34     	; 0x1a6 <pinMode+0x48>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:57
+    SREG = oldSREG;
+  } else {
+    uint8_t oldSREG = SREG;
+ 1c8:	8f b7       	in	r24, 0x3f	; 63
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:58
+                cli();
+ 1ca:	f8 94       	cli
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:59
+    *reg |= bit;
+ 1cc:	ec 91       	ld	r30, X
+ 1ce:	2e 2b       	or	r18, r30
+ 1d0:	2c 93       	st	X, r18
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:60
+    SREG = oldSREG;
+ 1d2:	8f bf       	out	0x3f, r24	; 63
+ 1d4:	ea cf       	rjmp	.-44     	; 0x1aa <pinMode+0x4c>
+
+000001d6 <millis>:
+millis():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:176
+}
+
+unsigned long millis()
+{
+  unsigned long m;
+  uint8_t oldSREG = SREG;
+ 1d6:	2f b7       	in	r18, 0x3f	; 63
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:180
+
+  // disable interrupts while we read millis_timer_millis or we might get an
+  // inconsistent value (e.g. in the middle of a write to millis_timer_millis)
+  cli();
+ 1d8:	f8 94       	cli
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:181
+  m = millis_timer_millis;
+ 1da:	60 91 d2 00 	lds	r22, 0x00D2	; 0x8000d2 <millis_timer_millis>
+ 1de:	70 91 d3 00 	lds	r23, 0x00D3	; 0x8000d3 <millis_timer_millis+0x1>
+ 1e2:	80 91 d4 00 	lds	r24, 0x00D4	; 0x8000d4 <millis_timer_millis+0x2>
+ 1e6:	90 91 d5 00 	lds	r25, 0x00D5	; 0x8000d5 <millis_timer_millis+0x3>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:182
+  SREG = oldSREG;
+ 1ea:	2f bf       	out	0x3f, r18	; 63
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:185
+
+  return m;
+}
+ 1ec:	08 95       	ret
+
+000001ee <updateEncoder1()>:
+_Z14updateEncoder1v():
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:45
+    |    10 |  8 INT0  (PB2)* |  Encoder 2 B     |
+    |    11 |  RST     (PB3)* |                  |
+  */
+
+  // read in full port values for port A and port B on the ATTINY
+  byte fullPortA = PINA;
+ 1ee:	99 b3       	in	r25, 0x19	; 25
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:46
+  byte fullPortB = PINB;
+ 1f0:	46 b3       	in	r20, 0x16	; 22
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:71
+  //lastEncoded1 could be many things but by looking for two unique values
+  //we filter out corrupted and partially dropped encoder readings
+  //Gaurantees we will not get partial indent readings
+
+  byte encoded1 = (MSB1 << 1) | LSB1; //Convert the 2 pin value to single number
+  lastEncoded1 = (lastEncoded1 << 2) | encoded1; //Add this to the previous readings
+ 1f2:	80 91 c2 00 	lds	r24, 0x00C2	; 0x8000c2 <lastEncoded1>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:50
+  byte fullPortA = PINA;
+  byte fullPortB = PINB;
+
+  // pull out MSB1 and LSM from full port on both encoders.
+  if (fullPortB & B00000001) MSB1 = 1;  // Encoder 1 A (D10) (PB0)
+  if (fullPortA & B00000100) LSB1 = 1;  // Encoder 1 B (D2)  (PA2)
+ 1f6:	92 fb       	bst	r25, 2
+ 1f8:	99 27       	eor	r25, r25
+ 1fa:	90 f9       	bld	r25, 0
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:71
+  //lastEncoded1 could be many things but by looking for two unique values
+  //we filter out corrupted and partially dropped encoder readings
+  //Gaurantees we will not get partial indent readings
+
+  byte encoded1 = (MSB1 << 1) | LSB1; //Convert the 2 pin value to single number
+  lastEncoded1 = (lastEncoded1 << 2) | encoded1; //Add this to the previous readings
+ 1fc:	88 0f       	add	r24, r24
+ 1fe:	88 0f       	add	r24, r24
+ 200:	89 2b       	or	r24, r25
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:70
+
+  //lastEncoded1 could be many things but by looking for two unique values
+  //we filter out corrupted and partially dropped encoder readings
+  //Gaurantees we will not get partial indent readings
+
+  byte encoded1 = (MSB1 << 1) | LSB1; //Convert the 2 pin value to single number
+ 202:	24 2f       	mov	r18, r20
+ 204:	21 70       	andi	r18, 0x01	; 1
+ 206:	30 e0       	ldi	r19, 0x00	; 0
+ 208:	22 0f       	add	r18, r18
+ 20a:	33 1f       	adc	r19, r19
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:71
+  lastEncoded1 = (lastEncoded1 << 2) | encoded1; //Add this to the previous readings
+ 20c:	82 2b       	or	r24, r18
+ 20e:	80 93 c2 00 	sts	0x00C2, r24	; 0x8000c2 <lastEncoded1>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:74
+
+  // Encoder 1
+  if ((lastEncoded1 == 0b01001011) || // clockwise
+ 212:	80 91 c2 00 	lds	r24, 0x00C2	; 0x8000c2 <lastEncoded1>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:76
+  (lastEncoded1 == 0b10110100) || 
+  (lastEncoded1 == 0b00101101) || 
+ 216:	8b 34       	cpi	r24, 0x4B	; 75
+ 218:	a1 f1       	breq	.+104    	; 0x282 <__stack+0x23>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:75
+  byte encoded1 = (MSB1 << 1) | LSB1; //Convert the 2 pin value to single number
+  lastEncoded1 = (lastEncoded1 << 2) | encoded1; //Add this to the previous readings
+
+  // Encoder 1
+  if ((lastEncoded1 == 0b01001011) || // clockwise
+  (lastEncoded1 == 0b10110100) || 
+ 21a:	80 91 c2 00 	lds	r24, 0x00C2	; 0x8000c2 <lastEncoded1>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:74
+
+  byte encoded1 = (MSB1 << 1) | LSB1; //Convert the 2 pin value to single number
+  lastEncoded1 = (lastEncoded1 << 2) | encoded1; //Add this to the previous readings
+
+  // Encoder 1
+  if ((lastEncoded1 == 0b01001011) || // clockwise
+ 21e:	84 3b       	cpi	r24, 0xB4	; 180
+ 220:	81 f1       	breq	.+96     	; 0x282 <__stack+0x23>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:76
+  (lastEncoded1 == 0b10110100) || 
+  (lastEncoded1 == 0b00101101) || 
+ 222:	80 91 c2 00 	lds	r24, 0x00C2	; 0x8000c2 <lastEncoded1>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:75
+  byte encoded1 = (MSB1 << 1) | LSB1; //Convert the 2 pin value to single number
+  lastEncoded1 = (lastEncoded1 << 2) | encoded1; //Add this to the previous readings
+
+  // Encoder 1
+  if ((lastEncoded1 == 0b01001011) || // clockwise
+  (lastEncoded1 == 0b10110100) || 
+ 226:	8d 32       	cpi	r24, 0x2D	; 45
+ 228:	61 f1       	breq	.+88     	; 0x282 <__stack+0x23>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:77
+  (lastEncoded1 == 0b00101101) || 
+  (lastEncoded1 == 0b11010010)) 
+ 22a:	80 91 c2 00 	lds	r24, 0x00C2	; 0x8000c2 <lastEncoded1>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:76
+  lastEncoded1 = (lastEncoded1 << 2) | encoded1; //Add this to the previous readings
+
+  // Encoder 1
+  if ((lastEncoded1 == 0b01001011) || // clockwise
+  (lastEncoded1 == 0b10110100) || 
+  (lastEncoded1 == 0b00101101) || 
+ 22e:	82 3d       	cpi	r24, 0xD2	; 210
+ 230:	41 f1       	breq	.+80     	; 0x282 <__stack+0x23>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:95
+    
+        //We have moved one full tick so update moved bit and timestamp
+        registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
+        lastEncoderMoveTime = millis(); //Timestamp this event
+  }
+  else if ((lastEncoded1 == 0b10000111) || // counter clockwise
+ 232:	80 91 c2 00 	lds	r24, 0x00C2	; 0x8000c2 <lastEncoded1>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:97
+  (lastEncoded1 == 0b01111000) ||
+  (lastEncoded1 == 0b00011110) ||
+ 236:	87 38       	cpi	r24, 0x87	; 135
+ 238:	09 f0       	breq	.+2      	; 0x23c <updateEncoder1()+0x4e>
+ 23a:	59 c0       	rjmp	.+178    	; 0x2ee <__stack+0x8f>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:100
+  (lastEncoded1 == 0b11100001)) 
+  {
+    registerMap.encoder1Count--;
+ 23c:	80 91 91 00 	lds	r24, 0x0091	; 0x800091 <registerMap+0x5>
+ 240:	90 91 92 00 	lds	r25, 0x0092	; 0x800092 <registerMap+0x6>
+ 244:	01 97       	sbiw	r24, 0x01	; 1
+ 246:	90 93 92 00 	sts	0x0092, r25	; 0x800092 <registerMap+0x6>
+ 24a:	80 93 91 00 	sts	0x0091, r24	; 0x800091 <registerMap+0x5>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:102
+        // If rotationLimit feature turned on, don't let the encoder1Count go below zero
+        if (registerMap.rotationLimit)
+ 24e:	80 91 9e 00 	lds	r24, 0x009E	; 0x80009e <registerMap+0x12>
+ 252:	90 91 9f 00 	lds	r25, 0x009F	; 0x80009f <registerMap+0x13>
+ 256:	89 2b       	or	r24, r25
+ 258:	71 f0       	breq	.+28     	; 0x276 <__stack+0x17>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:104
+        {
+          if (registerMap.encoder1Count < 0)
+ 25a:	80 91 91 00 	lds	r24, 0x0091	; 0x800091 <registerMap+0x5>
+ 25e:	90 91 92 00 	lds	r25, 0x0092	; 0x800092 <registerMap+0x6>
+ 262:	97 ff       	sbrs	r25, 7
+ 264:	08 c0       	rjmp	.+16     	; 0x276 <__stack+0x17>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:106
+          {
+            registerMap.encoder1Count = registerMap.rotationLimit;
+ 266:	80 91 9e 00 	lds	r24, 0x009E	; 0x80009e <registerMap+0x12>
+ 26a:	90 91 9f 00 	lds	r25, 0x009F	; 0x80009f <registerMap+0x13>
+ 26e:	90 93 92 00 	sts	0x0092, r25	; 0x800092 <registerMap+0x6>
+ 272:	80 93 91 00 	sts	0x0091, r24	; 0x800091 <registerMap+0x5>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:109
+          }
+        }
+        registerMap.encoder1Difference--;
+ 276:	80 91 93 00 	lds	r24, 0x0093	; 0x800093 <registerMap+0x7>
+ 27a:	90 91 94 00 	lds	r25, 0x0094	; 0x800094 <registerMap+0x8>
+ 27e:	01 97       	sbiw	r24, 0x01	; 1
+ 280:	23 c0       	rjmp	.+70     	; 0x2c8 <__stack+0x69>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:79
+  if ((lastEncoded1 == 0b01001011) || // clockwise
+  (lastEncoded1 == 0b10110100) || 
+  (lastEncoded1 == 0b00101101) || 
+  (lastEncoded1 == 0b11010010)) 
+  {
+    registerMap.encoder1Count++;
+ 282:	80 91 91 00 	lds	r24, 0x0091	; 0x800091 <registerMap+0x5>
+ 286:	90 91 92 00 	lds	r25, 0x0092	; 0x800092 <registerMap+0x6>
+ 28a:	01 96       	adiw	r24, 0x01	; 1
+ 28c:	90 93 92 00 	sts	0x0092, r25	; 0x800092 <registerMap+0x6>
+ 290:	80 93 91 00 	sts	0x0091, r24	; 0x800091 <registerMap+0x5>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:81
+        //If rotationLimit feature turned on, don't let the encoder1Count go past this value
+        if (registerMap.rotationLimit)
+ 294:	80 91 9e 00 	lds	r24, 0x009E	; 0x80009e <registerMap+0x12>
+ 298:	90 91 9f 00 	lds	r25, 0x009F	; 0x80009f <registerMap+0x13>
+ 29c:	89 2b       	or	r24, r25
+ 29e:	79 f0       	breq	.+30     	; 0x2be <__stack+0x5f>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:83
+        {
+          if (registerMap.encoder1Count >= (int16_t)registerMap.rotationLimit)
+ 2a0:	20 91 91 00 	lds	r18, 0x0091	; 0x800091 <registerMap+0x5>
+ 2a4:	30 91 92 00 	lds	r19, 0x0092	; 0x800092 <registerMap+0x6>
+ 2a8:	80 91 9e 00 	lds	r24, 0x009E	; 0x80009e <registerMap+0x12>
+ 2ac:	90 91 9f 00 	lds	r25, 0x009F	; 0x80009f <registerMap+0x13>
+ 2b0:	28 17       	cp	r18, r24
+ 2b2:	39 07       	cpc	r19, r25
+ 2b4:	24 f0       	brlt	.+8      	; 0x2be <__stack+0x5f>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:85
+          {
+            registerMap.encoder1Count = 0;
+ 2b6:	10 92 92 00 	sts	0x0092, r1	; 0x800092 <registerMap+0x6>
+ 2ba:	10 92 91 00 	sts	0x0091, r1	; 0x800091 <registerMap+0x5>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:88
+          }
+        }
+        registerMap.encoder1Difference++;
+ 2be:	80 91 93 00 	lds	r24, 0x0093	; 0x800093 <registerMap+0x7>
+ 2c2:	90 91 94 00 	lds	r25, 0x0094	; 0x800094 <registerMap+0x8>
+ 2c6:	01 96       	adiw	r24, 0x01	; 1
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:109
+          if (registerMap.encoder1Count < 0)
+          {
+            registerMap.encoder1Count = registerMap.rotationLimit;
+          }
+        }
+        registerMap.encoder1Difference--;
+ 2c8:	90 93 94 00 	sts	0x0094, r25	; 0x800094 <registerMap+0x8>
+ 2cc:	80 93 93 00 	sts	0x0093, r24	; 0x800093 <registerMap+0x7>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:112
+    
+        //We have moved one full tick so update moved bit and timestamp
+        registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
+ 2d0:	80 91 8d 00 	lds	r24, 0x008D	; 0x80008d <registerMap+0x1>
+ 2d4:	81 60       	ori	r24, 0x01	; 1
+ 2d6:	80 93 8d 00 	sts	0x008D, r24	; 0x80008d <registerMap+0x1>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:113
+        lastEncoderMoveTime = millis(); //Timestamp this event
+ 2da:	7d df       	rcall	.-262    	; 0x1d6 <millis>
+ 2dc:	60 93 dd 00 	sts	0x00DD, r22	; 0x8000dd <lastEncoderMoveTime>
+ 2e0:	70 93 de 00 	sts	0x00DE, r23	; 0x8000de <lastEncoderMoveTime+0x1>
+ 2e4:	80 93 df 00 	sts	0x00DF, r24	; 0x8000df <lastEncoderMoveTime+0x2>
+ 2e8:	90 93 e0 00 	sts	0x00E0, r25	; 0x8000e0 <lastEncoderMoveTime+0x3>
+ 2ec:	0f c0       	rjmp	.+30     	; 0x30c <__stack+0xad>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:96
+        //We have moved one full tick so update moved bit and timestamp
+        registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
+        lastEncoderMoveTime = millis(); //Timestamp this event
+  }
+  else if ((lastEncoded1 == 0b10000111) || // counter clockwise
+  (lastEncoded1 == 0b01111000) ||
+ 2ee:	80 91 c2 00 	lds	r24, 0x00C2	; 0x8000c2 <lastEncoded1>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:95
+    
+        //We have moved one full tick so update moved bit and timestamp
+        registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
+        lastEncoderMoveTime = millis(); //Timestamp this event
+  }
+  else if ((lastEncoded1 == 0b10000111) || // counter clockwise
+ 2f2:	88 37       	cpi	r24, 0x78	; 120
+ 2f4:	09 f4       	brne	.+2      	; 0x2f8 <__stack+0x99>
+ 2f6:	a2 cf       	rjmp	.-188    	; 0x23c <updateEncoder1()+0x4e>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:97
+  (lastEncoded1 == 0b01111000) ||
+  (lastEncoded1 == 0b00011110) ||
+ 2f8:	80 91 c2 00 	lds	r24, 0x00C2	; 0x8000c2 <lastEncoded1>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:96
+        //We have moved one full tick so update moved bit and timestamp
+        registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
+        lastEncoderMoveTime = millis(); //Timestamp this event
+  }
+  else if ((lastEncoded1 == 0b10000111) || // counter clockwise
+  (lastEncoded1 == 0b01111000) ||
+ 2fc:	8e 31       	cpi	r24, 0x1E	; 30
+ 2fe:	09 f4       	brne	.+2      	; 0x302 <__stack+0xa3>
+ 300:	9d cf       	rjmp	.-198    	; 0x23c <updateEncoder1()+0x4e>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:98
+  (lastEncoded1 == 0b00011110) ||
+  (lastEncoded1 == 0b11100001)) 
+ 302:	80 91 c2 00 	lds	r24, 0x00C2	; 0x8000c2 <lastEncoded1>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:97
+        registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
+        lastEncoderMoveTime = millis(); //Timestamp this event
+  }
+  else if ((lastEncoded1 == 0b10000111) || // counter clockwise
+  (lastEncoded1 == 0b01111000) ||
+  (lastEncoded1 == 0b00011110) ||
+ 306:	81 3e       	cpi	r24, 0xE1	; 225
+ 308:	09 f4       	brne	.+2      	; 0x30c <__stack+0xad>
+ 30a:	98 cf       	rjmp	.-208    	; 0x23c <updateEncoder1()+0x4e>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:116
+        //We have moved one full tick so update moved bit and timestamp
+        registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
+        lastEncoderMoveTime = millis(); //Timestamp this event
+  }
+
+}
+ 30c:	08 95       	ret
+
+0000030e <updateEncoder2()>:
+_Z14updateEncoder2v():
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:134
+  if (fullPortReadValue & B00100000) LSB2 = 1;
+
+#elif defined(__AVR_ATtiny84__)
+
+  // read in full port values for port A and port B on the ATTINY
+  byte fullPortA = PINA;
+ 30e:	29 b3       	in	r18, 0x19	; 25
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:135
+  byte fullPortB = PINB;
+ 310:	96 b3       	in	r25, 0x16	; 22
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:146
+#endif
+
+  // Encoder 2
+
+  byte encoded2 = (MSB2 << 1) | LSB2; //Convert the 2 pin value to single number
+  lastEncoded2 = (lastEncoded2 << 2) | encoded2; //Add this to the previous readings
+ 312:	80 91 c3 00 	lds	r24, 0x00C3	; 0x8000c3 <lastEncoded2>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:139
+  byte fullPortA = PINA;
+  byte fullPortB = PINB;
+
+  // pull out MSB and LSM from full port on both encoders.
+  if (fullPortA & B10000000) MSB2 = 1;  // Encoder 2 A (D7)  (PA7)
+  if (fullPortB & B00000100) LSB2 = 1;  // Encoder 2 B (D8)  (PB2)
+ 316:	92 fb       	bst	r25, 2
+ 318:	99 27       	eor	r25, r25
+ 31a:	90 f9       	bld	r25, 0
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:146
+#endif
+
+  // Encoder 2
+
+  byte encoded2 = (MSB2 << 1) | LSB2; //Convert the 2 pin value to single number
+  lastEncoded2 = (lastEncoded2 << 2) | encoded2; //Add this to the previous readings
+ 31c:	88 0f       	add	r24, r24
+ 31e:	88 0f       	add	r24, r24
+ 320:	89 2b       	or	r24, r25
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:138
+  // read in full port values for port A and port B on the ATTINY
+  byte fullPortA = PINA;
+  byte fullPortB = PINB;
+
+  // pull out MSB and LSM from full port on both encoders.
+  if (fullPortA & B10000000) MSB2 = 1;  // Encoder 2 A (D7)  (PA7)
+ 322:	02 2e       	mov	r0, r18
+ 324:	00 0c       	add	r0, r0
+ 326:	33 0b       	sbc	r19, r19
+ 328:	22 27       	eor	r18, r18
+ 32a:	33 0f       	add	r19, r19
+ 32c:	22 1f       	adc	r18, r18
+ 32e:	33 27       	eor	r19, r19
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:145
+
+#endif
+
+  // Encoder 2
+
+  byte encoded2 = (MSB2 << 1) | LSB2; //Convert the 2 pin value to single number
+ 330:	22 0f       	add	r18, r18
+ 332:	33 1f       	adc	r19, r19
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:146
+  lastEncoded2 = (lastEncoded2 << 2) | encoded2; //Add this to the previous readings
+ 334:	82 2b       	or	r24, r18
+ 336:	80 93 c3 00 	sts	0x00C3, r24	; 0x8000c3 <lastEncoded2>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:149
+
+
+  if ((lastEncoded2 == 0b01001011) || // clockwise
+ 33a:	80 91 c3 00 	lds	r24, 0x00C3	; 0x8000c3 <lastEncoded2>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:151
+  (lastEncoded2 == 0b10110100) || 
+  (lastEncoded2 == 0b00101101) || 
+ 33e:	8b 34       	cpi	r24, 0x4B	; 75
+ 340:	a1 f1       	breq	.+104    	; 0x3aa <updateEncoder2()+0x9c>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:150
+  byte encoded2 = (MSB2 << 1) | LSB2; //Convert the 2 pin value to single number
+  lastEncoded2 = (lastEncoded2 << 2) | encoded2; //Add this to the previous readings
+
+
+  if ((lastEncoded2 == 0b01001011) || // clockwise
+  (lastEncoded2 == 0b10110100) || 
+ 342:	80 91 c3 00 	lds	r24, 0x00C3	; 0x8000c3 <lastEncoded2>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:149
+
+  byte encoded2 = (MSB2 << 1) | LSB2; //Convert the 2 pin value to single number
+  lastEncoded2 = (lastEncoded2 << 2) | encoded2; //Add this to the previous readings
+
+
+  if ((lastEncoded2 == 0b01001011) || // clockwise
+ 346:	84 3b       	cpi	r24, 0xB4	; 180
+ 348:	81 f1       	breq	.+96     	; 0x3aa <updateEncoder2()+0x9c>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:151
+  (lastEncoded2 == 0b10110100) || 
+  (lastEncoded2 == 0b00101101) || 
+ 34a:	80 91 c3 00 	lds	r24, 0x00C3	; 0x8000c3 <lastEncoded2>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:150
+  byte encoded2 = (MSB2 << 1) | LSB2; //Convert the 2 pin value to single number
+  lastEncoded2 = (lastEncoded2 << 2) | encoded2; //Add this to the previous readings
+
+
+  if ((lastEncoded2 == 0b01001011) || // clockwise
+  (lastEncoded2 == 0b10110100) || 
+ 34e:	8d 32       	cpi	r24, 0x2D	; 45
+ 350:	61 f1       	breq	.+88     	; 0x3aa <updateEncoder2()+0x9c>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:152
+  (lastEncoded2 == 0b00101101) || 
+  (lastEncoded2 == 0b11010010)) 
+ 352:	80 91 c3 00 	lds	r24, 0x00C3	; 0x8000c3 <lastEncoded2>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:151
+  lastEncoded2 = (lastEncoded2 << 2) | encoded2; //Add this to the previous readings
+
+
+  if ((lastEncoded2 == 0b01001011) || // clockwise
+  (lastEncoded2 == 0b10110100) || 
+  (lastEncoded2 == 0b00101101) || 
+ 356:	82 3d       	cpi	r24, 0xD2	; 210
+ 358:	41 f1       	breq	.+80     	; 0x3aa <updateEncoder2()+0x9c>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:170
+    
+        //We have moved one full tick so update moved bit and timestamp
+        registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
+        lastEncoderMoveTime = millis(); //Timestamp this event
+  }
+  else if ((lastEncoded2 == 0b10000111) || // counter clockwise
+ 35a:	80 91 c3 00 	lds	r24, 0x00C3	; 0x8000c3 <lastEncoded2>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:172
+  (lastEncoded2 == 0b01111000) ||
+  (lastEncoded2 == 0b00011110) ||
+ 35e:	87 38       	cpi	r24, 0x87	; 135
+ 360:	09 f0       	breq	.+2      	; 0x364 <updateEncoder2()+0x56>
+ 362:	59 c0       	rjmp	.+178    	; 0x416 <__LOCK_REGION_LENGTH__+0x16>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:175
+  (lastEncoded2 == 0b11100001)) 
+  {
+    registerMap.encoder2Count--;
+ 364:	80 91 95 00 	lds	r24, 0x0095	; 0x800095 <registerMap+0x9>
+ 368:	90 91 96 00 	lds	r25, 0x0096	; 0x800096 <registerMap+0xa>
+ 36c:	01 97       	sbiw	r24, 0x01	; 1
+ 36e:	90 93 96 00 	sts	0x0096, r25	; 0x800096 <registerMap+0xa>
+ 372:	80 93 95 00 	sts	0x0095, r24	; 0x800095 <registerMap+0x9>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:177
+        // If rotationLimit feature turned on, don't let the encoder2Count go below zero
+        if (registerMap.rotationLimit)
+ 376:	80 91 9e 00 	lds	r24, 0x009E	; 0x80009e <registerMap+0x12>
+ 37a:	90 91 9f 00 	lds	r25, 0x009F	; 0x80009f <registerMap+0x13>
+ 37e:	89 2b       	or	r24, r25
+ 380:	71 f0       	breq	.+28     	; 0x39e <updateEncoder2()+0x90>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:179
+        {
+          if (registerMap.encoder2Count < 0)
+ 382:	80 91 95 00 	lds	r24, 0x0095	; 0x800095 <registerMap+0x9>
+ 386:	90 91 96 00 	lds	r25, 0x0096	; 0x800096 <registerMap+0xa>
+ 38a:	97 ff       	sbrs	r25, 7
+ 38c:	08 c0       	rjmp	.+16     	; 0x39e <updateEncoder2()+0x90>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:181
+          {
+            registerMap.encoder2Count = registerMap.rotationLimit;
+ 38e:	80 91 9e 00 	lds	r24, 0x009E	; 0x80009e <registerMap+0x12>
+ 392:	90 91 9f 00 	lds	r25, 0x009F	; 0x80009f <registerMap+0x13>
+ 396:	90 93 96 00 	sts	0x0096, r25	; 0x800096 <registerMap+0xa>
+ 39a:	80 93 95 00 	sts	0x0095, r24	; 0x800095 <registerMap+0x9>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:184
+          }
+        }
+        registerMap.encoder2Difference--;
+ 39e:	80 91 97 00 	lds	r24, 0x0097	; 0x800097 <registerMap+0xb>
+ 3a2:	90 91 98 00 	lds	r25, 0x0098	; 0x800098 <registerMap+0xc>
+ 3a6:	01 97       	sbiw	r24, 0x01	; 1
+ 3a8:	23 c0       	rjmp	.+70     	; 0x3f0 <updateEncoder2()+0xe2>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:154
+  if ((lastEncoded2 == 0b01001011) || // clockwise
+  (lastEncoded2 == 0b10110100) || 
+  (lastEncoded2 == 0b00101101) || 
+  (lastEncoded2 == 0b11010010)) 
+  {
+    registerMap.encoder2Count++;
+ 3aa:	80 91 95 00 	lds	r24, 0x0095	; 0x800095 <registerMap+0x9>
+ 3ae:	90 91 96 00 	lds	r25, 0x0096	; 0x800096 <registerMap+0xa>
+ 3b2:	01 96       	adiw	r24, 0x01	; 1
+ 3b4:	90 93 96 00 	sts	0x0096, r25	; 0x800096 <registerMap+0xa>
+ 3b8:	80 93 95 00 	sts	0x0095, r24	; 0x800095 <registerMap+0x9>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:156
+        // If rotationLimit feature turned on, don't let the encoder2Count go past this value
+        if (registerMap.rotationLimit)
+ 3bc:	80 91 9e 00 	lds	r24, 0x009E	; 0x80009e <registerMap+0x12>
+ 3c0:	90 91 9f 00 	lds	r25, 0x009F	; 0x80009f <registerMap+0x13>
+ 3c4:	89 2b       	or	r24, r25
+ 3c6:	79 f0       	breq	.+30     	; 0x3e6 <updateEncoder2()+0xd8>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:158
+        {
+          if (registerMap.encoder2Count >= (int16_t)registerMap.rotationLimit)
+ 3c8:	20 91 95 00 	lds	r18, 0x0095	; 0x800095 <registerMap+0x9>
+ 3cc:	30 91 96 00 	lds	r19, 0x0096	; 0x800096 <registerMap+0xa>
+ 3d0:	80 91 9e 00 	lds	r24, 0x009E	; 0x80009e <registerMap+0x12>
+ 3d4:	90 91 9f 00 	lds	r25, 0x009F	; 0x80009f <registerMap+0x13>
+ 3d8:	28 17       	cp	r18, r24
+ 3da:	39 07       	cpc	r19, r25
+ 3dc:	24 f0       	brlt	.+8      	; 0x3e6 <updateEncoder2()+0xd8>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:160
+          {
+            registerMap.encoder2Count = 0;
+ 3de:	10 92 96 00 	sts	0x0096, r1	; 0x800096 <registerMap+0xa>
+ 3e2:	10 92 95 00 	sts	0x0095, r1	; 0x800095 <registerMap+0x9>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:163
+          }
+        }
+        registerMap.encoder2Difference++;
+ 3e6:	80 91 97 00 	lds	r24, 0x0097	; 0x800097 <registerMap+0xb>
+ 3ea:	90 91 98 00 	lds	r25, 0x0098	; 0x800098 <registerMap+0xc>
+ 3ee:	01 96       	adiw	r24, 0x01	; 1
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:184
+          if (registerMap.encoder2Count < 0)
+          {
+            registerMap.encoder2Count = registerMap.rotationLimit;
+          }
+        }
+        registerMap.encoder2Difference--;
+ 3f0:	90 93 98 00 	sts	0x0098, r25	; 0x800098 <registerMap+0xc>
+ 3f4:	80 93 97 00 	sts	0x0097, r24	; 0x800097 <registerMap+0xb>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:187
+    
+        //We have moved one full tick so update moved bit and timestamp
+        registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
+ 3f8:	80 91 8d 00 	lds	r24, 0x008D	; 0x80008d <registerMap+0x1>
+ 3fc:	81 60       	ori	r24, 0x01	; 1
+ 3fe:	80 93 8d 00 	sts	0x008D, r24	; 0x80008d <registerMap+0x1>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:188
+        lastEncoderMoveTime = millis(); //Timestamp this event
+ 402:	e9 de       	rcall	.-558    	; 0x1d6 <millis>
+ 404:	60 93 dd 00 	sts	0x00DD, r22	; 0x8000dd <lastEncoderMoveTime>
+ 408:	70 93 de 00 	sts	0x00DE, r23	; 0x8000de <lastEncoderMoveTime+0x1>
+ 40c:	80 93 df 00 	sts	0x00DF, r24	; 0x8000df <lastEncoderMoveTime+0x2>
+ 410:	90 93 e0 00 	sts	0x00E0, r25	; 0x8000e0 <lastEncoderMoveTime+0x3>
+ 414:	0f c0       	rjmp	.+30     	; 0x434 <__LOCK_REGION_LENGTH__+0x34>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:171
+        //We have moved one full tick so update moved bit and timestamp
+        registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
+        lastEncoderMoveTime = millis(); //Timestamp this event
+  }
+  else if ((lastEncoded2 == 0b10000111) || // counter clockwise
+  (lastEncoded2 == 0b01111000) ||
+ 416:	80 91 c3 00 	lds	r24, 0x00C3	; 0x8000c3 <lastEncoded2>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:170
+    
+        //We have moved one full tick so update moved bit and timestamp
+        registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
+        lastEncoderMoveTime = millis(); //Timestamp this event
+  }
+  else if ((lastEncoded2 == 0b10000111) || // counter clockwise
+ 41a:	88 37       	cpi	r24, 0x78	; 120
+ 41c:	09 f4       	brne	.+2      	; 0x420 <__LOCK_REGION_LENGTH__+0x20>
+ 41e:	a2 cf       	rjmp	.-188    	; 0x364 <updateEncoder2()+0x56>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:172
+  (lastEncoded2 == 0b01111000) ||
+  (lastEncoded2 == 0b00011110) ||
+ 420:	80 91 c3 00 	lds	r24, 0x00C3	; 0x8000c3 <lastEncoded2>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:171
+        //We have moved one full tick so update moved bit and timestamp
+        registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
+        lastEncoderMoveTime = millis(); //Timestamp this event
+  }
+  else if ((lastEncoded2 == 0b10000111) || // counter clockwise
+  (lastEncoded2 == 0b01111000) ||
+ 424:	8e 31       	cpi	r24, 0x1E	; 30
+ 426:	09 f4       	brne	.+2      	; 0x42a <__LOCK_REGION_LENGTH__+0x2a>
+ 428:	9d cf       	rjmp	.-198    	; 0x364 <updateEncoder2()+0x56>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:173
+  (lastEncoded2 == 0b00011110) ||
+  (lastEncoded2 == 0b11100001)) 
+ 42a:	80 91 c3 00 	lds	r24, 0x00C3	; 0x8000c3 <lastEncoded2>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:172
+        registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
+        lastEncoderMoveTime = millis(); //Timestamp this event
+  }
+  else if ((lastEncoded2 == 0b10000111) || // counter clockwise
+  (lastEncoded2 == 0b01111000) ||
+  (lastEncoded2 == 0b00011110) ||
+ 42e:	81 3e       	cpi	r24, 0xE1	; 225
+ 430:	09 f4       	brne	.+2      	; 0x434 <__LOCK_REGION_LENGTH__+0x34>
+ 432:	98 cf       	rjmp	.-208    	; 0x364 <updateEncoder2()+0x56>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:191
+        //We have moved one full tick so update moved bit and timestamp
+        registerMap.status |= (1 << statusEncoderMovedBit); //Set the status bit to true to indicate movement
+        lastEncoderMoveTime = millis(); //Timestamp this event
+  }
+
+}
+ 434:	08 95       	ret
+
+00000436 <USI_TWI_Slave_Initialise>:
+USI_TWI_Slave_Initialise():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:54
+static volatile uint8_t TWI_TxHead;
+static volatile uint8_t TWI_TxTail;
+
+void Flush_TWI_Buffers(void)
+{
+  TWI_RxTail = 0;
+ 436:	10 92 e2 00 	sts	0x00E2, r1	; 0x8000e2 <TWI_RxTail>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:55
+  TWI_RxHead = 0;
+ 43a:	10 92 e1 00 	sts	0x00E1, r1	; 0x8000e1 <TWI_RxHead>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:56
+  TWI_TxTail = 0;
+ 43e:	10 92 c7 00 	sts	0x00C7, r1	; 0x8000c7 <TWI_TxTail>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:57
+  TWI_TxHead = 0;
+ 442:	10 92 c8 00 	sts	0x00C8, r1	; 0x8000c8 <TWI_TxHead>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:69
+----------------------------------------------------------*/
+void USI_TWI_Slave_Initialise(unsigned char TWI_ownAddress)
+{
+  Flush_TWI_Buffers();
+
+  TWI_slaveAddress = TWI_ownAddress;
+ 446:	80 93 cb 00 	sts	0x00CB, r24	; 0x8000cb <TWI_slaveAddress>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:71
+
+  USI_TWI_On_Slave_Transmit = 0;
+ 44a:	10 92 ca 00 	sts	0x00CA, r1	; 0x8000ca <USI_TWI_On_Slave_Transmit+0x1>
+ 44e:	10 92 c9 00 	sts	0x00C9, r1	; 0x8000c9 <USI_TWI_On_Slave_Transmit>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:72
+  USI_TWI_On_Slave_Receive = 0;
+ 452:	10 92 c6 00 	sts	0x00C6, r1	; 0x8000c6 <USI_TWI_On_Slave_Receive+0x1>
+ 456:	10 92 c5 00 	sts	0x00C5, r1	; 0x8000c5 <USI_TWI_On_Slave_Receive>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:74
+
+  PORT_USI_CL |= (1 << PORT_USI_SCL);     // Set SCL high
+ 45a:	dc 9a       	sbi	0x1b, 4	; 27
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:75
+  PORT_USI |= (1 << PORT_USI_SDA);        // Set SDA high
+ 45c:	de 9a       	sbi	0x1b, 6	; 27
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:76
+  DDR_USI_CL |= (1 << PORT_USI_SCL);      // Set SCL as output
+ 45e:	d4 9a       	sbi	0x1a, 4	; 26
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:77
+  DDR_USI &= ~(1 << PORT_USI_SDA);        // Set SDA as input
+ 460:	d6 98       	cbi	0x1a, 6	; 26
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:78
+  USICR = (1 << USISIE) | (0 << USIOIE) | // Enable Start Condition Interrupt. Disable Overflow Interrupt.
+ 462:	88 ea       	ldi	r24, 0xA8	; 168
+ 464:	8d b9       	out	0x0d, r24	; 13
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:83
+          (1 << USIWM1) | (0 << USIWM0) | // Set USI in Two-wire mode. No USI Counter overflow prior
+                                          // to first Start Condition (potential failure)
+          (1 << USICS1) | (0 << USICS0) | (0 << USICLK) | // Shift Register Clock Source = External, positive edge
+          (0 << USITC);
+  USISR = 0xF0; // Clear all flags and reset overflow counter
+ 466:	80 ef       	ldi	r24, 0xF0	; 240
+ 468:	8e b9       	out	0x0e, r24	; 14
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:84
+}
+ 46a:	08 95       	ret
+
+0000046c <requestEvent()>:
+_Z12requestEventv():
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:254
+//Respond to GET commands
+//When Twist gets a request for data from the user, this function is called as an interrupt
+//The interrupt will respond with bytes starting from the last byte the user sent to us
+//While we are sending bytes we may have to do some calculations
+void requestEvent()
+{
+ 46c:	0f 93       	push	r16
+ 46e:	1f 93       	push	r17
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:256
+  //Calculate time stamps before we start sending bytes via I2C
+  if (lastEncoderMoveTime > 0) registerMap.timeSinceLastMovement = millis() - lastEncoderMoveTime;
+ 470:	80 91 dd 00 	lds	r24, 0x00DD	; 0x8000dd <lastEncoderMoveTime>
+ 474:	90 91 de 00 	lds	r25, 0x00DE	; 0x8000de <lastEncoderMoveTime+0x1>
+ 478:	a0 91 df 00 	lds	r26, 0x00DF	; 0x8000df <lastEncoderMoveTime+0x2>
+ 47c:	b0 91 e0 00 	lds	r27, 0x00E0	; 0x8000e0 <lastEncoderMoveTime+0x3>
+ 480:	89 2b       	or	r24, r25
+ 482:	8a 2b       	or	r24, r26
+ 484:	8b 2b       	or	r24, r27
+ 486:	79 f0       	breq	.+30     	; 0x4a6 <requestEvent()+0x3a>
+ 488:	a6 de       	rcall	.-692    	; 0x1d6 <millis>
+ 48a:	00 91 dd 00 	lds	r16, 0x00DD	; 0x8000dd <lastEncoderMoveTime>
+ 48e:	10 91 de 00 	lds	r17, 0x00DE	; 0x8000de <lastEncoderMoveTime+0x1>
+ 492:	20 91 df 00 	lds	r18, 0x00DF	; 0x8000df <lastEncoderMoveTime+0x2>
+ 496:	30 91 e0 00 	lds	r19, 0x00E0	; 0x8000e0 <lastEncoderMoveTime+0x3>
+ 49a:	60 1b       	sub	r22, r16
+ 49c:	71 0b       	sbc	r23, r17
+ 49e:	70 93 9a 00 	sts	0x009A, r23	; 0x80009a <registerMap+0xe>
+ 4a2:	60 93 99 00 	sts	0x0099, r22	; 0x800099 <registerMap+0xd>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:261
+
+  //This will write the entire contents of the register map struct starting from
+  //the register the user requested, and when it reaches the end the master
+  //will read 0xFFs.
+  Wire.write((registerPointer + registerNumber), sizeof(memoryMap) - registerNumber);
+ 4a6:	80 91 c4 00 	lds	r24, 0x00C4	; 0x8000c4 <registerNumber>
+ 4aa:	44 e1       	ldi	r20, 0x14	; 20
+ 4ac:	50 e0       	ldi	r21, 0x00	; 0
+ 4ae:	48 1b       	sub	r20, r24
+ 4b0:	51 09       	sbc	r21, r1
+ 4b2:	60 91 c4 00 	lds	r22, 0x00C4	; 0x8000c4 <registerNumber>
+ 4b6:	70 e0       	ldi	r23, 0x00	; 0
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src/Wire.cpp:524
+// must be called in:
+// slave tx event callback
+// or after beginTransmission(address)
+size_t TwoWire::write(const uint8_t *data, size_t quantity) {
+  size_t numBytes = 0;
+  for (size_t i = 0; i < quantity; ++i){
+ 4b8:	30 e0       	ldi	r19, 0x00	; 0
+ 4ba:	20 e0       	ldi	r18, 0x00	; 0
+write():
+ 4bc:	42 17       	cp	r20, r18
+ 4be:	53 07       	cpc	r21, r19
+ 4c0:	01 f1       	breq	.+64     	; 0x502 <requestEvent()+0x96>
+USI_TWI_Space_In_Transmission_Buffer():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:144
+
+// Check if there is space in the transmission buffer.
+unsigned char USI_TWI_Space_In_Transmission_Buffer(void)
+{
+  unsigned char tmpTxHead;
+  tmpTxHead = (TWI_TxHead + 1) & TWI_TX_BUFFER_MASK; // Calculate next buffer index.
+ 4c2:	90 91 c8 00 	lds	r25, 0x00C8	; 0x8000c8 <TWI_TxHead>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:145
+  return (TWI_TxTail - tmpTxHead) & TWI_TX_BUFFER_MASK; // Return 0 (FALSE) if the transmission buffer is full.
+ 4c6:	80 91 c7 00 	lds	r24, 0x00C7	; 0x8000c7 <TWI_TxTail>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:144
+
+// Check if there is space in the transmission buffer.
+unsigned char USI_TWI_Space_In_Transmission_Buffer(void)
+{
+  unsigned char tmpTxHead;
+  tmpTxHead = (TWI_TxHead + 1) & TWI_TX_BUFFER_MASK; // Calculate next buffer index.
+ 4ca:	9f 5f       	subi	r25, 0xFF	; 255
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:145
+  return (TWI_TxTail - tmpTxHead) & TWI_TX_BUFFER_MASK; // Return 0 (FALSE) if the transmission buffer is full.
+ 4cc:	89 1b       	sub	r24, r25
+ 4ce:	8f 70       	andi	r24, 0x0F	; 15
+write():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src/Wire.cpp:510
+    ++BufferIndex;
+    // update amount in buffer
+    BufferLength = BufferIndex;
+  } else { // in slave send mode
+    // don't bother if buffer is full
+    if (!USI_TWI_Space_In_Transmission_Buffer()) {
+ 4d0:	a9 f0       	breq	.+42     	; 0x4fc <requestEvent()+0x90>
+USI_TWI_Transmit_Byte():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:100
+// Puts data in the transmission buffer, Waits if buffer is full.
+void USI_TWI_Transmit_Byte(unsigned char data)
+{
+  unsigned char tmphead;
+
+  tmphead = (TWI_TxHead + 1) & TWI_TX_BUFFER_MASK; // Calculate buffer index.
+ 4d2:	80 91 c8 00 	lds	r24, 0x00C8	; 0x8000c8 <TWI_TxHead>
+ 4d6:	8f 5f       	subi	r24, 0xFF	; 255
+ 4d8:	8f 70       	andi	r24, 0x0F	; 15
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:101
+  while (tmphead == TWI_TxTail)
+ 4da:	90 91 c7 00 	lds	r25, 0x00C7	; 0x8000c7 <TWI_TxTail>
+ 4de:	89 17       	cp	r24, r25
+ 4e0:	e1 f3       	breq	.-8      	; 0x4da <requestEvent()+0x6e>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:103
+    ;                         // Wait for free space in buffer.
+  TWI_TxBuf[tmphead] = data;    // Store data in buffer.
+ 4e2:	e8 2f       	mov	r30, r24
+ 4e4:	f0 e0       	ldi	r31, 0x00	; 0
+ 4e6:	ee 54       	subi	r30, 0x4E	; 78
+ 4e8:	ff 4f       	sbci	r31, 0xFF	; 255
+write():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src/Wire.cpp:525
+// slave tx event callback
+// or after beginTransmission(address)
+size_t TwoWire::write(const uint8_t *data, size_t quantity) {
+  size_t numBytes = 0;
+  for (size_t i = 0; i < quantity; ++i){
+    numBytes += write(data[i]);
+ 4ea:	db 01       	movw	r26, r22
+ 4ec:	a2 0f       	add	r26, r18
+ 4ee:	b3 1f       	adc	r27, r19
+ 4f0:	a4 57       	subi	r26, 0x74	; 116
+ 4f2:	bf 4f       	sbci	r27, 0xFF	; 255
+USI_TWI_Transmit_Byte():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:103
+ 4f4:	9c 91       	ld	r25, X
+ 4f6:	90 83       	st	Z, r25
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:104
+  TWI_TxHead         = tmphead; // Store new index.
+ 4f8:	80 93 c8 00 	sts	0x00C8, r24	; 0x8000c8 <TWI_TxHead>
+write():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src/Wire.cpp:524
+// must be called in:
+// slave tx event callback
+// or after beginTransmission(address)
+size_t TwoWire::write(const uint8_t *data, size_t quantity) {
+  size_t numBytes = 0;
+  for (size_t i = 0; i < quantity; ++i){
+ 4fc:	2f 5f       	subi	r18, 0xFF	; 255
+ 4fe:	3f 4f       	sbci	r19, 0xFF	; 255
+ 500:	dd cf       	rjmp	.-70     	; 0x4bc <requestEvent()+0x50>
+_Z12requestEventv():
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:262
+}
+ 502:	1f 91       	pop	r17
+ 504:	0f 91       	pop	r16
+ 506:	08 95       	ret
+
+00000508 <receiveEvent(int)>:
+_Z12receiveEventi():
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:215
+  attachPCINT(digitalPinToPCINT(encoder2BPin), updateEncoder2, CHANGE);
+}
+
+//When Twist receives data bytes from Master, this function is called as an interrupt
+void receiveEvent(int numberOfBytesReceived)
+{
+ 508:	ff 92       	push	r15
+ 50a:	0f 93       	push	r16
+ 50c:	1f 93       	push	r17
+ 50e:	cf 93       	push	r28
+ 510:	df 93       	push	r29
+ 512:	8c 01       	movw	r16, r24
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:216
+  registerNumber = Wire.read(); //Get the memory map offset from the user
+ 514:	bd dd       	rcall	.-1158   	; 0x90 <TwoWire::read() [clone .constprop.7]>
+ 516:	80 93 c4 00 	sts	0x00C4, r24	; 0x8000c4 <registerNumber>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:220
+
+  //Begin recording the following incoming bytes to the temp memory map
+  //starting at the registerNumber (the first byte received)
+  for (byte x = 0 ; x < numberOfBytesReceived - 1 ; x++)
+ 51a:	f1 2c       	mov	r15, r1
+ 51c:	01 50       	subi	r16, 0x01	; 1
+ 51e:	11 09       	sbc	r17, r1
+ 520:	cf 2d       	mov	r28, r15
+ 522:	d0 e0       	ldi	r29, 0x00	; 0
+ 524:	c0 17       	cp	r28, r16
+ 526:	d1 07       	cpc	r29, r17
+ 528:	84 f5       	brge	.+96     	; 0x58a <receiveEvent(int)+0x82>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:222
+  {
+    byte temp = Wire.read(); //We might record it, we might throw it away
+ 52a:	b2 dd       	rcall	.-1180   	; 0x90 <TwoWire::read() [clone .constprop.7]>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:224
+
+    if ( (x + registerNumber) < sizeof(memoryMap))
+ 52c:	20 91 c4 00 	lds	r18, 0x00C4	; 0x8000c4 <registerNumber>
+ 530:	2c 0f       	add	r18, r28
+ 532:	3d 2f       	mov	r19, r29
+ 534:	31 1d       	adc	r19, r1
+ 536:	24 31       	cpi	r18, 0x14	; 20
+ 538:	31 05       	cpc	r19, r1
+ 53a:	28 f5       	brcc	.+74     	; 0x586 <receiveEvent(int)+0x7e>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:228
+    {
+      //Clense the incoming byte against the read only protected bits
+      //Store the result into the register map
+      *(registerPointer + registerNumber + x) &= ~*(protectionPointer + registerNumber + x); //Clear this register if needed
+ 53c:	a0 91 c4 00 	lds	r26, 0x00C4	; 0x8000c4 <registerNumber>
+ 540:	e0 91 c4 00 	lds	r30, 0x00C4	; 0x8000c4 <registerNumber>
+ 544:	ec 0f       	add	r30, r28
+ 546:	fd 2f       	mov	r31, r29
+ 548:	f1 1d       	adc	r31, r1
+ 54a:	e4 57       	subi	r30, 0x74	; 116
+ 54c:	ff 4f       	sbci	r31, 0xFF	; 255
+ 54e:	ac 0f       	add	r26, r28
+ 550:	bd 2f       	mov	r27, r29
+ 552:	b1 1d       	adc	r27, r1
+ 554:	a0 5a       	subi	r26, 0xA0	; 160
+ 556:	bf 4f       	sbci	r27, 0xFF	; 255
+ 558:	9c 91       	ld	r25, X
+ 55a:	90 95       	com	r25
+ 55c:	20 81       	ld	r18, Z
+ 55e:	92 23       	and	r25, r18
+ 560:	90 83       	st	Z, r25
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:229
+      *(registerPointer + registerNumber + x) |= temp & *(protectionPointer + registerNumber + x); //Or in the user's request (clensed against protection bits)
+ 562:	90 91 c4 00 	lds	r25, 0x00C4	; 0x8000c4 <registerNumber>
+ 566:	e0 91 c4 00 	lds	r30, 0x00C4	; 0x8000c4 <registerNumber>
+ 56a:	ec 0f       	add	r30, r28
+ 56c:	fd 2f       	mov	r31, r29
+ 56e:	f1 1d       	adc	r31, r1
+ 570:	e4 57       	subi	r30, 0x74	; 116
+ 572:	ff 4f       	sbci	r31, 0xFF	; 255
+ 574:	c9 0f       	add	r28, r25
+ 576:	d1 1d       	adc	r29, r1
+ 578:	c0 5a       	subi	r28, 0xA0	; 160
+ 57a:	df 4f       	sbci	r29, 0xFF	; 255
+ 57c:	98 81       	ld	r25, Y
+ 57e:	98 23       	and	r25, r24
+ 580:	80 81       	ld	r24, Z
+ 582:	89 2b       	or	r24, r25
+ 584:	80 83       	st	Z, r24
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:220
+{
+  registerNumber = Wire.read(); //Get the memory map offset from the user
+
+  //Begin recording the following incoming bytes to the temp memory map
+  //starting at the registerNumber (the first byte received)
+  for (byte x = 0 ; x < numberOfBytesReceived - 1 ; x++)
+ 586:	f3 94       	inc	r15
+ 588:	cb cf       	rjmp	.-106    	; 0x520 <receiveEvent(int)+0x18>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:233
+      *(registerPointer + registerNumber + x) &= ~*(protectionPointer + registerNumber + x); //Clear this register if needed
+      *(registerPointer + registerNumber + x) |= temp & *(protectionPointer + registerNumber + x); //Or in the user's request (clensed against protection bits)
+    }
+  }
+
+  if (interruptState == STATE_INT_INDICATED)
+ 58a:	80 91 a0 00 	lds	r24, 0x00A0	; 0x8000a0 <interruptState>
+ 58e:	82 30       	cpi	r24, 0x02	; 2
+ 590:	59 f4       	brne	.+22     	; 0x5a8 <receiveEvent(int)+0xa0>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:236
+  {
+    //If the user has cleared all the interrupt bits then clear interrupt pin
+    if ( (registerMap.status & (1 << statusEncoderMovedBit)) == 0)
+ 592:	80 91 8d 00 	lds	r24, 0x008D	; 0x80008d <registerMap+0x1>
+ 596:	80 fd       	sbrc	r24, 0
+ 598:	07 c0       	rjmp	.+14     	; 0x5a8 <receiveEvent(int)+0xa0>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:239
+    {
+      //This will set the int pin to high impedance (aka pulled high by external resistor)
+      digitalWrite(interruptPin, LOW); //Push pin to disable internal pull-ups
+ 59a:	bf dd       	rcall	.-1154   	; 0x11a <digitalWrite.constprop.9>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:240
+      pinMode(interruptPin, INPUT); //Go to high impedance
+ 59c:	60 e0       	ldi	r22, 0x00	; 0
+ 59e:	80 e0       	ldi	r24, 0x00	; 0
+ 5a0:	de dd       	rcall	.-1092   	; 0x15e <pinMode>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:242
+
+      interruptState = STATE_INT_CLEARED; //Go to next state
+ 5a2:	81 e0       	ldi	r24, 0x01	; 1
+ 5a4:	80 93 a0 00 	sts	0x00A0, r24	; 0x8000a0 <interruptState>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:246
+    }
+  }
+
+  updateOutputs = true; //Update things like LED brightnesses in the main loop
+ 5a8:	81 e0       	ldi	r24, 0x01	; 1
+ 5aa:	80 93 dc 00 	sts	0x00DC, r24	; 0x8000dc <updateOutputs>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/interrupts.ino:247
+}
+ 5ae:	df 91       	pop	r29
+ 5b0:	cf 91       	pop	r28
+ 5b2:	1f 91       	pop	r17
+ 5b4:	0f 91       	pop	r16
+ 5b6:	ff 90       	pop	r15
+ 5b8:	08 95       	ret
+
+000005ba <startI2C()>:
+_Z8startI2Cv():
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:369
+  sleep_enable();
+}
+
+//Begin listening on I2C bus as I2C slave using the global variable setting_i2c_address
+void startI2C()
+{
+ 5ba:	cf 93       	push	r28
+ 5bc:	df 93       	push	r29
+USI_TWI_Slave_Disable():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:89
+}
+
+// Disable USI for TWI Slave mode.
+void USI_TWI_Slave_Disable()
+{
+  DDR_USI_CL &= ~(1 << PORT_USI_SCL);  // Set SCL as input
+ 5be:	d4 98       	cbi	0x1a, 4	; 26
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:90
+  DDR_USI &= ~(1 << PORT_USI_SDA);  // Set SDA as input
+ 5c0:	d6 98       	cbi	0x1a, 6	; 26
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:91
+  USICR = 0x00; // Disable USI
+ 5c2:	1d b8       	out	0x0d, r1	; 13
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:92
+  USISR = 0xF0; // Clear all flags and reset overflow counter
+ 5c4:	80 ef       	ldi	r24, 0xF0	; 240
+ 5c6:	8e b9       	out	0x0e, r24	; 14
+digitalRead():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:168
+}
+
+int digitalRead(uint8_t pin)
+{
+  if (pin&128) {pin=analogInputToDigitalPin((pin&127));}
+  uint8_t timer = digitalPinToTimer(pin);
+ 5c8:	e5 e5       	ldi	r30, 0x55	; 85
+ 5ca:	f0 e0       	ldi	r31, 0x00	; 0
+ 5cc:	84 91       	lpm	r24, Z
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:169
+  uint8_t bit = digitalPinToBitMask(pin);
+ 5ce:	e9 e4       	ldi	r30, 0x49	; 73
+ 5d0:	f0 e0       	ldi	r31, 0x00	; 0
+ 5d2:	d4 91       	lpm	r29, Z
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:170
+  uint8_t port = digitalPinToPort(pin);
+ 5d4:	ed e3       	ldi	r30, 0x3D	; 61
+ 5d6:	f0 e0       	ldi	r31, 0x00	; 0
+ 5d8:	c4 91       	lpm	r28, Z
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:172
+
+  if (port == NOT_A_PIN) return LOW;
+ 5da:	cc 23       	and	r28, r28
+ 5dc:	f9 f0       	breq	.+62     	; 0x61c <startI2C()+0x62>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:176
+
+  // If the pin that support PWM output, we need to turn it off
+  // before getting a digital reading.
+  if (timer != NOT_ON_TIMER) turnOffPWM(timer);
+ 5de:	81 11       	cpse	r24, r1
+ 5e0:	86 dd       	rcall	.-1268   	; 0xee <turnOffPWM>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring_digital.c:178
+
+  if (*portInputRegister(port) & bit) return HIGH;
+ 5e2:	ec 2f       	mov	r30, r28
+ 5e4:	f0 e0       	ldi	r31, 0x00	; 0
+ 5e6:	ee 0f       	add	r30, r30
+ 5e8:	ff 1f       	adc	r31, r31
+ 5ea:	ee 5d       	subi	r30, 0xDE	; 222
+ 5ec:	ff 4f       	sbci	r31, 0xFF	; 255
+ 5ee:	a5 91       	lpm	r26, Z+
+ 5f0:	b4 91       	lpm	r27, Z
+ 5f2:	ec 91       	ld	r30, X
+ 5f4:	ed 23       	and	r30, r29
+ 5f6:	91 f0       	breq	.+36     	; 0x61c <startI2C()+0x62>
+_Z8startI2Cv():
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:373
+  Wire.end(); //Before we can change addresses we need to stop
+
+  if (digitalRead(addressPin) == HIGH) //Default is HIGH, the address jumper is open
+    Wire.begin(registerMap.i2cAddress); //Start I2C and answer calls using address from EEPROM
+ 5f8:	80 91 9d 00 	lds	r24, 0x009D	; 0x80009d <registerMap+0x11>
+begin():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src/Wire.cpp:371
+
+  USI_TWI_Master_Initialise();
+}
+
+void TwoWire::begin(uint8_t address) {
+  USI_TWI_Slave_Initialise(address);
+ 5fc:	1c df       	rcall	.-456    	; 0x436 <USI_TWI_Slave_Initialise>
+onReceive():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src/Wire.cpp:591
+  // XXX: to be implemented.
+}
+
+// sets function called on slave write
+void TwoWire::onReceive( void (*function)(int) ) {
+  USI_TWI_On_Slave_Receive = function;
+ 5fe:	84 e8       	ldi	r24, 0x84	; 132
+ 600:	92 e0       	ldi	r25, 0x02	; 2
+ 602:	90 93 c6 00 	sts	0x00C6, r25	; 0x8000c6 <USI_TWI_On_Slave_Receive+0x1>
+ 606:	80 93 c5 00 	sts	0x00C5, r24	; 0x8000c5 <USI_TWI_On_Slave_Receive>
+onRequest():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src/Wire.cpp:596
+}
+
+// sets function called on slave read
+void TwoWire::onRequest( void (*function)(void) ) {
+  USI_TWI_On_Slave_Transmit = function;
+ 60a:	86 e3       	ldi	r24, 0x36	; 54
+ 60c:	92 e0       	ldi	r25, 0x02	; 2
+ 60e:	90 93 ca 00 	sts	0x00CA, r25	; 0x8000ca <USI_TWI_On_Slave_Transmit+0x1>
+ 612:	80 93 c9 00 	sts	0x00C9, r24	; 0x8000c9 <USI_TWI_On_Slave_Transmit>
+_Z8startI2Cv():
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:380
+    Wire.begin(I2C_FORCED_ADDRESS); //Force address to I2C_FORCED_ADDRESS if user has closed the solder jumper
+
+  //The connections to the interrupts are severed when a Wire.begin occurs. So re-declare them.
+  Wire.onReceive(receiveEvent);
+  Wire.onRequest(requestEvent);
+}
+ 616:	df 91       	pop	r29
+ 618:	cf 91       	pop	r28
+ 61a:	08 95       	ret
+begin():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src/Wire.cpp:371
+
+  USI_TWI_Master_Initialise();
+}
+
+void TwoWire::begin(uint8_t address) {
+  USI_TWI_Slave_Initialise(address);
+ 61c:	84 e7       	ldi	r24, 0x74	; 116
+ 61e:	ee cf       	rjmp	.-36     	; 0x5fc <startI2C()+0x42>
+
+00000620 <unsigned char const& EEPROMClass::put<unsigned char>(int, unsigned char const&) [clone .isra.3]>:
+_ZN11EEPROMClass3putIhEERKT_iS3_.isra.3():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:137
+        uint8_t *ptr = (uint8_t*) &t;
+        for( int count = sizeof(T) ; count ; --count, ++e )  *ptr++ = *e;
+        return t;
+    }
+
+    template< typename T > const T &put( int idx, const T &t ){
+ 620:	ff 92       	push	r15
+ 622:	0f 93       	push	r16
+ 624:	1f 93       	push	r17
+ 626:	cf 93       	push	r28
+ 628:	df 93       	push	r29
+ 62a:	8c 01       	movw	r16, r24
+ 62c:	eb 01       	movw	r28, r22
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:140
+        EEPtr e = idx;
+        const uint8_t *ptr = (const uint8_t*) &t;
+        for( int count = sizeof(T) ; count ; --count, ++e )  (*e).update( *ptr++ );
+ 62e:	f8 80       	ld	r15, Y
+operator*():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:42
+
+    EERef( const int index )
+        : index( index )                 {}
+
+    //Access/read members.
+    uint8_t operator*() const            { return eeprom_read_byte( (uint8_t*) index ); }
+ 630:	2b d4       	rcall	.+2134   	; 0xe88 <eeprom_read_byte>
+update():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:59
+    EERef &operator &=( uint8_t in )     { return *this = **this & in; }
+    EERef &operator |=( uint8_t in )     { return *this = **this | in; }
+    EERef &operator <<=( uint8_t in )    { return *this = **this << in; }
+    EERef &operator >>=( uint8_t in )    { return *this = **this >> in; }
+
+    EERef &update( uint8_t in )          { return  in != *this ? *this = in : *this; }
+ 632:	f8 16       	cp	r15, r24
+ 634:	19 f0       	breq	.+6      	; 0x63c <unsigned char const& EEPROMClass::put<unsigned char>(int, unsigned char const&) [clone .isra.3]+0x1c>
+operator=():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:47
+    uint8_t operator*() const            { return eeprom_read_byte( (uint8_t*) index ); }
+    operator uint8_t() const       { return **this; }
+
+    //Assignment/write members.
+    EERef &operator=( const EERef &ref ) { return *this = *ref; }
+    EERef &operator=( uint8_t in )       { return eeprom_write_byte( (uint8_t*) index, in ), *this;  }
+ 636:	6f 2d       	mov	r22, r15
+ 638:	c8 01       	movw	r24, r16
+ 63a:	2e d4       	rcall	.+2140   	; 0xe98 <eeprom_write_byte>
+_ZN11EEPROMClass3putIhEERKT_iS3_.isra.3():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:142
+    template< typename T > const T &put( int idx, const T &t ){
+        EEPtr e = idx;
+        const uint8_t *ptr = (const uint8_t*) &t;
+        for( int count = sizeof(T) ; count ; --count, ++e )  (*e).update( *ptr++ );
+        return t;
+    }
+ 63c:	ce 01       	movw	r24, r28
+ 63e:	df 91       	pop	r29
+ 640:	cf 91       	pop	r28
+ 642:	1f 91       	pop	r17
+ 644:	0f 91       	pop	r16
+ 646:	ff 90       	pop	r15
+ 648:	08 95       	ret
+
+0000064a <unsigned int volatile& EEPROMClass::get<unsigned int volatile>(int, unsigned int volatile&) [clone .isra.6]>:
+_ZN11EEPROMClass3getIjEERT_iS2_.isra.4():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:130
+    EEPtr begin()                        { return 0x00; }
+    EEPtr end()                          { return length(); } //Standards requires this to be the item after the last valid entry. The returned pointer is invalid.
+    uint16_t length()                    { return E2END + 1; }
+
+    //Functionality to 'get' and 'put' objects to and from EEPROM.
+    template< typename T > T &get( int idx, T &t ){
+ 64a:	0f 93       	push	r16
+ 64c:	1f 93       	push	r17
+ 64e:	cf 93       	push	r28
+ 650:	df 93       	push	r29
+ 652:	8c 01       	movw	r16, r24
+ 654:	eb 01       	movw	r28, r22
+operator*():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:42
+
+    EERef( const int index )
+        : index( index )                 {}
+
+    //Access/read members.
+    uint8_t operator*() const            { return eeprom_read_byte( (uint8_t*) index ); }
+ 656:	18 d4       	rcall	.+2096   	; 0xe88 <eeprom_read_byte>
+_ZN11EEPROMClass3getIjEERT_iS2_.isra.4():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:133
+
+    //Functionality to 'get' and 'put' objects to and from EEPROM.
+    template< typename T > T &get( int idx, T &t ){
+        EEPtr e = idx;
+        uint8_t *ptr = (uint8_t*) &t;
+        for( int count = sizeof(T) ; count ; --count, ++e )  *ptr++ = *e;
+ 658:	88 83       	st	Y, r24
+operator*():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:42
+
+    EERef( const int index )
+        : index( index )                 {}
+
+    //Access/read members.
+    uint8_t operator*() const            { return eeprom_read_byte( (uint8_t*) index ); }
+ 65a:	c8 01       	movw	r24, r16
+ 65c:	01 96       	adiw	r24, 0x01	; 1
+ 65e:	14 d4       	rcall	.+2088   	; 0xe88 <eeprom_read_byte>
+_ZN11EEPROMClass3getIjEERT_iS2_.isra.4():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:133
+
+    //Functionality to 'get' and 'put' objects to and from EEPROM.
+    template< typename T > T &get( int idx, T &t ){
+        EEPtr e = idx;
+        uint8_t *ptr = (uint8_t*) &t;
+        for( int count = sizeof(T) ; count ; --count, ++e )  *ptr++ = *e;
+ 660:	89 83       	std	Y+1, r24	; 0x01
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:135
+        return t;
+    }
+ 662:	ce 01       	movw	r24, r28
+ 664:	df 91       	pop	r29
+ 666:	cf 91       	pop	r28
+ 668:	1f 91       	pop	r17
+ 66a:	0f 91       	pop	r16
+ 66c:	08 95       	ret
+
+0000066e <int const& EEPROMClass::put<int>(int, int const&) [clone .isra.5]>:
+_ZN11EEPROMClass3putIiEERKT_iS3_.isra.5():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:137
+
+    template< typename T > const T &put( int idx, const T &t ){
+ 66e:	ff 92       	push	r15
+ 670:	0f 93       	push	r16
+ 672:	1f 93       	push	r17
+ 674:	cf 93       	push	r28
+ 676:	df 93       	push	r29
+ 678:	ec 01       	movw	r28, r24
+ 67a:	8b 01       	movw	r16, r22
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:140
+        EEPtr e = idx;
+        const uint8_t *ptr = (const uint8_t*) &t;
+        for( int count = sizeof(T) ; count ; --count, ++e )  (*e).update( *ptr++ );
+ 67c:	fb 01       	movw	r30, r22
+ 67e:	f0 80       	ld	r15, Z
+operator*():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:42
+
+    EERef( const int index )
+        : index( index )                 {}
+
+    //Access/read members.
+    uint8_t operator*() const            { return eeprom_read_byte( (uint8_t*) index ); }
+ 680:	03 d4       	rcall	.+2054   	; 0xe88 <eeprom_read_byte>
+update():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:59
+    EERef &operator &=( uint8_t in )     { return *this = **this & in; }
+    EERef &operator |=( uint8_t in )     { return *this = **this | in; }
+    EERef &operator <<=( uint8_t in )    { return *this = **this << in; }
+    EERef &operator >>=( uint8_t in )    { return *this = **this >> in; }
+
+    EERef &update( uint8_t in )          { return  in != *this ? *this = in : *this; }
+ 682:	f8 16       	cp	r15, r24
+ 684:	19 f0       	breq	.+6      	; 0x68c <int const& EEPROMClass::put<int>(int, int const&) [clone .isra.5]+0x1e>
+operator=():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:47
+    uint8_t operator*() const            { return eeprom_read_byte( (uint8_t*) index ); }
+    operator uint8_t() const       { return **this; }
+
+    //Assignment/write members.
+    EERef &operator=( const EERef &ref ) { return *this = *ref; }
+    EERef &operator=( uint8_t in )       { return eeprom_write_byte( (uint8_t*) index, in ), *this;  }
+ 686:	6f 2d       	mov	r22, r15
+ 688:	ce 01       	movw	r24, r28
+ 68a:	06 d4       	rcall	.+2060   	; 0xe98 <eeprom_write_byte>
+_ZN11EEPROMClass3putIiEERKT_iS3_.isra.5():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:140
+    }
+
+    template< typename T > const T &put( int idx, const T &t ){
+        EEPtr e = idx;
+        const uint8_t *ptr = (const uint8_t*) &t;
+        for( int count = sizeof(T) ; count ; --count, ++e )  (*e).update( *ptr++ );
+ 68c:	f8 01       	movw	r30, r16
+ 68e:	f1 80       	ldd	r15, Z+1	; 0x01
+_ZN5EEPtrppEv():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:100
+    //Iterator functionality.
+    bool operator!=( const EEPtr &ptr ) { return index != ptr.index; }
+    EERef operator*()                   { return index; }
+
+    /** Prefix & Postfix increment/decrement **/
+    EEPtr& operator++()                 { return ++index, *this; }
+ 690:	21 96       	adiw	r28, 0x01	; 1
+operator*():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:42
+
+    EERef( const int index )
+        : index( index )                 {}
+
+    //Access/read members.
+    uint8_t operator*() const            { return eeprom_read_byte( (uint8_t*) index ); }
+ 692:	ce 01       	movw	r24, r28
+ 694:	f9 d3       	rcall	.+2034   	; 0xe88 <eeprom_read_byte>
+update():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:59
+    EERef &operator &=( uint8_t in )     { return *this = **this & in; }
+    EERef &operator |=( uint8_t in )     { return *this = **this | in; }
+    EERef &operator <<=( uint8_t in )    { return *this = **this << in; }
+    EERef &operator >>=( uint8_t in )    { return *this = **this >> in; }
+
+    EERef &update( uint8_t in )          { return  in != *this ? *this = in : *this; }
+ 696:	f8 16       	cp	r15, r24
+ 698:	19 f0       	breq	.+6      	; 0x6a0 <int const& EEPROMClass::put<int>(int, int const&) [clone .isra.5]+0x32>
+operator=():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:47
+    uint8_t operator*() const            { return eeprom_read_byte( (uint8_t*) index ); }
+    operator uint8_t() const       { return **this; }
+
+    //Assignment/write members.
+    EERef &operator=( const EERef &ref ) { return *this = *ref; }
+    EERef &operator=( uint8_t in )       { return eeprom_write_byte( (uint8_t*) index, in ), *this;  }
+ 69a:	6f 2d       	mov	r22, r15
+ 69c:	ce 01       	movw	r24, r28
+ 69e:	fc d3       	rcall	.+2040   	; 0xe98 <eeprom_write_byte>
+_ZN11EEPROMClass3putIiEERKT_iS3_.isra.5():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:142
+    template< typename T > const T &put( int idx, const T &t ){
+        EEPtr e = idx;
+        const uint8_t *ptr = (const uint8_t*) &t;
+        for( int count = sizeof(T) ; count ; --count, ++e )  (*e).update( *ptr++ );
+        return t;
+    }
+ 6a0:	c8 01       	movw	r24, r16
+ 6a2:	df 91       	pop	r29
+ 6a4:	cf 91       	pop	r28
+ 6a6:	1f 91       	pop	r17
+ 6a8:	0f 91       	pop	r16
+ 6aa:	ff 90       	pop	r15
+ 6ac:	08 95       	ret
+
+000006ae <unsigned char& EEPROMClass::get<unsigned char>(int, unsigned char&) [clone .isra.2]>:
+_ZN11EEPROMClass3getIhEERT_iS2_.isra.2():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:130
+    EEPtr begin()                        { return 0x00; }
+    EEPtr end()                          { return length(); } //Standards requires this to be the item after the last valid entry. The returned pointer is invalid.
+    uint16_t length()                    { return E2END + 1; }
+
+    //Functionality to 'get' and 'put' objects to and from EEPROM.
+    template< typename T > T &get( int idx, T &t ){
+ 6ae:	cf 93       	push	r28
+ 6b0:	df 93       	push	r29
+ 6b2:	eb 01       	movw	r28, r22
+operator*():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:42
+
+    EERef( const int index )
+        : index( index )                 {}
+
+    //Access/read members.
+    uint8_t operator*() const            { return eeprom_read_byte( (uint8_t*) index ); }
+ 6b4:	e9 d3       	rcall	.+2002   	; 0xe88 <eeprom_read_byte>
+_ZN11EEPROMClass3getIhEERT_iS2_.isra.2():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:133
+
+    //Functionality to 'get' and 'put' objects to and from EEPROM.
+    template< typename T > T &get( int idx, T &t ){
+        EEPtr e = idx;
+        uint8_t *ptr = (uint8_t*) &t;
+        for( int count = sizeof(T) ; count ; --count, ++e )  *ptr++ = *e;
+ 6b6:	88 83       	st	Y, r24
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:135
+        return t;
+    }
+ 6b8:	ce 01       	movw	r24, r28
+ 6ba:	df 91       	pop	r29
+ 6bc:	cf 91       	pop	r28
+ 6be:	08 95       	ret
+
+000006c0 <__vector_11>:
+__vector_11():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:133
+#else
+
+#error Millis() timer not defined!
+
+#endif
+{
+ 6c0:	1f 92       	push	r1
+ 6c2:	0f 92       	push	r0
+ 6c4:	0f b6       	in	r0, 0x3f	; 63
+ 6c6:	0f 92       	push	r0
+ 6c8:	11 24       	eor	r1, r1
+ 6ca:	2f 93       	push	r18
+ 6cc:	3f 93       	push	r19
+ 6ce:	8f 93       	push	r24
+ 6d0:	9f 93       	push	r25
+ 6d2:	af 93       	push	r26
+ 6d4:	bf 93       	push	r27
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:136
+  // copy these to local variables so they can be stored in registers
+  // (volatile variables must be read from memory on every access)
+  unsigned long m = millis_timer_millis;
+ 6d6:	80 91 d2 00 	lds	r24, 0x00D2	; 0x8000d2 <millis_timer_millis>
+ 6da:	90 91 d3 00 	lds	r25, 0x00D3	; 0x8000d3 <millis_timer_millis+0x1>
+ 6de:	a0 91 d4 00 	lds	r26, 0x00D4	; 0x8000d4 <millis_timer_millis+0x2>
+ 6e2:	b0 91 d5 00 	lds	r27, 0x00D5	; 0x8000d5 <millis_timer_millis+0x3>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:137
+  unsigned char f = millis_timer_fract;
+ 6e6:	30 91 d1 00 	lds	r19, 0x00D1	; 0x8000d1 <millis_timer_fract>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:149
+    f -= FRACT_MAX;
+    m += 1;
+  }
+...rmv */
+
+  f += FRACT_INC;
+ 6ea:	26 e0       	ldi	r18, 0x06	; 6
+ 6ec:	23 0f       	add	r18, r19
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:151
+
+  if (f >= FRACT_MAX)
+ 6ee:	2d 37       	cpi	r18, 0x7D	; 125
+ 6f0:	68 f1       	brcs	.+90     	; 0x74c <__vector_11+0x8c>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:153
+  {
+    f -= FRACT_MAX;
+ 6f2:	29 e8       	ldi	r18, 0x89	; 137
+ 6f4:	23 0f       	add	r18, r19
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:155
+  m += 1;
+    m += MILLIS_INC;
+ 6f6:	03 96       	adiw	r24, 0x03	; 3
+ 6f8:	a1 1d       	adc	r26, r1
+ 6fa:	b1 1d       	adc	r27, r1
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:162
+  else
+  {
+    m += MILLIS_INC;
+  }
+
+  millis_timer_fract = f;
+ 6fc:	20 93 d1 00 	sts	0x00D1, r18	; 0x8000d1 <millis_timer_fract>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:163
+  millis_timer_millis = m;
+ 700:	80 93 d2 00 	sts	0x00D2, r24	; 0x8000d2 <millis_timer_millis>
+ 704:	90 93 d3 00 	sts	0x00D3, r25	; 0x8000d3 <millis_timer_millis+0x1>
+ 708:	a0 93 d4 00 	sts	0x00D4, r26	; 0x8000d4 <millis_timer_millis+0x2>
+ 70c:	b0 93 d5 00 	sts	0x00D5, r27	; 0x8000d5 <millis_timer_millis+0x3>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:164
+  millis_timer_overflow_count++;
+ 710:	80 91 cd 00 	lds	r24, 0x00CD	; 0x8000cd <millis_timer_overflow_count>
+ 714:	90 91 ce 00 	lds	r25, 0x00CE	; 0x8000ce <millis_timer_overflow_count+0x1>
+ 718:	a0 91 cf 00 	lds	r26, 0x00CF	; 0x8000cf <millis_timer_overflow_count+0x2>
+ 71c:	b0 91 d0 00 	lds	r27, 0x00D0	; 0x8000d0 <millis_timer_overflow_count+0x3>
+ 720:	01 96       	adiw	r24, 0x01	; 1
+ 722:	a1 1d       	adc	r26, r1
+ 724:	b1 1d       	adc	r27, r1
+ 726:	80 93 cd 00 	sts	0x00CD, r24	; 0x8000cd <millis_timer_overflow_count>
+ 72a:	90 93 ce 00 	sts	0x00CE, r25	; 0x8000ce <millis_timer_overflow_count+0x1>
+ 72e:	a0 93 cf 00 	sts	0x00CF, r26	; 0x8000cf <millis_timer_overflow_count+0x2>
+ 732:	b0 93 d0 00 	sts	0x00D0, r27	; 0x8000d0 <millis_timer_overflow_count+0x3>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:171
+
+//MICROSECONDS_PER_MILLIS_OVERFLOW=2048
+//MILLIS_INC=2
+//FRACT_INC=6
+//FRACT_MAX=125
+}
+ 736:	bf 91       	pop	r27
+ 738:	af 91       	pop	r26
+ 73a:	9f 91       	pop	r25
+ 73c:	8f 91       	pop	r24
+ 73e:	3f 91       	pop	r19
+ 740:	2f 91       	pop	r18
+ 742:	0f 90       	pop	r0
+ 744:	0f be       	out	0x3f, r0	; 63
+ 746:	0f 90       	pop	r0
+ 748:	1f 90       	pop	r1
+ 74a:	18 95       	reti
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:159
+  m += 1;
+    m += MILLIS_INC;
+  }
+  else
+  {
+    m += MILLIS_INC;
+ 74c:	02 96       	adiw	r24, 0x02	; 2
+ 74e:	a1 1d       	adc	r26, r1
+ 750:	b1 1d       	adc	r27, r1
+ 752:	d4 cf       	rjmp	.-88     	; 0x6fc <__vector_11+0x3c>
+
+00000754 <__vector_3>:
+__vector_3():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt1.cpp:40
+
+void attachPinChangeInterrupt1(void) {
+	// fake function to make the IDE link this file
+}
+
+ISR(PCINT1_vect) {
+ 754:	1f 92       	push	r1
+ 756:	0f 92       	push	r0
+ 758:	0f b6       	in	r0, 0x3f	; 63
+ 75a:	0f 92       	push	r0
+ 75c:	11 24       	eor	r1, r1
+ 75e:	2f 93       	push	r18
+ 760:	3f 93       	push	r19
+ 762:	4f 93       	push	r20
+ 764:	5f 93       	push	r21
+ 766:	6f 93       	push	r22
+ 768:	7f 93       	push	r23
+ 76a:	8f 93       	push	r24
+ 76c:	9f 93       	push	r25
+ 76e:	af 93       	push	r26
+ 770:	bf 93       	push	r27
+ 772:	cf 93       	push	r28
+ 774:	ef 93       	push	r30
+ 776:	ff 93       	push	r31
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt1.cpp:42
+	// get the new and old pin states for port
+	uint8_t newPort = PCINT_INPUT_PORT1;
+ 778:	96 b3       	in	r25, 0x16	; 22
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt1.cpp:46
+
+	// compare with the old value to detect a rising or falling
+	uint8_t arrayPos = getArrayPosPCINT(1);
+	uint8_t change = newPort ^ oldPorts[arrayPos];
+ 77a:	80 91 d7 00 	lds	r24, 0x00D7	; 0x8000d7 <oldPorts+0x1>
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt1.cpp:51
+	uint8_t rising = change & newPort;
+	uint8_t falling = change & oldPorts[arrayPos];
+
+	// check which pins are triggered, compared with the settings
+	uint8_t risingTrigger = rising & risingPorts[arrayPos];
+ 77e:	c0 91 db 00 	lds	r28, 0x00DB	; 0x8000db <risingPorts+0x1>
+ 782:	c9 23       	and	r28, r25
+ 784:	28 2f       	mov	r18, r24
+ 786:	20 95       	com	r18
+ 788:	c2 23       	and	r28, r18
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt1.cpp:52
+	uint8_t fallingTrigger = falling & fallingPorts[arrayPos];
+ 78a:	20 91 d9 00 	lds	r18, 0x00D9	; 0x8000d9 <fallingPorts+0x1>
+ 78e:	82 23       	and	r24, r18
+ 790:	29 2f       	mov	r18, r25
+ 792:	20 95       	com	r18
+ 794:	82 23       	and	r24, r18
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt1.cpp:53
+	uint8_t trigger = risingTrigger | fallingTrigger;
+ 796:	c8 2b       	or	r28, r24
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt1.cpp:56
+
+	// save the new state for next comparison
+	oldPorts[arrayPos] = newPort;
+ 798:	90 93 d7 00 	sts	0x00D7, r25	; 0x8000d7 <oldPorts+0x1>
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt1.cpp:63
+	// Execute all functions that should be triggered
+	// This way we can exclude a single function
+	// and the calling is also much faster
+	// We may also reorder the pins for different priority
+#if !defined(PCINT_CALLBACK_PORT1)
+	PCINT_CALLBACK(0, 8);
+ 79c:	c0 ff       	sbrs	r28, 0
+ 79e:	05 c0       	rjmp	.+10     	; 0x7aa <__vector_3+0x56>
+PinChangeInterruptEventPCINT8():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt1.cpp:99
+}
+*/
+#if (PCINT_USE_PCINT8 == true)
+volatile callback callbackPCINT8 = pcint_null_callback;
+void PinChangeInterruptEventPCINT8(void) {
+	callbackPCINT8();
+ 7a0:	e0 91 8a 00 	lds	r30, 0x008A	; 0x80008a <callbackPCINT8>
+ 7a4:	f0 91 8b 00 	lds	r31, 0x008B	; 0x80008b <callbackPCINT8+0x1>
+ 7a8:	09 95       	icall
+__vector_3():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt1.cpp:64
+	// This way we can exclude a single function
+	// and the calling is also much faster
+	// We may also reorder the pins for different priority
+#if !defined(PCINT_CALLBACK_PORT1)
+	PCINT_CALLBACK(0, 8);
+	PCINT_CALLBACK(1, 9);
+ 7aa:	c1 ff       	sbrs	r28, 1
+ 7ac:	05 c0       	rjmp	.+10     	; 0x7b8 <__vector_3+0x64>
+PinChangeInterruptEventPCINT9():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt1.cpp:105
+}
+#endif
+#if (PCINT_USE_PCINT9 == true)
+volatile callback callbackPCINT9 = pcint_null_callback;
+void PinChangeInterruptEventPCINT9(void) {
+	callbackPCINT9();
+ 7ae:	e0 91 80 00 	lds	r30, 0x0080	; 0x800080 <callbackPCINT9>
+ 7b2:	f0 91 81 00 	lds	r31, 0x0081	; 0x800081 <callbackPCINT9+0x1>
+ 7b6:	09 95       	icall
+__vector_3():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt1.cpp:65
+	// and the calling is also much faster
+	// We may also reorder the pins for different priority
+#if !defined(PCINT_CALLBACK_PORT1)
+	PCINT_CALLBACK(0, 8);
+	PCINT_CALLBACK(1, 9);
+	PCINT_CALLBACK(2, 10);
+ 7b8:	c2 ff       	sbrs	r28, 2
+ 7ba:	05 c0       	rjmp	.+10     	; 0x7c6 <__vector_3+0x72>
+PinChangeInterruptEventPCINT10():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt1.cpp:111
+}
+#endif
+#if (PCINT_USE_PCINT10 == true)
+volatile callback callbackPCINT10 = pcint_null_callback;
+void PinChangeInterruptEventPCINT10(void) {
+	callbackPCINT10();
+ 7bc:	e0 91 84 00 	lds	r30, 0x0084	; 0x800084 <callbackPCINT10>
+ 7c0:	f0 91 85 00 	lds	r31, 0x0085	; 0x800085 <callbackPCINT10+0x1>
+ 7c4:	09 95       	icall
+__vector_3():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt1.cpp:66
+	// We may also reorder the pins for different priority
+#if !defined(PCINT_CALLBACK_PORT1)
+	PCINT_CALLBACK(0, 8);
+	PCINT_CALLBACK(1, 9);
+	PCINT_CALLBACK(2, 10);
+	PCINT_CALLBACK(3, 11);
+ 7c6:	c3 ff       	sbrs	r28, 3
+ 7c8:	05 c0       	rjmp	.+10     	; 0x7d4 <__vector_3+0x80>
+PinChangeInterruptEventPCINT11():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt1.cpp:117
+}
+#endif
+#if (PCINT_USE_PCINT11 == true)
+volatile callback callbackPCINT11 = pcint_null_callback;
+void PinChangeInterruptEventPCINT11(void) {
+	callbackPCINT11();
+ 7ca:	e0 91 82 00 	lds	r30, 0x0082	; 0x800082 <callbackPCINT11>
+ 7ce:	f0 91 83 00 	lds	r31, 0x0083	; 0x800083 <callbackPCINT11+0x1>
+ 7d2:	09 95       	icall
+__vector_3():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt1.cpp:74
+	PCINT_CALLBACK(6, 14);
+	PCINT_CALLBACK(7, 15);
+#else
+	PCINT_CALLBACK_PORT1
+#endif
+}
+ 7d4:	ff 91       	pop	r31
+ 7d6:	ef 91       	pop	r30
+ 7d8:	cf 91       	pop	r28
+ 7da:	bf 91       	pop	r27
+ 7dc:	af 91       	pop	r26
+ 7de:	9f 91       	pop	r25
+ 7e0:	8f 91       	pop	r24
+ 7e2:	7f 91       	pop	r23
+ 7e4:	6f 91       	pop	r22
+ 7e6:	5f 91       	pop	r21
+ 7e8:	4f 91       	pop	r20
+ 7ea:	3f 91       	pop	r19
+ 7ec:	2f 91       	pop	r18
+ 7ee:	0f 90       	pop	r0
+ 7f0:	0f be       	out	0x3f, r0	; 63
+ 7f2:	0f 90       	pop	r0
+ 7f4:	1f 90       	pop	r1
+ 7f6:	18 95       	reti
+
+000007f8 <__vector_2>:
+__vector_2():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt0.cpp:40
+
+void attachPinChangeInterrupt0(void) {
+	// fake function to make the IDE link this file
+}
+
+ISR(PCINT0_vect) {
+ 7f8:	1f 92       	push	r1
+ 7fa:	0f 92       	push	r0
+ 7fc:	0f b6       	in	r0, 0x3f	; 63
+ 7fe:	0f 92       	push	r0
+ 800:	11 24       	eor	r1, r1
+ 802:	2f 93       	push	r18
+ 804:	3f 93       	push	r19
+ 806:	4f 93       	push	r20
+ 808:	5f 93       	push	r21
+ 80a:	6f 93       	push	r22
+ 80c:	7f 93       	push	r23
+ 80e:	8f 93       	push	r24
+ 810:	9f 93       	push	r25
+ 812:	af 93       	push	r26
+ 814:	bf 93       	push	r27
+ 816:	cf 93       	push	r28
+ 818:	ef 93       	push	r30
+ 81a:	ff 93       	push	r31
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt0.cpp:42
+	// get the new and old pin states for port
+	uint8_t newPort = PCINT_INPUT_PORT0;
+ 81c:	99 b3       	in	r25, 0x19	; 25
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt0.cpp:46
+
+	// compare with the old value to detect a rising or falling
+	uint8_t arrayPos = getArrayPosPCINT(0);
+	uint8_t change = newPort ^ oldPorts[arrayPos];
+ 81e:	80 91 d6 00 	lds	r24, 0x00D6	; 0x8000d6 <oldPorts>
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt0.cpp:51
+	uint8_t rising = change & newPort;
+	uint8_t falling = change & oldPorts[arrayPos];
+
+	// check which pins are triggered, compared with the settings
+	uint8_t risingTrigger = rising & risingPorts[arrayPos];
+ 822:	c0 91 da 00 	lds	r28, 0x00DA	; 0x8000da <risingPorts>
+ 826:	c9 23       	and	r28, r25
+ 828:	28 2f       	mov	r18, r24
+ 82a:	20 95       	com	r18
+ 82c:	c2 23       	and	r28, r18
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt0.cpp:52
+	uint8_t fallingTrigger = falling & fallingPorts[arrayPos];
+ 82e:	20 91 d8 00 	lds	r18, 0x00D8	; 0x8000d8 <fallingPorts>
+ 832:	82 23       	and	r24, r18
+ 834:	29 2f       	mov	r18, r25
+ 836:	20 95       	com	r18
+ 838:	82 23       	and	r24, r18
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt0.cpp:53
+	uint8_t trigger = risingTrigger | fallingTrigger;
+ 83a:	c8 2b       	or	r28, r24
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt0.cpp:56
+
+	// save the new state for next comparison
+	oldPorts[arrayPos] = newPort;
+ 83c:	90 93 d6 00 	sts	0x00D6, r25	; 0x8000d6 <oldPorts>
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt0.cpp:63
+	// Execute all functions that should be triggered
+	// This way we can exclude a single function
+	// and the calling is also much faster
+	// We may also reorder the pins for different priority
+#if !defined(PCINT_CALLBACK_PORT0)
+	PCINT_CALLBACK(0, 0);
+ 840:	c0 ff       	sbrs	r28, 0
+ 842:	05 c0       	rjmp	.+10     	; 0x84e <__vector_2+0x56>
+PinChangeInterruptEventPCINT0():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt0.cpp:99
+}
+*/
+#if (PCINT_USE_PCINT0 == true)
+volatile callback callbackPCINT0 = pcint_null_callback;
+void PinChangeInterruptEventPCINT0(void) {
+	callbackPCINT0();
+ 844:	e0 91 74 00 	lds	r30, 0x0074	; 0x800074 <callbackPCINT0>
+ 848:	f0 91 75 00 	lds	r31, 0x0075	; 0x800075 <callbackPCINT0+0x1>
+ 84c:	09 95       	icall
+__vector_2():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt0.cpp:64
+	// This way we can exclude a single function
+	// and the calling is also much faster
+	// We may also reorder the pins for different priority
+#if !defined(PCINT_CALLBACK_PORT0)
+	PCINT_CALLBACK(0, 0);
+	PCINT_CALLBACK(1, 1);
+ 84e:	c1 ff       	sbrs	r28, 1
+ 850:	05 c0       	rjmp	.+10     	; 0x85c <__vector_2+0x64>
+PinChangeInterruptEventPCINT1():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt0.cpp:105
+}
+#endif
+#if (PCINT_USE_PCINT1 == true)
+volatile callback callbackPCINT1 = pcint_null_callback;
+void PinChangeInterruptEventPCINT1(void) {
+	callbackPCINT1();
+ 852:	e0 91 76 00 	lds	r30, 0x0076	; 0x800076 <callbackPCINT1>
+ 856:	f0 91 77 00 	lds	r31, 0x0077	; 0x800077 <callbackPCINT1+0x1>
+ 85a:	09 95       	icall
+__vector_2():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt0.cpp:65
+	// and the calling is also much faster
+	// We may also reorder the pins for different priority
+#if !defined(PCINT_CALLBACK_PORT0)
+	PCINT_CALLBACK(0, 0);
+	PCINT_CALLBACK(1, 1);
+	PCINT_CALLBACK(2, 2);
+ 85c:	c2 ff       	sbrs	r28, 2
+ 85e:	05 c0       	rjmp	.+10     	; 0x86a <__vector_2+0x72>
+PinChangeInterruptEventPCINT2():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt0.cpp:111
+}
+#endif
+#if (PCINT_USE_PCINT2 == true)
+volatile callback callbackPCINT2 = pcint_null_callback;
+void PinChangeInterruptEventPCINT2(void) {
+	callbackPCINT2();
+ 860:	e0 91 88 00 	lds	r30, 0x0088	; 0x800088 <callbackPCINT2>
+ 864:	f0 91 89 00 	lds	r31, 0x0089	; 0x800089 <callbackPCINT2+0x1>
+ 868:	09 95       	icall
+__vector_2():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt0.cpp:66
+	// We may also reorder the pins for different priority
+#if !defined(PCINT_CALLBACK_PORT0)
+	PCINT_CALLBACK(0, 0);
+	PCINT_CALLBACK(1, 1);
+	PCINT_CALLBACK(2, 2);
+	PCINT_CALLBACK(3, 3);
+ 86a:	c3 ff       	sbrs	r28, 3
+ 86c:	05 c0       	rjmp	.+10     	; 0x878 <__vector_2+0x80>
+PinChangeInterruptEventPCINT3():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt0.cpp:117
+}
+#endif
+#if (PCINT_USE_PCINT3 == true)
+volatile callback callbackPCINT3 = pcint_null_callback;
+void PinChangeInterruptEventPCINT3(void) {
+	callbackPCINT3();
+ 86e:	e0 91 78 00 	lds	r30, 0x0078	; 0x800078 <callbackPCINT3>
+ 872:	f0 91 79 00 	lds	r31, 0x0079	; 0x800079 <callbackPCINT3+0x1>
+ 876:	09 95       	icall
+__vector_2():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt0.cpp:67
+#if !defined(PCINT_CALLBACK_PORT0)
+	PCINT_CALLBACK(0, 0);
+	PCINT_CALLBACK(1, 1);
+	PCINT_CALLBACK(2, 2);
+	PCINT_CALLBACK(3, 3);
+	PCINT_CALLBACK(4, 4);
+ 878:	c4 ff       	sbrs	r28, 4
+ 87a:	05 c0       	rjmp	.+10     	; 0x886 <__vector_2+0x8e>
+PinChangeInterruptEventPCINT4():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt0.cpp:123
+}
+#endif
+#if (PCINT_USE_PCINT4 == true)
+volatile callback callbackPCINT4 = pcint_null_callback;
+void PinChangeInterruptEventPCINT4(void) {
+	callbackPCINT4();
+ 87c:	e0 91 7a 00 	lds	r30, 0x007A	; 0x80007a <callbackPCINT4>
+ 880:	f0 91 7b 00 	lds	r31, 0x007B	; 0x80007b <callbackPCINT4+0x1>
+ 884:	09 95       	icall
+__vector_2():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt0.cpp:68
+	PCINT_CALLBACK(0, 0);
+	PCINT_CALLBACK(1, 1);
+	PCINT_CALLBACK(2, 2);
+	PCINT_CALLBACK(3, 3);
+	PCINT_CALLBACK(4, 4);
+	PCINT_CALLBACK(5, 5);
+ 886:	c5 ff       	sbrs	r28, 5
+ 888:	05 c0       	rjmp	.+10     	; 0x894 <__vector_2+0x9c>
+PinChangeInterruptEventPCINT5():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt0.cpp:129
+}
+#endif
+#if (PCINT_USE_PCINT5 == true)
+volatile callback callbackPCINT5 = pcint_null_callback;
+void PinChangeInterruptEventPCINT5(void) {
+	callbackPCINT5();
+ 88a:	e0 91 7c 00 	lds	r30, 0x007C	; 0x80007c <callbackPCINT5>
+ 88e:	f0 91 7d 00 	lds	r31, 0x007D	; 0x80007d <callbackPCINT5+0x1>
+ 892:	09 95       	icall
+__vector_2():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt0.cpp:69
+	PCINT_CALLBACK(1, 1);
+	PCINT_CALLBACK(2, 2);
+	PCINT_CALLBACK(3, 3);
+	PCINT_CALLBACK(4, 4);
+	PCINT_CALLBACK(5, 5);
+	PCINT_CALLBACK(6, 6);
+ 894:	c6 ff       	sbrs	r28, 6
+ 896:	05 c0       	rjmp	.+10     	; 0x8a2 <__vector_2+0xaa>
+PinChangeInterruptEventPCINT6():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt0.cpp:135
+}
+#endif
+#if (PCINT_USE_PCINT6 == true)
+volatile callback callbackPCINT6 = pcint_null_callback;
+void PinChangeInterruptEventPCINT6(void) {
+	callbackPCINT6();
+ 898:	e0 91 7e 00 	lds	r30, 0x007E	; 0x80007e <callbackPCINT6>
+ 89c:	f0 91 7f 00 	lds	r31, 0x007F	; 0x80007f <callbackPCINT6+0x1>
+ 8a0:	09 95       	icall
+__vector_2():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt0.cpp:70
+	PCINT_CALLBACK(2, 2);
+	PCINT_CALLBACK(3, 3);
+	PCINT_CALLBACK(4, 4);
+	PCINT_CALLBACK(5, 5);
+	PCINT_CALLBACK(6, 6);
+	PCINT_CALLBACK(7, 7);
+ 8a2:	c7 ff       	sbrs	r28, 7
+ 8a4:	05 c0       	rjmp	.+10     	; 0x8b0 <__vector_2+0xb8>
+PinChangeInterruptEventPCINT7():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt0.cpp:141
+}
+#endif
+#if (PCINT_USE_PCINT7 == true)
+volatile callback callbackPCINT7 = pcint_null_callback;
+void PinChangeInterruptEventPCINT7(void) {
+	callbackPCINT7();
+ 8a6:	e0 91 86 00 	lds	r30, 0x0086	; 0x800086 <callbackPCINT7>
+ 8aa:	f0 91 87 00 	lds	r31, 0x0087	; 0x800087 <callbackPCINT7+0x1>
+ 8ae:	09 95       	icall
+__vector_2():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt0.cpp:74
+	PCINT_CALLBACK(6, 6);
+	PCINT_CALLBACK(7, 7);
+#else
+	PCINT_CALLBACK_PORT0
+#endif
+}
+ 8b0:	ff 91       	pop	r31
+ 8b2:	ef 91       	pop	r30
+ 8b4:	cf 91       	pop	r28
+ 8b6:	bf 91       	pop	r27
+ 8b8:	af 91       	pop	r26
+ 8ba:	9f 91       	pop	r25
+ 8bc:	8f 91       	pop	r24
+ 8be:	7f 91       	pop	r23
+ 8c0:	6f 91       	pop	r22
+ 8c2:	5f 91       	pop	r21
+ 8c4:	4f 91       	pop	r20
+ 8c6:	3f 91       	pop	r19
+ 8c8:	2f 91       	pop	r18
+ 8ca:	0f 90       	pop	r0
+ 8cc:	0f be       	out	0x3f, r0	; 63
+ 8ce:	0f 90       	pop	r0
+ 8d0:	1f 90       	pop	r1
+ 8d2:	18 95       	reti
+
+000008d4 <__vector_16>:
+__vector_16():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:212
+ISR(USI_OVERFLOW_VECTOR)
+#elif __ICCAVR__
+#pragma vector = USI_OVERFLOW_VECTOR
+__interrupt void USI_Counter_Overflow_ISR(void)
+#endif
+{
+ 8d4:	1f 92       	push	r1
+ 8d6:	0f 92       	push	r0
+ 8d8:	0f b6       	in	r0, 0x3f	; 63
+ 8da:	0f 92       	push	r0
+ 8dc:	11 24       	eor	r1, r1
+ 8de:	2f 93       	push	r18
+ 8e0:	3f 93       	push	r19
+ 8e2:	4f 93       	push	r20
+ 8e4:	5f 93       	push	r21
+ 8e6:	6f 93       	push	r22
+ 8e8:	7f 93       	push	r23
+ 8ea:	8f 93       	push	r24
+ 8ec:	9f 93       	push	r25
+ 8ee:	af 93       	push	r26
+ 8f0:	bf 93       	push	r27
+ 8f2:	cf 93       	push	r28
+ 8f4:	ef 93       	push	r30
+ 8f6:	ff 93       	push	r31
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:217
+  unsigned char tmpRxHead;
+  unsigned char tmpTxTail; // Temporary variables to store volatiles
+  unsigned char tmpUSIDR;
+
+  switch (USI_TWI_Overflow_State) {
+ 8f8:	80 91 cc 00 	lds	r24, 0x00CC	; 0x8000cc <USI_TWI_Overflow_State>
+ 8fc:	82 30       	cpi	r24, 0x02	; 2
+ 8fe:	09 f4       	brne	.+2      	; 0x902 <__vector_16+0x2e>
+ 900:	74 c0       	rjmp	.+232    	; 0x9ea <__vector_16+0x116>
+ 902:	b8 f4       	brcc	.+46     	; 0x932 <__vector_16+0x5e>
+ 904:	88 23       	and	r24, r24
+ 906:	89 f1       	breq	.+98     	; 0x96a <__vector_16+0x96>
+ 908:	81 30       	cpi	r24, 0x01	; 1
+ 90a:	09 f4       	brne	.+2      	; 0x90e <__vector_16+0x3a>
+ 90c:	54 c0       	rjmp	.+168    	; 0x9b6 <__vector_16+0xe2>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:310
+    {
+      SET_USI_TO_SEND_NACK();
+    }
+    break;
+  }
+}
+ 90e:	ff 91       	pop	r31
+ 910:	ef 91       	pop	r30
+ 912:	cf 91       	pop	r28
+ 914:	bf 91       	pop	r27
+ 916:	af 91       	pop	r26
+ 918:	9f 91       	pop	r25
+ 91a:	8f 91       	pop	r24
+ 91c:	7f 91       	pop	r23
+ 91e:	6f 91       	pop	r22
+ 920:	5f 91       	pop	r21
+ 922:	4f 91       	pop	r20
+ 924:	3f 91       	pop	r19
+ 926:	2f 91       	pop	r18
+ 928:	0f 90       	pop	r0
+ 92a:	0f be       	out	0x3f, r0	; 63
+ 92c:	0f 90       	pop	r0
+ 92e:	1f 90       	pop	r1
+ 930:	18 95       	reti
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:217
+{
+  unsigned char tmpRxHead;
+  unsigned char tmpTxTail; // Temporary variables to store volatiles
+  unsigned char tmpUSIDR;
+
+  switch (USI_TWI_Overflow_State) {
+ 932:	84 30       	cpi	r24, 0x04	; 4
+ 934:	09 f4       	brne	.+2      	; 0x938 <__vector_16+0x64>
+ 936:	5f c0       	rjmp	.+190    	; 0x9f6 <__vector_16+0x122>
+ 938:	b8 f1       	brcs	.+110    	; 0x9a8 <__vector_16+0xd4>
+ 93a:	85 30       	cpi	r24, 0x05	; 5
+ 93c:	41 f7       	brne	.-48     	; 0x90e <__vector_16+0x3a>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:297
+    break;
+
+  // Copy data from USIDR and send ACK. Next USI_SLAVE_REQUEST_DATA
+  case USI_SLAVE_GET_DATA_AND_SEND_ACK:
+    // Put data into Buffer
+    USI_TWI_Overflow_State = USI_SLAVE_REQUEST_DATA;
+ 93e:	84 e0       	ldi	r24, 0x04	; 4
+ 940:	80 93 cc 00 	sts	0x00CC, r24	; 0x8000cc <USI_TWI_Overflow_State>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:298
+    tmpUSIDR              = USIDR; // Not necessary, but prevents warnings
+ 944:	9f b1       	in	r25, 0x0f	; 15
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:299
+    tmpRxHead = (TWI_RxHead + 1) & TWI_RX_BUFFER_MASK;
+ 946:	80 91 e1 00 	lds	r24, 0x00E1	; 0x8000e1 <TWI_RxHead>
+ 94a:	8f 5f       	subi	r24, 0xFF	; 255
+ 94c:	8f 70       	andi	r24, 0x0F	; 15
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:300
+    if (TWI_RxTail != tmpRxHead) {
+ 94e:	20 91 e2 00 	lds	r18, 0x00E2	; 0x8000e2 <TWI_RxTail>
+ 952:	28 17       	cp	r18, r24
+ 954:	09 f4       	brne	.+2      	; 0x958 <__vector_16+0x84>
+ 956:	73 c0       	rjmp	.+230    	; 0xa3e <__vector_16+0x16a>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:301
+      TWI_RxHead            = tmpRxHead;
+ 958:	80 93 e1 00 	sts	0x00E1, r24	; 0x8000e1 <TWI_RxHead>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:302
+      TWI_RxBuf[TWI_RxHead] = tmpUSIDR;
+ 95c:	e0 91 e1 00 	lds	r30, 0x00E1	; 0x8000e1 <TWI_RxHead>
+ 960:	f0 e0       	ldi	r31, 0x00	; 0
+ 962:	ee 55       	subi	r30, 0x5E	; 94
+ 964:	ff 4f       	sbci	r31, 0xFF	; 255
+ 966:	90 83       	st	Z, r25
+ 968:	19 c0       	rjmp	.+50     	; 0x99c <__vector_16+0xc8>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:221
+
+  switch (USI_TWI_Overflow_State) {
+  // ---------- Address mode ----------
+  // Check address and send ACK (and next USI_SLAVE_SEND_DATA) if OK, else reset USI.
+  case USI_SLAVE_CHECK_ADDRESS:
+    if ((USIDR == 0) || ((USIDR >> 1) == TWI_slaveAddress)) {
+ 96a:	8f b1       	in	r24, 0x0f	; 15
+ 96c:	88 23       	and	r24, r24
+ 96e:	31 f0       	breq	.+12     	; 0x97c <__vector_16+0xa8>
+ 970:	8f b1       	in	r24, 0x0f	; 15
+ 972:	86 95       	lsr	r24
+ 974:	90 91 cb 00 	lds	r25, 0x00CB	; 0x8000cb <TWI_slaveAddress>
+ 978:	89 13       	cpse	r24, r25
+ 97a:	19 c0       	rjmp	.+50     	; 0x9ae <__vector_16+0xda>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:222
+      if (USIDR & 0x01) {
+ 97c:	78 9b       	sbis	0x0f, 0	; 15
+ 97e:	12 c0       	rjmp	.+36     	; 0x9a4 <__vector_16+0xd0>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:223
+        if (USI_TWI_On_Slave_Transmit) {
+ 980:	e0 91 c9 00 	lds	r30, 0x00C9	; 0x8000c9 <USI_TWI_On_Slave_Transmit>
+ 984:	f0 91 ca 00 	lds	r31, 0x00CA	; 0x8000ca <USI_TWI_On_Slave_Transmit+0x1>
+ 988:	30 97       	sbiw	r30, 0x00	; 0
+ 98a:	29 f0       	breq	.+10     	; 0x996 <__vector_16+0xc2>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:225
+          // reset tx buffer and call callback
+          tmpTxTail = TWI_TxHead;
+ 98c:	80 91 c8 00 	lds	r24, 0x00C8	; 0x8000c8 <TWI_TxHead>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:226
+          TWI_TxTail = tmpTxTail;
+ 990:	80 93 c7 00 	sts	0x00C7, r24	; 0x8000c7 <TWI_TxTail>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:227
+          USI_TWI_On_Slave_Transmit();
+ 994:	09 95       	icall
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:229
+        }
+        USI_TWI_Overflow_State = USI_SLAVE_SEND_DATA;
+ 996:	81 e0       	ldi	r24, 0x01	; 1
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:231
+      } else {
+        USI_TWI_Overflow_State = USI_SLAVE_REQUEST_DATA;
+ 998:	80 93 cc 00 	sts	0x00CC, r24	; 0x8000cc <USI_TWI_Overflow_State>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:233
+      }
+      SET_USI_TO_SEND_ACK();
+ 99c:	1f b8       	out	0x0f, r1	; 15
+ 99e:	d6 9a       	sbi	0x1a, 6	; 26
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:306
+      TWI_RxHead            = tmpRxHead;
+      TWI_RxBuf[TWI_RxHead] = tmpUSIDR;
+      SET_USI_TO_SEND_ACK();
+    } else // If the buffer is full then:
+    {
+      SET_USI_TO_SEND_NACK();
+ 9a0:	8e e7       	ldi	r24, 0x7E	; 126
+ 9a2:	21 c0       	rjmp	.+66     	; 0x9e6 <__vector_16+0x112>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:231
+          TWI_TxTail = tmpTxTail;
+          USI_TWI_On_Slave_Transmit();
+        }
+        USI_TWI_Overflow_State = USI_SLAVE_SEND_DATA;
+      } else {
+        USI_TWI_Overflow_State = USI_SLAVE_REQUEST_DATA;
+ 9a4:	84 e0       	ldi	r24, 0x04	; 4
+ 9a6:	f8 cf       	rjmp	.-16     	; 0x998 <__vector_16+0xc4>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:242
+    break;
+
+  // ----- Master write data mode ------
+  // Check reply and goto USI_SLAVE_SEND_DATA if OK, else reset USI.
+  case USI_SLAVE_CHECK_REPLY_FROM_SEND_DATA:
+    if (USIDR) // If NACK, the master does not want more data.
+ 9a8:	8f b1       	in	r24, 0x0f	; 15
+ 9aa:	88 23       	and	r24, r24
+ 9ac:	21 f0       	breq	.+8      	; 0x9b6 <__vector_16+0xe2>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:259
+    if (TWI_TxHead != tmpTxTail) {
+      TWI_TxTail = (TWI_TxTail + 1) & TWI_TX_BUFFER_MASK;
+      USIDR      = TWI_TxBuf[TWI_TxTail];
+    } else // If the buffer is empty then:
+    {
+      SET_USI_TO_TWI_START_CONDITION_MODE();
+ 9ae:	d6 98       	cbi	0x1a, 6	; 26
+ 9b0:	88 ea       	ldi	r24, 0xA8	; 168
+ 9b2:	8d b9       	out	0x0d, r24	; 13
+ 9b4:	17 c0       	rjmp	.+46     	; 0x9e4 <__vector_16+0x110>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:253
+
+  // Copy data from buffer to USIDR and set USI to shift byte. Next USI_SLAVE_REQUEST_REPLY_FROM_SEND_DATA
+  case USI_SLAVE_SEND_DATA:
+
+    // Get data from Buffer
+    tmpTxTail = TWI_TxTail; // Not necessary, but prevents warnings
+ 9b6:	80 91 c7 00 	lds	r24, 0x00C7	; 0x8000c7 <TWI_TxTail>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:254
+    if (TWI_TxHead != tmpTxTail) {
+ 9ba:	90 91 c8 00 	lds	r25, 0x00C8	; 0x8000c8 <TWI_TxHead>
+ 9be:	98 17       	cp	r25, r24
+ 9c0:	b1 f3       	breq	.-20     	; 0x9ae <__vector_16+0xda>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:255
+      TWI_TxTail = (TWI_TxTail + 1) & TWI_TX_BUFFER_MASK;
+ 9c2:	80 91 c7 00 	lds	r24, 0x00C7	; 0x8000c7 <TWI_TxTail>
+ 9c6:	8f 5f       	subi	r24, 0xFF	; 255
+ 9c8:	8f 70       	andi	r24, 0x0F	; 15
+ 9ca:	80 93 c7 00 	sts	0x00C7, r24	; 0x8000c7 <TWI_TxTail>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:256
+      USIDR      = TWI_TxBuf[TWI_TxTail];
+ 9ce:	e0 91 c7 00 	lds	r30, 0x00C7	; 0x8000c7 <TWI_TxTail>
+ 9d2:	f0 e0       	ldi	r31, 0x00	; 0
+ 9d4:	ee 54       	subi	r30, 0x4E	; 78
+ 9d6:	ff 4f       	sbci	r31, 0xFF	; 255
+ 9d8:	80 81       	ld	r24, Z
+ 9da:	8f b9       	out	0x0f, r24	; 15
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:262
+    } else // If the buffer is empty then:
+    {
+      SET_USI_TO_TWI_START_CONDITION_MODE();
+      return;
+    }
+    USI_TWI_Overflow_State = USI_SLAVE_REQUEST_REPLY_FROM_SEND_DATA;
+ 9dc:	82 e0       	ldi	r24, 0x02	; 2
+ 9de:	80 93 cc 00 	sts	0x00CC, r24	; 0x8000cc <USI_TWI_Overflow_State>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:263
+    SET_USI_TO_SEND_DATA();
+ 9e2:	d6 9a       	sbi	0x1a, 6	; 26
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:259
+    if (TWI_TxHead != tmpTxTail) {
+      TWI_TxTail = (TWI_TxTail + 1) & TWI_TX_BUFFER_MASK;
+      USIDR      = TWI_TxBuf[TWI_TxTail];
+    } else // If the buffer is empty then:
+    {
+      SET_USI_TO_TWI_START_CONDITION_MODE();
+ 9e4:	80 e7       	ldi	r24, 0x70	; 112
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:306
+      TWI_RxHead            = tmpRxHead;
+      TWI_RxBuf[TWI_RxHead] = tmpUSIDR;
+      SET_USI_TO_SEND_ACK();
+    } else // If the buffer is full then:
+    {
+      SET_USI_TO_SEND_NACK();
+ 9e6:	8e b9       	out	0x0e, r24	; 14
+ 9e8:	92 cf       	rjmp	.-220    	; 0x90e <__vector_16+0x3a>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:268
+    SET_USI_TO_SEND_DATA();
+    break;
+
+  // Set USI to sample reply from master. Next USI_SLAVE_CHECK_REPLY_FROM_SEND_DATA
+  case USI_SLAVE_REQUEST_REPLY_FROM_SEND_DATA:
+    USI_TWI_Overflow_State = USI_SLAVE_CHECK_REPLY_FROM_SEND_DATA;
+ 9ea:	83 e0       	ldi	r24, 0x03	; 3
+ 9ec:	80 93 cc 00 	sts	0x00CC, r24	; 0x8000cc <USI_TWI_Overflow_State>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:269
+    SET_USI_TO_READ_ACK();
+ 9f0:	d6 98       	cbi	0x1a, 6	; 26
+ 9f2:	1f b8       	out	0x0f, r1	; 15
+ 9f4:	d5 cf       	rjmp	.-86     	; 0x9a0 <__vector_16+0xcc>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:275
+    break;
+
+  // ----- Master read data mode ------
+  // Set USI to sample data from master. Next USI_SLAVE_GET_DATA_AND_SEND_ACK.
+  case USI_SLAVE_REQUEST_DATA:
+    USI_TWI_Overflow_State = USI_SLAVE_GET_DATA_AND_SEND_ACK;
+ 9f6:	85 e0       	ldi	r24, 0x05	; 5
+ 9f8:	80 93 cc 00 	sts	0x00CC, r24	; 0x8000cc <USI_TWI_Overflow_State>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:276
+    SET_USI_TO_READ_DATA();
+ 9fc:	d6 98       	cbi	0x1a, 6	; 26
+ 9fe:	80 e7       	ldi	r24, 0x70	; 112
+ a00:	8e b9       	out	0x0e, r24	; 14
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:278
+    // call slave receive callback on stop condition
+    if (USI_TWI_On_Slave_Receive) {
+ a02:	e0 91 c5 00 	lds	r30, 0x00C5	; 0x8000c5 <USI_TWI_On_Slave_Receive>
+ a06:	f0 91 c6 00 	lds	r31, 0x00C6	; 0x8000c6 <USI_TWI_On_Slave_Receive+0x1>
+ a0a:	30 97       	sbiw	r30, 0x00	; 0
+ a0c:	09 f4       	brne	.+2      	; 0xa10 <__vector_16+0x13c>
+ a0e:	7f cf       	rjmp	.-258    	; 0x90e <__vector_16+0x3a>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:279
+      tmpRxHead = TWI_RxHead;
+ a10:	c0 91 e1 00 	lds	r28, 0x00E1	; 0x8000e1 <TWI_RxHead>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:280
+      if (TWI_RxTail != tmpRxHead) { // data in receive buffer
+ a14:	80 91 e2 00 	lds	r24, 0x00E2	; 0x8000e2 <TWI_RxTail>
+ a18:	8c 17       	cp	r24, r28
+ a1a:	09 f4       	brne	.+2      	; 0xa1e <__vector_16+0x14a>
+ a1c:	78 cf       	rjmp	.-272    	; 0x90e <__vector_16+0x3a>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:282
+        // check for stop Condition
+        while ((USISR & ((1 << USI_START_COND_INT) | (1 << USIPF) | (0xE << USICNT0))) == 0)
+ a1e:	8e b1       	in	r24, 0x0e	; 14
+ a20:	8e 7a       	andi	r24, 0xAE	; 174
+ a22:	e9 f3       	breq	.-6      	; 0xa1e <__vector_16+0x14a>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:285
+          ;// wait for either Start or Stop Condition
+          // cancel after one SCL cycle
+        if (USISR & (1 << USIPF)) { // Stop Condition
+ a24:	75 9b       	sbis	0x0e, 5	; 14
+ a26:	73 cf       	rjmp	.-282    	; 0x90e <__vector_16+0x3a>
+USI_TWI_Data_In_Receive_Buffer():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:136
+
+// Check if there is data in the receive buffer.
+unsigned char USI_TWI_Data_In_Receive_Buffer(void)
+{
+  unsigned char tmpRxTail;          // Temporary variable to store volatile
+  tmpRxTail = TWI_RxTail;           // Not necessary, but prevents warnings
+ a28:	90 91 e2 00 	lds	r25, 0x00E2	; 0x8000e2 <TWI_RxTail>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:137
+  return (TWI_RxHead - tmpRxTail) & TWI_RX_BUFFER_MASK; // Return 0 (FALSE) if the receive buffer is empty.
+ a2c:	80 91 e1 00 	lds	r24, 0x00E1	; 0x8000e1 <TWI_RxHead>
+ a30:	89 1b       	sub	r24, r25
+ a32:	8f 70       	andi	r24, 0x0F	; 15
+__vector_16():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:286
+        // check for stop Condition
+        while ((USISR & ((1 << USI_START_COND_INT) | (1 << USIPF) | (0xE << USICNT0))) == 0)
+          ;// wait for either Start or Stop Condition
+          // cancel after one SCL cycle
+        if (USISR & (1 << USIPF)) { // Stop Condition
+          USI_TWI_On_Slave_Receive(USI_TWI_Data_In_Receive_Buffer());
+ a34:	90 e0       	ldi	r25, 0x00	; 0
+ a36:	09 95       	icall
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:288
+          // reset rx buffer
+          TWI_RxTail = tmpRxHead;
+ a38:	c0 93 e2 00 	sts	0x00E2, r28	; 0x8000e2 <TWI_RxTail>
+ a3c:	68 cf       	rjmp	.-304    	; 0x90e <__vector_16+0x3a>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:306
+      TWI_RxHead            = tmpRxHead;
+      TWI_RxBuf[TWI_RxHead] = tmpUSIDR;
+      SET_USI_TO_SEND_ACK();
+    } else // If the buffer is full then:
+    {
+      SET_USI_TO_SEND_NACK();
+ a3e:	d6 98       	cbi	0x1a, 6	; 26
+ a40:	af cf       	rjmp	.-162    	; 0x9a0 <__vector_16+0xcc>
+
+00000a42 <__vector_15>:
+__vector_15():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:165
+ISR(USI_START_VECTOR)
+#elif __ICCAVR__
+#pragma vector = USI_START_VECTOR
+__interrupt void USI_Start_Condition_ISR(void)
+#endif
+{
+ a42:	1f 92       	push	r1
+ a44:	0f 92       	push	r0
+ a46:	0f b6       	in	r0, 0x3f	; 63
+ a48:	0f 92       	push	r0
+ a4a:	11 24       	eor	r1, r1
+ a4c:	2f 93       	push	r18
+ a4e:	3f 93       	push	r19
+ a50:	4f 93       	push	r20
+ a52:	5f 93       	push	r21
+ a54:	6f 93       	push	r22
+ a56:	7f 93       	push	r23
+ a58:	8f 93       	push	r24
+ a5a:	9f 93       	push	r25
+ a5c:	af 93       	push	r26
+ a5e:	bf 93       	push	r27
+ a60:	cf 93       	push	r28
+ a62:	ef 93       	push	r30
+ a64:	ff 93       	push	r31
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:169
+  unsigned char tmpPin; // Temporary variable for pin state
+  unsigned char tmpRxHead; // Temporary variable to store volatile
+  // call slave receive callback on repeated start
+  if (USI_TWI_On_Slave_Receive) {
+ a66:	e0 91 c5 00 	lds	r30, 0x00C5	; 0x8000c5 <USI_TWI_On_Slave_Receive>
+ a6a:	f0 91 c6 00 	lds	r31, 0x00C6	; 0x8000c6 <USI_TWI_On_Slave_Receive+0x1>
+ a6e:	30 97       	sbiw	r30, 0x00	; 0
+ a70:	81 f0       	breq	.+32     	; 0xa92 <__vector_15+0x50>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:170
+    tmpRxHead = TWI_RxHead;
+ a72:	c0 91 e1 00 	lds	r28, 0x00E1	; 0x8000e1 <TWI_RxHead>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:171
+    if (TWI_RxTail != tmpRxHead) { // data in receive buffer
+ a76:	80 91 e2 00 	lds	r24, 0x00E2	; 0x8000e2 <TWI_RxTail>
+ a7a:	8c 17       	cp	r24, r28
+ a7c:	51 f0       	breq	.+20     	; 0xa92 <__vector_15+0x50>
+USI_TWI_Data_In_Receive_Buffer():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:136
+
+// Check if there is data in the receive buffer.
+unsigned char USI_TWI_Data_In_Receive_Buffer(void)
+{
+  unsigned char tmpRxTail;          // Temporary variable to store volatile
+  tmpRxTail = TWI_RxTail;           // Not necessary, but prevents warnings
+ a7e:	90 91 e2 00 	lds	r25, 0x00E2	; 0x8000e2 <TWI_RxTail>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:137
+  return (TWI_RxHead - tmpRxTail) & TWI_RX_BUFFER_MASK; // Return 0 (FALSE) if the receive buffer is empty.
+ a82:	80 91 e1 00 	lds	r24, 0x00E1	; 0x8000e1 <TWI_RxHead>
+ a86:	89 1b       	sub	r24, r25
+ a88:	8f 70       	andi	r24, 0x0F	; 15
+__vector_15():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:172
+  unsigned char tmpRxHead; // Temporary variable to store volatile
+  // call slave receive callback on repeated start
+  if (USI_TWI_On_Slave_Receive) {
+    tmpRxHead = TWI_RxHead;
+    if (TWI_RxTail != tmpRxHead) { // data in receive buffer
+      USI_TWI_On_Slave_Receive(USI_TWI_Data_In_Receive_Buffer());
+ a8a:	90 e0       	ldi	r25, 0x00	; 0
+ a8c:	09 95       	icall
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:174
+      // reset rx buffer
+      TWI_RxTail = tmpRxHead;
+ a8e:	c0 93 e2 00 	sts	0x00E2, r28	; 0x8000e2 <TWI_RxTail>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:178
+    }
+  }
+
+  USI_TWI_Overflow_State = USI_SLAVE_CHECK_ADDRESS;
+ a92:	10 92 cc 00 	sts	0x00CC, r1	; 0x8000cc <USI_TWI_Overflow_State>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:179
+  DDR_USI &= ~(1 << PORT_USI_SDA); // Set SDA as input
+ a96:	d6 98       	cbi	0x1a, 6	; 26
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:180
+  while ((tmpPin = (PIN_USI_CL & (1 << PORT_USI_SCL))) && ((PIN_USI & (1 << PIN_USI_SDA)) == 0))
+ a98:	cc 9b       	sbis	0x19, 4	; 25
+ a9a:	18 c0       	rjmp	.+48     	; 0xacc <__vector_15+0x8a>
+ a9c:	ce 9b       	sbis	0x19, 6	; 25
+ a9e:	fc cf       	rjmp	.-8      	; 0xa98 <__vector_15+0x56>
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:185
+    ; // Wait for SCL to go low to ensure the "Start Condition" has completed.
+        // If a Stop condition arises then leave the interrupt to prevent waiting forever.
+  if (tmpPin) {
+    // Stop Condition (waiting for next Start Condition)
+    USICR = (1 << USISIE) | (0 << USIOIE) | // Enable Start Condition Interrupt. Disable Overflow Interrupt.
+ aa0:	88 ea       	ldi	r24, 0xA8	; 168
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:192
+                                            // to first Start Condition (potential failure)
+            (1 << USICS1) | (0 << USICS0) | (0 << USICLK) | // Shift Register Clock Source = External, positive edge
+            (0 << USITC);
+  } else {
+    // really Start Condition (Enable Overflow Interrupt)
+    USICR = (1 << USISIE) | (1 << USIOIE)
+ aa2:	8d b9       	out	0x0d, r24	; 13
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:198
+            | // Enable Overflow and Start Condition Interrupt. (Keep StartCondInt to detect RESTART)
+            (1 << USIWM1) | (1 << USIWM0) |                 // Set USI in Two-wire mode.
+            (1 << USICS1) | (0 << USICS0) | (0 << USICLK) | // Shift Register Clock Source = External, positive edge
+            (0 << USITC);
+  }
+  USISR = (1 << USI_START_COND_INT) | (1 << USIOIF) | (1 << USIPF) | (1 << USIDC) | // Clear flags
+ aa4:	80 ef       	ldi	r24, 0xF0	; 240
+ aa6:	8e b9       	out	0x0e, r24	; 14
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:200
+          (0x0 << USICNT0); // Set USI to sample 8 bits i.e. count 16 external pin toggles.
+}
+ aa8:	ff 91       	pop	r31
+ aaa:	ef 91       	pop	r30
+ aac:	cf 91       	pop	r28
+ aae:	bf 91       	pop	r27
+ ab0:	af 91       	pop	r26
+ ab2:	9f 91       	pop	r25
+ ab4:	8f 91       	pop	r24
+ ab6:	7f 91       	pop	r23
+ ab8:	6f 91       	pop	r22
+ aba:	5f 91       	pop	r21
+ abc:	4f 91       	pop	r20
+ abe:	3f 91       	pop	r19
+ ac0:	2f 91       	pop	r18
+ ac2:	0f 90       	pop	r0
+ ac4:	0f be       	out	0x3f, r0	; 63
+ ac6:	0f 90       	pop	r0
+ ac8:	1f 90       	pop	r1
+ aca:	18 95       	reti
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\Wire\src\USI_TWI_Slave/USI_TWI_Slave.c:192
+                                            // to first Start Condition (potential failure)
+            (1 << USICS1) | (0 << USICS0) | (0 << USICLK) | // Shift Register Clock Source = External, positive edge
+            (0 << USITC);
+  } else {
+    // really Start Condition (Enable Overflow Interrupt)
+    USICR = (1 << USISIE) | (1 << USIOIE)
+ acc:	88 ef       	ldi	r24, 0xF8	; 248
+ ace:	e9 cf       	rjmp	.-46     	; 0xaa2 <__vector_15+0x60>
+
+00000ad0 <main>:
+main():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/main.cpp:4
+#include <Arduino.h>
+
+int main(void)
+{
+ ad0:	cf 93       	push	r28
+ ad2:	df 93       	push	r29
+ ad4:	cd b7       	in	r28, 0x3d	; 61
+ ad6:	de b7       	in	r29, 0x3e	; 62
+ ad8:	28 97       	sbiw	r28, 0x08	; 8
+ ada:	0f b6       	in	r0, 0x3f	; 63
+ adc:	f8 94       	cli
+ ade:	de bf       	out	0x3e, r29	; 62
+ ae0:	0f be       	out	0x3f, r0	; 63
+ ae2:	cd bf       	out	0x3d, r28	; 61
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/main.cpp:6
+  #ifdef TUNED_OSCCAL_VALUE
+  OSCCAL = TUNED_OSCCAL_VALUE; //set the oscillator calibration value based on the pins_arduino.h file. If this is not set, it will be optimised away
+ ae4:	81 b7       	in	r24, 0x31	; 49
+ ae6:	81 bf       	out	0x31, r24	; 49
+init():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:699
+    } else {
+      OSCCAL += 5;
+    }
+  }
+  #endif
+  sei();
+ ae8:	78 94       	sei
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:831
+  #endif
+  #endif
+
+  // Use the Millis Timer for fast PWM (unless it doesn't have an output).
+  #if (TIMER_TO_USE_FOR_MILLIS == 0) && defined(WGM01)
+  sbi(TCCR0A, WGM01);
+ aea:	80 b7       	in	r24, 0x30	; 48
+ aec:	82 60       	ori	r24, 0x02	; 2
+ aee:	80 bf       	out	0x30, r24	; 48
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:832
+  sbi(TCCR0A, WGM00);
+ af0:	80 b7       	in	r24, 0x30	; 48
+ af2:	81 60       	ori	r24, 0x01	; 1
+ af4:	80 bf       	out	0x30, r24	; 48
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:855
+  #endif
+
+  // Millis timer is always processor clock divided by MillisTimer_Prescale_Value (64)
+  #if (TIMER_TO_USE_FOR_MILLIS == 0)
+   #ifdef TCCR0B
+    TCCR0B = (TCCR0B & ~((1<<CS02)|(1<<CS01)|(1<<CS00))) | (MillisTimer_Prescale_Index << CS00);
+ af6:	83 b7       	in	r24, 0x33	; 51
+ af8:	88 7f       	andi	r24, 0xF8	; 248
+ afa:	83 60       	ori	r24, 0x03	; 3
+ afc:	83 bf       	out	0x33, r24	; 51
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:867
+  TCCR1B = (TCCR1B & ~((1<<CS13)|(1<<CS12)|(1<<CS11)|(1<<CS10))) | (MillisTimer_Prescale_Index << CS10);
+  #elif (TIMER_TO_USE_FOR_MILLIS == 1)
+  TCCR1B = (TCCR1B & ~((1<<CS12)|(1<<CS11)|(1<<CS10))) | (MillisTimer_Prescale_Index << CS10);
+  #endif
+  // this needs to be called before setup() or some functions won't work there
+  sei();
+ afe:	78 94       	sei
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:874
+  #ifndef DISABLEMILLIS
+  // Enable the overlow interrupt (this is the basic system tic-toc for millis)
+  #if defined(TIMSK) && defined(TOIE0) && (TIMER_TO_USE_FOR_MILLIS == 0)
+  sbi(TIMSK, TOIE0);
+  #elif defined(TIMSK0) && defined(TOIE0) && (TIMER_TO_USE_FOR_MILLIS == 0)
+  sbi(TIMSK0, TOIE0);
+ b00:	89 b7       	in	r24, 0x39	; 57
+ b02:	81 60       	ori	r24, 0x01	; 1
+ b04:	89 bf       	out	0x39, r24	; 57
+initToneTimerInternal():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:526
+  sbi(TCCR1C, PWM1D);
+  cbi(TCCR1D, WGM11);
+  sbi(TCCR1D, WGM10);
+  TCCR1B |= (ToneTimer_Prescale_Index << CS10);
+  #elif (TIMER_TO_USE_FOR_TONE == 1)
+  TCCR1B &= ~((1<<CS12) | (1<<CS11) | (1<<CS10)); //stop the clock to configure
+ b06:	8e b5       	in	r24, 0x2e	; 46
+ b08:	88 7f       	andi	r24, 0xF8	; 248
+ b0a:	8e bd       	out	0x2e, r24	; 46
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:528
+  // Use the Tone Timer for phase correct PWM
+  sbi(TCCR1A, WGM10);
+ b0c:	8f b5       	in	r24, 0x2f	; 47
+ b0e:	81 60       	ori	r24, 0x01	; 1
+ b10:	8f bd       	out	0x2f, r24	; 47
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:529
+  cbi(TCCR1A, WGM11);
+ b12:	8f b5       	in	r24, 0x2f	; 47
+ b14:	8d 7f       	andi	r24, 0xFD	; 253
+ b16:	8f bd       	out	0x2f, r24	; 47
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:530
+  cbi(TCCR1B, WGM12);
+ b18:	8e b5       	in	r24, 0x2e	; 46
+ b1a:	87 7f       	andi	r24, 0xF7	; 247
+ b1c:	8e bd       	out	0x2e, r24	; 46
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:531
+  cbi(TCCR1B, WGM13);
+ b1e:	8e b5       	in	r24, 0x2e	; 46
+ b20:	8f 7e       	andi	r24, 0xEF	; 239
+ b22:	8e bd       	out	0x2e, r24	; 46
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:532
+  TCCR1B |= (ToneTimer_Prescale_Index << CS10); //set the clock
+ b24:	8e b5       	in	r24, 0x2e	; 46
+ b26:	83 60       	ori	r24, 0x03	; 3
+ b28:	8e bd       	out	0x2e, r24	; 46
+init():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:893
+
+  // Initialize the ADC
+  #if defined( INITIALIZE_ANALOG_TO_DIGITAL_CONVERTER ) && INITIALIZE_ANALOG_TO_DIGITAL_CONVERTER
+  #if defined(ADCSRA)
+    // set a2d prescale factor
+  ADCSRA = (ADCSRA & ~((1<<ADPS2)|(1<<ADPS1)|(1<<ADPS0))) | (ADC_ARDUINO_PRESCALER << ADPS0) | (1<<ADEN);
+ b2a:	86 b1       	in	r24, 0x06	; 6
+ b2c:	88 77       	andi	r24, 0x78	; 120
+ b2e:	86 68       	ori	r24, 0x86	; 134
+ b30:	86 b9       	out	0x06, r24	; 6
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\cores\tiny/wiring.c:895
+    // enable a2d conversions
+    sbi(ADCSRA, ADEN);
+ b32:	37 9a       	sbi	0x06, 7	; 6
+setup():
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:151
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+void setup(void)
+{
+  pinMode(addressPin, INPUT_PULLUP);
+ b34:	62 e0       	ldi	r22, 0x02	; 2
+ b36:	89 e0       	ldi	r24, 0x09	; 9
+ b38:	12 db       	rcall	.-2524   	; 0x15e <pinMode>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:152
+  pinMode(encoder2BPin, INPUT); //No pull-up. External 10k
+ b3a:	60 e0       	ldi	r22, 0x00	; 0
+ b3c:	88 e0       	ldi	r24, 0x08	; 8
+ b3e:	0f db       	rcall	.-2530   	; 0x15e <pinMode>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:153
+  pinMode(encoder2APin, INPUT); //No pull-up. External 10k
+ b40:	60 e0       	ldi	r22, 0x00	; 0
+ b42:	87 e0       	ldi	r24, 0x07	; 7
+ b44:	0c db       	rcall	.-2536   	; 0x15e <pinMode>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:154
+  pinMode(encoder1BPin, INPUT); //No pull-up. External 10k
+ b46:	60 e0       	ldi	r22, 0x00	; 0
+ b48:	82 e0       	ldi	r24, 0x02	; 2
+ b4a:	09 db       	rcall	.-2542   	; 0x15e <pinMode>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:155
+  pinMode(encoder1APin, INPUT); //No pull-up. External 10k
+ b4c:	60 e0       	ldi	r22, 0x00	; 0
+ b4e:	8a e0       	ldi	r24, 0x0A	; 10
+ b50:	06 db       	rcall	.-2548   	; 0x15e <pinMode>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:156
+  pinMode(interruptPin, INPUT); //Interrupt is high-impedance until we have int (and then go low). Pulled high with 10k with cuttable jumper.
+ b52:	60 e0       	ldi	r22, 0x00	; 0
+ b54:	80 e0       	ldi	r24, 0x00	; 0
+ b56:	03 db       	rcall	.-2554   	; 0x15e <pinMode>
+turnOffExtraBits():
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:355
+
+//Turn off anything we aren't going to use
+void turnOffExtraBits()
+{
+  //Disable ADC
+  ADCSRA = 0;
+ b58:	16 b8       	out	0x06, r1	; 6
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:358
+
+  //Disble Brown-Out Detect
+  MCUCR = bit (BODS) | bit (BODSE);
+ b5a:	84 e8       	ldi	r24, 0x84	; 132
+ b5c:	85 bf       	out	0x35, r24	; 53
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:359
+  MCUCR = bit (BODS);
+ b5e:	80 e8       	ldi	r24, 0x80	; 128
+ b60:	85 bf       	out	0x35, r24	; 53
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:363
+
+  //Power down various bits of hardware to lower power usage
+  //set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+  set_sleep_mode(SLEEP_MODE_IDLE);
+ b62:	85 b7       	in	r24, 0x35	; 53
+ b64:	87 7e       	andi	r24, 0xE7	; 231
+ b66:	85 bf       	out	0x35, r24	; 53
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:364
+  sleep_enable();
+ b68:	85 b7       	in	r24, 0x35	; 53
+ b6a:	80 62       	ori	r24, 0x20	; 32
+ b6c:	85 bf       	out	0x35, r24	; 53
+operator*():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:42
+
+    EERef( const int index )
+        : index( index )                 {}
+
+    //Access/read members.
+    uint8_t operator*() const            { return eeprom_read_byte( (uint8_t*) index ); }
+ b6e:	90 e0       	ldi	r25, 0x00	; 0
+ b70:	80 e0       	ldi	r24, 0x00	; 0
+ b72:	8a d1       	rcall	.+788    	; 0xe88 <eeprom_read_byte>
+readSystemSettings():
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:308
+void readSystemSettings(void)
+{
+  uint16_t discard; // do-nothing variable put in to eleminate compiler warnings
+
+  //Read what I2C address we should use
+  registerMap.i2cAddress = EEPROM.read(LOCATION_I2C_ADDRESS);
+ b74:	80 93 9d 00 	sts	0x009D, r24	; 0x80009d <registerMap+0x11>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:309
+  if (registerMap.i2cAddress == 0xFF) //Blank
+ b78:	80 91 9d 00 	lds	r24, 0x009D	; 0x80009d <registerMap+0x11>
+ b7c:	8f 3f       	cpi	r24, 0xFF	; 255
+ b7e:	41 f4       	brne	.+16     	; 0xb90 <main+0xc0>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:311
+  {
+    registerMap.i2cAddress = I2C_ADDRESS_DEFAULT; //By default, we listen for I2C_ADDRESS_DEFAULT
+ b80:	83 e7       	ldi	r24, 0x73	; 115
+ b82:	80 93 9d 00 	sts	0x009D, r24	; 0x80009d <registerMap+0x11>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:312
+    EEPROM.write(LOCATION_I2C_ADDRESS, registerMap.i2cAddress);
+ b86:	60 91 9d 00 	lds	r22, 0x009D	; 0x80009d <registerMap+0x11>
+operator=():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:47
+    operator uint8_t() const       { return **this; }
+
+    //Assignment/write members.
+    EERef &operator=( const EERef &ref ) { return *this = *ref; }
+    EERef &operator=( uint8_t in )       { return eeprom_write_byte( (uint8_t*) index, in ), *this;  }
+ b8a:	90 e0       	ldi	r25, 0x00	; 0
+ b8c:	80 e0       	ldi	r24, 0x00	; 0
+ b8e:	84 d1       	rcall	.+776    	; 0xe98 <eeprom_write_byte>
+readSystemSettings():
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:316
+  }
+
+  //Error check I2C address we read from EEPROM
+  if (registerMap.i2cAddress < 0x08 || registerMap.i2cAddress > 0x77)
+ b90:	80 91 9d 00 	lds	r24, 0x009D	; 0x80009d <registerMap+0x11>
+ b94:	88 30       	cpi	r24, 0x08	; 8
+ b96:	20 f0       	brcs	.+8      	; 0xba0 <main+0xd0>
+ b98:	80 91 9d 00 	lds	r24, 0x009D	; 0x80009d <registerMap+0x11>
+ b9c:	88 37       	cpi	r24, 0x78	; 120
+ b9e:	40 f0       	brcs	.+16     	; 0xbb0 <main+0xe0>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:320
+  {
+    //User has set the address out of range
+    //Go back to defaults
+    registerMap.i2cAddress = I2C_ADDRESS_DEFAULT;
+ ba0:	83 e7       	ldi	r24, 0x73	; 115
+ ba2:	80 93 9d 00 	sts	0x009D, r24	; 0x80009d <registerMap+0x11>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:321
+    EEPROM.write(LOCATION_I2C_ADDRESS, registerMap.i2cAddress);
+ ba6:	60 91 9d 00 	lds	r22, 0x009D	; 0x80009d <registerMap+0x11>
+operator=():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:47
+ baa:	90 e0       	ldi	r25, 0x00	; 0
+ bac:	80 e0       	ldi	r24, 0x00	; 0
+ bae:	74 d1       	rcall	.+744    	; 0xe98 <eeprom_write_byte>
+operator*():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:42
+
+    EERef( const int index )
+        : index( index )                 {}
+
+    //Access/read members.
+    uint8_t operator*() const            { return eeprom_read_byte( (uint8_t*) index ); }
+ bb0:	81 e0       	ldi	r24, 0x01	; 1
+ bb2:	90 e0       	ldi	r25, 0x00	; 0
+ bb4:	69 d1       	rcall	.+722    	; 0xe88 <eeprom_read_byte>
+readSystemSettings():
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:325
+  }
+
+  //Read the interrupt bits
+  registerMap.interruptEnable = EEPROM.read(LOCATION_INTERRUPTS);
+ bb6:	80 93 90 00 	sts	0x0090, r24	; 0x800090 <registerMap+0x4>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:326
+  if (registerMap.interruptEnable == 0xFF) //Blank
+ bba:	80 91 90 00 	lds	r24, 0x0090	; 0x800090 <registerMap+0x4>
+ bbe:	8f 3f       	cpi	r24, 0xFF	; 255
+ bc0:	41 f4       	brne	.+16     	; 0xbd2 <main+0x102>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:328
+  {
+    registerMap.interruptEnable = 0x03; //By default, enable the click and encoder interrupts
+ bc2:	83 e0       	ldi	r24, 0x03	; 3
+ bc4:	80 93 90 00 	sts	0x0090, r24	; 0x800090 <registerMap+0x4>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:329
+    EEPROM.write(LOCATION_INTERRUPTS, registerMap.interruptEnable);
+ bc8:	60 91 90 00 	lds	r22, 0x0090	; 0x800090 <registerMap+0x4>
+operator=():
+C:\Users\pete.lewis\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.3.3\libraries\EEPROM/EEPROM.h:47
+    operator uint8_t() const       { return **this; }
+
+    //Assignment/write members.
+    EERef &operator=( const EERef &ref ) { return *this = *ref; }
+    EERef &operator=( uint8_t in )       { return eeprom_write_byte( (uint8_t*) index, in ), *this;  }
+ bcc:	81 e0       	ldi	r24, 0x01	; 1
+ bce:	90 e0       	ldi	r25, 0x00	; 0
+ bd0:	63 d1       	rcall	.+710    	; 0xe98 <eeprom_write_byte>
+readSystemSettings():
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:333
+  }
+
+
+  discard = EEPROM.get(LOCATION_TURN_INTERRUPT_TIMEOUT_AMOUNT, registerMap.turnInterruptTimeout);
+ bd2:	6b e9       	ldi	r22, 0x9B	; 155
+ bd4:	70 e0       	ldi	r23, 0x00	; 0
+ bd6:	82 e0       	ldi	r24, 0x02	; 2
+ bd8:	90 e0       	ldi	r25, 0x00	; 0
+ bda:	37 dd       	rcall	.-1426   	; 0x64a <unsigned int volatile& EEPROMClass::get<unsigned int volatile>(int, unsigned int volatile&) [clone .isra.6]>
+ bdc:	fc 01       	movw	r30, r24
+ bde:	80 81       	ld	r24, Z
+ be0:	91 81       	ldd	r25, Z+1	; 0x01
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:334
+  if ((uint16_t)registerMap.turnInterruptTimeout == 0xFFFF)
+ be2:	80 91 9b 00 	lds	r24, 0x009B	; 0x80009b <registerMap+0xf>
+ be6:	90 91 9c 00 	lds	r25, 0x009C	; 0x80009c <registerMap+0x10>
+ bea:	01 96       	adiw	r24, 0x01	; 1
+ bec:	91 f4       	brne	.+36     	; 0xc12 <main+0x142>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:336
+  {
+    registerMap.turnInterruptTimeout = 250; //Default to 250ms
+ bee:	8a ef       	ldi	r24, 0xFA	; 250
+ bf0:	90 e0       	ldi	r25, 0x00	; 0
+ bf2:	90 93 9c 00 	sts	0x009C, r25	; 0x80009c <registerMap+0x10>
+ bf6:	80 93 9b 00 	sts	0x009B, r24	; 0x80009b <registerMap+0xf>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:337
+    EEPROM.put(LOCATION_TURN_INTERRUPT_TIMEOUT_AMOUNT, (int16_t)registerMap.turnInterruptTimeout);
+ bfa:	80 91 9b 00 	lds	r24, 0x009B	; 0x80009b <registerMap+0xf>
+ bfe:	90 91 9c 00 	lds	r25, 0x009C	; 0x80009c <registerMap+0x10>
+ c02:	9a 83       	std	Y+2, r25	; 0x02
+ c04:	89 83       	std	Y+1, r24	; 0x01
+ c06:	be 01       	movw	r22, r28
+ c08:	6f 5f       	subi	r22, 0xFF	; 255
+ c0a:	7f 4f       	sbci	r23, 0xFF	; 255
+ c0c:	82 e0       	ldi	r24, 0x02	; 2
+ c0e:	90 e0       	ldi	r25, 0x00	; 0
+ c10:	2e dd       	rcall	.-1444   	; 0x66e <int const& EEPROMClass::put<int>(int, int const&) [clone .isra.5]>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:340
+  }
+
+  discard = EEPROM.get(LOCATION_ROTATION_LIMIT, registerMap.rotationLimit);
+ c12:	6e e9       	ldi	r22, 0x9E	; 158
+ c14:	70 e0       	ldi	r23, 0x00	; 0
+ c16:	84 e0       	ldi	r24, 0x04	; 4
+ c18:	90 e0       	ldi	r25, 0x00	; 0
+ c1a:	17 dd       	rcall	.-1490   	; 0x64a <unsigned int volatile& EEPROMClass::get<unsigned int volatile>(int, unsigned int volatile&) [clone .isra.6]>
+ c1c:	fc 01       	movw	r30, r24
+ c1e:	80 81       	ld	r24, Z
+ c20:	91 81       	ldd	r25, Z+1	; 0x01
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:341
+  if ((uint16_t)registerMap.rotationLimit == 0xFFFF)
+ c22:	80 91 9e 00 	lds	r24, 0x009E	; 0x80009e <registerMap+0x12>
+ c26:	90 91 9f 00 	lds	r25, 0x009F	; 0x80009f <registerMap+0x13>
+ c2a:	01 96       	adiw	r24, 0x01	; 1
+ c2c:	81 f4       	brne	.+32     	; 0xc4e <main+0x17e>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:343
+  {
+    registerMap.rotationLimit = 0; // Default to 0 (off)
+ c2e:	10 92 9f 00 	sts	0x009F, r1	; 0x80009f <registerMap+0x13>
+ c32:	10 92 9e 00 	sts	0x009E, r1	; 0x80009e <registerMap+0x12>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:344
+    EEPROM.put(LOCATION_ROTATION_LIMIT, (int16_t)registerMap.rotationLimit);
+ c36:	80 91 9e 00 	lds	r24, 0x009E	; 0x80009e <registerMap+0x12>
+ c3a:	90 91 9f 00 	lds	r25, 0x009F	; 0x80009f <registerMap+0x13>
+ c3e:	9a 83       	std	Y+2, r25	; 0x02
+ c40:	89 83       	std	Y+1, r24	; 0x01
+ c42:	be 01       	movw	r22, r28
+ c44:	6f 5f       	subi	r22, 0xFF	; 255
+ c46:	7f 4f       	sbci	r23, 0xFF	; 255
+ c48:	84 e0       	ldi	r24, 0x04	; 4
+ c4a:	90 e0       	ldi	r25, 0x00	; 0
+ c4c:	10 dd       	rcall	.-1504   	; 0x66e <int const& EEPROMClass::put<int>(int, int const&) [clone .isra.5]>
+attachPinChangeInterrupt():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt.h:474
+
+		//  attache the function pointers for the API
+#if defined(PCINT_API)
+#if (PCINT_USE_PCINT8 == true)
+		if (pcintNum == 8)
+			callbackPCINT8 = userFunc;
+ c4e:	47 ef       	ldi	r20, 0xF7	; 247
+ c50:	50 e0       	ldi	r21, 0x00	; 0
+ c52:	50 93 8b 00 	sts	0x008B, r21	; 0x80008b <callbackPCINT8+0x1>
+ c56:	40 93 8a 00 	sts	0x008A, r20	; 0x80008a <callbackPCINT8>
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt.h:600
+	uint8_t pcintMask = (1 << pcintBit);
+	uint8_t arrayPos = getArrayPosPCINT(pcintPort);
+
+	// save settings related to mode and registers
+	if (mode == CHANGE || mode == RISING)
+		risingPorts[arrayPos] |= pcintMask;
+ c5a:	90 91 db 00 	lds	r25, 0x00DB	; 0x8000db <risingPorts+0x1>
+ c5e:	89 2f       	mov	r24, r25
+ c60:	81 60       	ori	r24, 0x01	; 1
+ c62:	80 93 db 00 	sts	0x00DB, r24	; 0x8000db <risingPorts+0x1>
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt.h:602
+	if (mode == CHANGE || mode == FALLING)
+		fallingPorts[arrayPos] |= pcintMask;
+ c66:	80 91 d9 00 	lds	r24, 0x00D9	; 0x8000d9 <fallingPorts+0x1>
+ c6a:	28 2f       	mov	r18, r24
+ c6c:	21 60       	ori	r18, 0x01	; 1
+ c6e:	20 93 d9 00 	sts	0x00D9, r18	; 0x8000d9 <fallingPorts+0x1>
+enablePinChangeInterruptHelper():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt.cpp:109
+			oldPorts[arrayPos] = PCINT_INPUT_PORT0;
+		break;
+#endif
+#ifdef PCINT_INPUT_PORT1_USED
+		case 1:
+			oldPorts[arrayPos] = PCINT_INPUT_PORT1;
+ c72:	26 b3       	in	r18, 0x16	; 22
+ c74:	20 93 d7 00 	sts	0x00D7, r18	; 0x8000d7 <oldPorts+0x1>
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt.cpp:144
+		switch(pcintPort){
+			case 0:
+				PCMSK0 |= pcintMask;
+			break;
+			case 1:
+				PCMSK1 |= pcintMask;
+ c78:	20 b5       	in	r18, 0x20	; 32
+ c7a:	21 60       	ori	r18, 0x01	; 1
+ c7c:	20 bd       	out	0x20, r18	; 32
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt.cpp:167
+
+	// PCICR: Pin Change Interrupt Control Register - enables interrupt vectors
+#ifdef PCICR
+	PCICR |= (1  << (pcintPort + PCIE0));
+#elif defined(GIMSK) && defined(PCIE0) /* e.g. ATtiny X4 */
+	GIMSK |= (1  << (pcintPort + PCIE0));
+ c7e:	2b b7       	in	r18, 0x3b	; 59
+ c80:	20 62       	ori	r18, 0x20	; 32
+ c82:	2b bf       	out	0x3b, r18	; 59
+attachPinChangeInterrupt():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt.h:438
+		if (pcintNum == 1)
+			callbackPCINT1 = userFunc;
+#endif
+#if (PCINT_USE_PCINT2 == true)
+		if (pcintNum == 2)
+			callbackPCINT2 = userFunc;
+ c84:	50 93 89 00 	sts	0x0089, r21	; 0x800089 <callbackPCINT2+0x1>
+ c88:	40 93 88 00 	sts	0x0088, r20	; 0x800088 <callbackPCINT2>
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt.h:600
+	uint8_t pcintMask = (1 << pcintBit);
+	uint8_t arrayPos = getArrayPosPCINT(pcintPort);
+
+	// save settings related to mode and registers
+	if (mode == CHANGE || mode == RISING)
+		risingPorts[arrayPos] |= pcintMask;
+ c8c:	20 91 da 00 	lds	r18, 0x00DA	; 0x8000da <risingPorts>
+ c90:	24 60       	ori	r18, 0x04	; 4
+ c92:	20 93 da 00 	sts	0x00DA, r18	; 0x8000da <risingPorts>
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt.h:602
+	if (mode == CHANGE || mode == FALLING)
+		fallingPorts[arrayPos] |= pcintMask;
+ c96:	20 91 d8 00 	lds	r18, 0x00D8	; 0x8000d8 <fallingPorts>
+ c9a:	24 60       	ori	r18, 0x04	; 4
+ c9c:	20 93 d8 00 	sts	0x00D8, r18	; 0x8000d8 <fallingPorts>
+enablePinChangeInterruptHelper():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt.cpp:104
+void enablePinChangeInterruptHelper(const uint8_t pcintPort, const uint8_t pcintMask, const uint8_t arrayPos){
+	// Update the old state to the actual state
+	switch(pcintPort){
+#ifdef PCINT_INPUT_PORT0_USED
+		case 0:
+			oldPorts[arrayPos] = PCINT_INPUT_PORT0;
+ ca0:	29 b3       	in	r18, 0x19	; 25
+ ca2:	20 93 d6 00 	sts	0x00D6, r18	; 0x8000d6 <oldPorts>
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt.cpp:141
+#ifdef PCMSK1
+	}
+	else{
+		switch(pcintPort){
+			case 0:
+				PCMSK0 |= pcintMask;
+ ca6:	92 9a       	sbi	0x12, 2	; 18
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt.cpp:167
+
+	// PCICR: Pin Change Interrupt Control Register - enables interrupt vectors
+#ifdef PCICR
+	PCICR |= (1  << (pcintPort + PCIE0));
+#elif defined(GIMSK) && defined(PCIE0) /* e.g. ATtiny X4 */
+	GIMSK |= (1  << (pcintPort + PCIE0));
+ ca8:	2b b7       	in	r18, 0x3b	; 59
+ caa:	20 61       	ori	r18, 0x10	; 16
+ cac:	2b bf       	out	0x3b, r18	; 59
+attachPinChangeInterrupt():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt.h:458
+		if (pcintNum == 6)
+			callbackPCINT6 = userFunc;
+#endif
+#if (PCINT_USE_PCINT7 == true)
+		if (pcintNum == 7)
+			callbackPCINT7 = userFunc;
+ cae:	47 e8       	ldi	r20, 0x87	; 135
+ cb0:	51 e0       	ldi	r21, 0x01	; 1
+ cb2:	50 93 87 00 	sts	0x0087, r21	; 0x800087 <callbackPCINT7+0x1>
+ cb6:	40 93 86 00 	sts	0x0086, r20	; 0x800086 <callbackPCINT7>
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt.h:600
+	uint8_t pcintMask = (1 << pcintBit);
+	uint8_t arrayPos = getArrayPosPCINT(pcintPort);
+
+	// save settings related to mode and registers
+	if (mode == CHANGE || mode == RISING)
+		risingPorts[arrayPos] |= pcintMask;
+ cba:	20 91 da 00 	lds	r18, 0x00DA	; 0x8000da <risingPorts>
+ cbe:	20 68       	ori	r18, 0x80	; 128
+ cc0:	20 93 da 00 	sts	0x00DA, r18	; 0x8000da <risingPorts>
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt.h:602
+	if (mode == CHANGE || mode == FALLING)
+		fallingPorts[arrayPos] |= pcintMask;
+ cc4:	20 91 d8 00 	lds	r18, 0x00D8	; 0x8000d8 <fallingPorts>
+ cc8:	20 68       	ori	r18, 0x80	; 128
+ cca:	20 93 d8 00 	sts	0x00D8, r18	; 0x8000d8 <fallingPorts>
+enablePinChangeInterruptHelper():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt.cpp:104
+void enablePinChangeInterruptHelper(const uint8_t pcintPort, const uint8_t pcintMask, const uint8_t arrayPos){
+	// Update the old state to the actual state
+	switch(pcintPort){
+#ifdef PCINT_INPUT_PORT0_USED
+		case 0:
+			oldPorts[arrayPos] = PCINT_INPUT_PORT0;
+ cce:	29 b3       	in	r18, 0x19	; 25
+ cd0:	20 93 d6 00 	sts	0x00D6, r18	; 0x8000d6 <oldPorts>
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt.cpp:141
+#ifdef PCMSK1
+	}
+	else{
+		switch(pcintPort){
+			case 0:
+				PCMSK0 |= pcintMask;
+ cd4:	97 9a       	sbi	0x12, 7	; 18
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt.cpp:167
+
+	// PCICR: Pin Change Interrupt Control Register - enables interrupt vectors
+#ifdef PCICR
+	PCICR |= (1  << (pcintPort + PCIE0));
+#elif defined(GIMSK) && defined(PCIE0) /* e.g. ATtiny X4 */
+	GIMSK |= (1  << (pcintPort + PCIE0));
+ cd6:	2b b7       	in	r18, 0x3b	; 59
+ cd8:	20 61       	ori	r18, 0x10	; 16
+ cda:	2b bf       	out	0x3b, r18	; 59
+attachPinChangeInterrupt():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt.h:482
+		if (pcintNum == 9)
+			callbackPCINT9 = userFunc;
+#endif
+#if (PCINT_USE_PCINT10 == true)
+		if (pcintNum == 10)
+			callbackPCINT10 = userFunc;
+ cdc:	50 93 85 00 	sts	0x0085, r21	; 0x800085 <callbackPCINT10+0x1>
+ ce0:	40 93 84 00 	sts	0x0084, r20	; 0x800084 <callbackPCINT10>
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt.h:600
+	uint8_t pcintMask = (1 << pcintBit);
+	uint8_t arrayPos = getArrayPosPCINT(pcintPort);
+
+	// save settings related to mode and registers
+	if (mode == CHANGE || mode == RISING)
+		risingPorts[arrayPos] |= pcintMask;
+ ce4:	95 60       	ori	r25, 0x05	; 5
+ ce6:	90 93 db 00 	sts	0x00DB, r25	; 0x8000db <risingPorts+0x1>
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt.h:602
+	if (mode == CHANGE || mode == FALLING)
+		fallingPorts[arrayPos] |= pcintMask;
+ cea:	85 60       	ori	r24, 0x05	; 5
+ cec:	80 93 d9 00 	sts	0x00D9, r24	; 0x8000d9 <fallingPorts+0x1>
+enablePinChangeInterruptHelper():
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt.cpp:109
+			oldPorts[arrayPos] = PCINT_INPUT_PORT0;
+		break;
+#endif
+#ifdef PCINT_INPUT_PORT1_USED
+		case 1:
+			oldPorts[arrayPos] = PCINT_INPUT_PORT1;
+ cf0:	86 b3       	in	r24, 0x16	; 22
+ cf2:	80 93 d7 00 	sts	0x00D7, r24	; 0x8000d7 <oldPorts+0x1>
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt.cpp:144
+		switch(pcintPort){
+			case 0:
+				PCMSK0 |= pcintMask;
+			break;
+			case 1:
+				PCMSK1 |= pcintMask;
+ cf6:	80 b5       	in	r24, 0x20	; 32
+ cf8:	84 60       	ori	r24, 0x04	; 4
+ cfa:	80 bd       	out	0x20, r24	; 32
+C:\Users\pete.lewis\Documents\Arduino\libraries\PinChangeInterrupt\src/PinChangeInterrupt.cpp:167
+
+	// PCICR: Pin Change Interrupt Control Register - enables interrupt vectors
+#ifdef PCICR
+	PCICR |= (1  << (pcintPort + PCIE0));
+#elif defined(GIMSK) && defined(PCIE0) /* e.g. ATtiny X4 */
+	GIMSK |= (1  << (pcintPort + PCIE0));
+ cfc:	8b b7       	in	r24, 0x3b	; 59
+ cfe:	80 62       	ori	r24, 0x20	; 32
+ d00:	8b bf       	out	0x3b, r24	; 59
+setup():
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:173
+
+  readSystemSettings(); //Load all system settings from EEPROM
+
+  setupInterrupts(); //Enable pin change interrupts for I2C, encoder, switch, etc
+
+  lastEncoderMoveTime = 0; //User has not yet twisted the encoder. Used for firing int pin.
+ d02:	10 92 dd 00 	sts	0x00DD, r1	; 0x8000dd <lastEncoderMoveTime>
+ d06:	10 92 de 00 	sts	0x00DE, r1	; 0x8000de <lastEncoderMoveTime+0x1>
+ d0a:	10 92 df 00 	sts	0x00DF, r1	; 0x8000df <lastEncoderMoveTime+0x2>
+ d0e:	10 92 e0 00 	sts	0x00E0, r1	; 0x8000e0 <lastEncoderMoveTime+0x3>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:175
+
+  startI2C(); //Determine the I2C address we should be using and begin listening on I2C bus
+ d12:	53 dc       	rcall	.-1882   	; 0x5ba <startI2C()>
+loop():
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:221
+  if(interruptState == STATE_ENCODER_INT)
+  {
+    //Set the interrupt pin low to indicate interrupt
+    pinMode(interruptPin, OUTPUT);
+    digitalWrite(interruptPin, LOW);
+    interruptState = STATE_INT_INDICATED;
+ d14:	12 e0       	ldi	r17, 0x02	; 2
+recordSystemSettings():
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:266
+  //Error check the current I2C address
+  if (registerMap.i2cAddress < 0x08 || registerMap.i2cAddress > 0x77)
+  {
+    //User has set the address out of range
+    //Go back to defaults
+    registerMap.i2cAddress = I2C_ADDRESS_DEFAULT;
+ d16:	03 e7       	ldi	r16, 0x73	; 115
+loop():
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:198
+  //Interrupt pin state machine
+  //There are four states: Encoder Int, Int Cleared, Int Indicated
+  //ENCODER_INT state is set here once user has stopped turning encoder
+  //INT_CLEARED state is set in the I2C interrupt when Clear Ints command is received.
+  //INT_INDICATED state is set once we change the INT pin to go low
+  if (interruptState == STATE_INT_CLEARED)
+ d18:	80 91 a0 00 	lds	r24, 0x00A0	; 0x8000a0 <interruptState>
+ d1c:	81 30       	cpi	r24, 0x01	; 1
+ d1e:	29 f5       	brne	.+74     	; 0xd6a <main+0x29a>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:201
+  {
+    //See if user has turned the encoder
+    if ( registerMap.status & (1 << statusEncoderMovedBit) )
+ d20:	80 91 8d 00 	lds	r24, 0x008D	; 0x80008d <registerMap+0x1>
+ d24:	80 ff       	sbrs	r24, 0
+ d26:	21 c0       	rjmp	.+66     	; 0xd6a <main+0x29a>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:204
+    {
+      //Check if encoder interrupt is enabled
+      if ( (registerMap.interruptEnable & (1 << enableInterruptEncoderBit) ) )
+ d28:	80 91 90 00 	lds	r24, 0x0090	; 0x800090 <registerMap+0x4>
+ d2c:	80 ff       	sbrs	r24, 0
+ d2e:	1d c0       	rjmp	.+58     	; 0xd6a <main+0x29a>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:207
+      {
+        //See if enough time has passed since the user has stopped turning the encoder
+        if ( (millis() - lastEncoderMoveTime) > registerMap.turnInterruptTimeout)
+ d30:	52 da       	rcall	.-2908   	; 0x1d6 <millis>
+ d32:	c0 90 dd 00 	lds	r12, 0x00DD	; 0x8000dd <lastEncoderMoveTime>
+ d36:	d0 90 de 00 	lds	r13, 0x00DE	; 0x8000de <lastEncoderMoveTime+0x1>
+ d3a:	e0 90 df 00 	lds	r14, 0x00DF	; 0x8000df <lastEncoderMoveTime+0x2>
+ d3e:	f0 90 e0 00 	lds	r15, 0x00E0	; 0x8000e0 <lastEncoderMoveTime+0x3>
+ d42:	20 91 9b 00 	lds	r18, 0x009B	; 0x80009b <registerMap+0xf>
+ d46:	30 91 9c 00 	lds	r19, 0x009C	; 0x80009c <registerMap+0x10>
+ d4a:	ab 01       	movw	r20, r22
+ d4c:	bc 01       	movw	r22, r24
+ d4e:	4c 19       	sub	r20, r12
+ d50:	5d 09       	sbc	r21, r13
+ d52:	6e 09       	sbc	r22, r14
+ d54:	7f 09       	sbc	r23, r15
+ d56:	c9 01       	movw	r24, r18
+ d58:	b0 e0       	ldi	r27, 0x00	; 0
+ d5a:	a0 e0       	ldi	r26, 0x00	; 0
+ d5c:	84 17       	cp	r24, r20
+ d5e:	95 07       	cpc	r25, r21
+ d60:	a6 07       	cpc	r26, r22
+ d62:	b7 07       	cpc	r27, r23
+ d64:	10 f4       	brcc	.+4      	; 0xd6a <main+0x29a>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:209
+        {
+          interruptState = STATE_ENCODER_INT; //Go to next state
+ d66:	10 92 a0 00 	sts	0x00A0, r1	; 0x8000a0 <interruptState>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:216
+      }
+    }
+  }
+
+  //If we are in encoder state, then set INT low
+  if(interruptState == STATE_ENCODER_INT)
+ d6a:	80 91 a0 00 	lds	r24, 0x00A0	; 0x8000a0 <interruptState>
+ d6e:	81 11       	cpse	r24, r1
+ d70:	05 c0       	rjmp	.+10     	; 0xd7c <main+0x2ac>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:219
+  {
+    //Set the interrupt pin low to indicate interrupt
+    pinMode(interruptPin, OUTPUT);
+ d72:	61 e0       	ldi	r22, 0x01	; 1
+ d74:	f4 d9       	rcall	.-3096   	; 0x15e <pinMode>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:220
+    digitalWrite(interruptPin, LOW);
+ d76:	d1 d9       	rcall	.-3166   	; 0x11a <digitalWrite.constprop.9>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:221
+    interruptState = STATE_INT_INDICATED;
+ d78:	10 93 a0 00 	sts	0x00A0, r17	; 0x8000a0 <interruptState>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:224
+  }
+
+  if (updateOutputs == true)
+ d7c:	80 91 dc 00 	lds	r24, 0x00DC	; 0x8000dc <updateOutputs>
+ d80:	81 30       	cpi	r24, 0x01	; 1
+ d82:	09 f0       	breq	.+2      	; 0xd86 <main+0x2b6>
+ d84:	79 c0       	rjmp	.+242    	; 0xe78 <main+0x3a8>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:226
+  {
+    updateOutputs = false;
+ d86:	10 92 dc 00 	sts	0x00DC, r1	; 0x8000dc <updateOutputs>
+recordSystemSettings():
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:262
+{
+  //I2C address is byte
+  byte i2cAddr;
+
+  //Error check the current I2C address
+  if (registerMap.i2cAddress < 0x08 || registerMap.i2cAddress > 0x77)
+ d8a:	80 91 9d 00 	lds	r24, 0x009D	; 0x80009d <registerMap+0x11>
+ d8e:	88 30       	cpi	r24, 0x08	; 8
+ d90:	20 f0       	brcs	.+8      	; 0xd9a <main+0x2ca>
+ d92:	80 91 9d 00 	lds	r24, 0x009D	; 0x80009d <registerMap+0x11>
+ d96:	88 37       	cpi	r24, 0x78	; 120
+ d98:	10 f0       	brcs	.+4      	; 0xd9e <main+0x2ce>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:266
+  {
+    //User has set the address out of range
+    //Go back to defaults
+    registerMap.i2cAddress = I2C_ADDRESS_DEFAULT;
+ d9a:	00 93 9d 00 	sts	0x009D, r16	; 0x80009d <registerMap+0x11>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:270
+  }
+
+  //Read the value currently in EEPROM. If it's different from the memory map then record the memory map value to EEPROM.
+  EEPROM.get(LOCATION_I2C_ADDRESS, i2cAddr);
+ d9e:	be 01       	movw	r22, r28
+ da0:	68 5f       	subi	r22, 0xF8	; 248
+ da2:	7f 4f       	sbci	r23, 0xFF	; 255
+ da4:	90 e0       	ldi	r25, 0x00	; 0
+ da6:	80 e0       	ldi	r24, 0x00	; 0
+ da8:	82 dc       	rcall	.-1788   	; 0x6ae <unsigned char& EEPROMClass::get<unsigned char>(int, unsigned char&) [clone .isra.2]>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:271
+  if (i2cAddr != registerMap.i2cAddress)
+ daa:	90 91 9d 00 	lds	r25, 0x009D	; 0x80009d <registerMap+0x11>
+ dae:	88 85       	ldd	r24, Y+8	; 0x08
+ db0:	98 17       	cp	r25, r24
+ db2:	51 f0       	breq	.+20     	; 0xdc8 <main+0x2f8>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:273
+  {
+    EEPROM.put(LOCATION_I2C_ADDRESS, (byte)registerMap.i2cAddress);
+ db4:	80 91 9d 00 	lds	r24, 0x009D	; 0x80009d <registerMap+0x11>
+ db8:	89 83       	std	Y+1, r24	; 0x01
+ dba:	be 01       	movw	r22, r28
+ dbc:	6f 5f       	subi	r22, 0xFF	; 255
+ dbe:	7f 4f       	sbci	r23, 0xFF	; 255
+ dc0:	90 e0       	ldi	r25, 0x00	; 0
+ dc2:	80 e0       	ldi	r24, 0x00	; 0
+ dc4:	2d dc       	rcall	.-1958   	; 0x620 <unsigned char const& EEPROMClass::put<unsigned char>(int, unsigned char const&) [clone .isra.3]>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:274
+    startI2C(); //Determine the I2C address we should be using and begin listening on I2C bus
+ dc6:	f9 db       	rcall	.-2062   	; 0x5ba <startI2C()>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:278
+  }
+
+  byte intBits;
+  EEPROM.get(LOCATION_INTERRUPTS, intBits);
+ dc8:	be 01       	movw	r22, r28
+ dca:	69 5f       	subi	r22, 0xF9	; 249
+ dcc:	7f 4f       	sbci	r23, 0xFF	; 255
+ dce:	81 e0       	ldi	r24, 0x01	; 1
+ dd0:	90 e0       	ldi	r25, 0x00	; 0
+ dd2:	6d dc       	rcall	.-1830   	; 0x6ae <unsigned char& EEPROMClass::get<unsigned char>(int, unsigned char&) [clone .isra.2]>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:279
+  if (intBits != registerMap.interruptEnable)
+ dd4:	90 91 90 00 	lds	r25, 0x0090	; 0x800090 <registerMap+0x4>
+ dd8:	8f 81       	ldd	r24, Y+7	; 0x07
+ dda:	98 17       	cp	r25, r24
+ ddc:	49 f0       	breq	.+18     	; 0xdf0 <main+0x320>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:280
+    EEPROM.put(LOCATION_INTERRUPTS, (byte)registerMap.interruptEnable);
+ dde:	80 91 90 00 	lds	r24, 0x0090	; 0x800090 <registerMap+0x4>
+ de2:	89 83       	std	Y+1, r24	; 0x01
+ de4:	be 01       	movw	r22, r28
+ de6:	6f 5f       	subi	r22, 0xFF	; 255
+ de8:	7f 4f       	sbci	r23, 0xFF	; 255
+ dea:	81 e0       	ldi	r24, 0x01	; 1
+ dec:	90 e0       	ldi	r25, 0x00	; 0
+ dee:	18 dc       	rcall	.-2000   	; 0x620 <unsigned char const& EEPROMClass::put<unsigned char>(int, unsigned char const&) [clone .isra.3]>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:286
+
+
+  //Turn Timeout is uint16_t
+  uint16_t timeout;
+
+  EEPROM.get(LOCATION_TURN_INTERRUPT_TIMEOUT_AMOUNT, timeout);
+ df0:	be 01       	movw	r22, r28
+ df2:	6b 5f       	subi	r22, 0xFB	; 251
+ df4:	7f 4f       	sbci	r23, 0xFF	; 255
+ df6:	82 e0       	ldi	r24, 0x02	; 2
+ df8:	90 e0       	ldi	r25, 0x00	; 0
+ dfa:	27 dc       	rcall	.-1970   	; 0x64a <unsigned int volatile& EEPROMClass::get<unsigned int volatile>(int, unsigned int volatile&) [clone .isra.6]>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:287
+  if (timeout != registerMap.turnInterruptTimeout)
+ dfc:	20 91 9b 00 	lds	r18, 0x009B	; 0x80009b <registerMap+0xf>
+ e00:	30 91 9c 00 	lds	r19, 0x009C	; 0x80009c <registerMap+0x10>
+ e04:	8d 81       	ldd	r24, Y+5	; 0x05
+ e06:	9e 81       	ldd	r25, Y+6	; 0x06
+ e08:	28 17       	cp	r18, r24
+ e0a:	39 07       	cpc	r19, r25
+ e0c:	61 f0       	breq	.+24     	; 0xe26 <main+0x356>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:288
+    EEPROM.put(LOCATION_TURN_INTERRUPT_TIMEOUT_AMOUNT, (int16_t)registerMap.turnInterruptTimeout);
+ e0e:	80 91 9b 00 	lds	r24, 0x009B	; 0x80009b <registerMap+0xf>
+ e12:	90 91 9c 00 	lds	r25, 0x009C	; 0x80009c <registerMap+0x10>
+ e16:	9a 83       	std	Y+2, r25	; 0x02
+ e18:	89 83       	std	Y+1, r24	; 0x01
+ e1a:	be 01       	movw	r22, r28
+ e1c:	6f 5f       	subi	r22, 0xFF	; 255
+ e1e:	7f 4f       	sbci	r23, 0xFF	; 255
+ e20:	82 e0       	ldi	r24, 0x02	; 2
+ e22:	90 e0       	ldi	r25, 0x00	; 0
+ e24:	24 dc       	rcall	.-1976   	; 0x66e <int const& EEPROMClass::put<int>(int, int const&) [clone .isra.5]>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:291
+
+  //If the user has zero'd out the timestamps then reflect that in the globals
+  if (registerMap.timeSinceLastMovement == 0) lastEncoderMoveTime = 0;
+ e26:	80 91 99 00 	lds	r24, 0x0099	; 0x800099 <registerMap+0xd>
+ e2a:	90 91 9a 00 	lds	r25, 0x009A	; 0x80009a <registerMap+0xe>
+ e2e:	89 2b       	or	r24, r25
+ e30:	41 f4       	brne	.+16     	; 0xe42 <main+0x372>
+ e32:	10 92 dd 00 	sts	0x00DD, r1	; 0x8000dd <lastEncoderMoveTime>
+ e36:	10 92 de 00 	sts	0x00DE, r1	; 0x8000de <lastEncoderMoveTime+0x1>
+ e3a:	10 92 df 00 	sts	0x00DF, r1	; 0x8000df <lastEncoderMoveTime+0x2>
+ e3e:	10 92 e0 00 	sts	0x00E0, r1	; 0x8000e0 <lastEncoderMoveTime+0x3>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:296
+
+  //Rotation Limit is uint16_t
+  uint16_t rotationLim;
+
+  EEPROM.get(LOCATION_ROTATION_LIMIT, rotationLim);
+ e42:	be 01       	movw	r22, r28
+ e44:	6d 5f       	subi	r22, 0xFD	; 253
+ e46:	7f 4f       	sbci	r23, 0xFF	; 255
+ e48:	84 e0       	ldi	r24, 0x04	; 4
+ e4a:	90 e0       	ldi	r25, 0x00	; 0
+ e4c:	fe db       	rcall	.-2052   	; 0x64a <unsigned int volatile& EEPROMClass::get<unsigned int volatile>(int, unsigned int volatile&) [clone .isra.6]>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:297
+  if (rotationLim != registerMap.rotationLimit)
+ e4e:	20 91 9e 00 	lds	r18, 0x009E	; 0x80009e <registerMap+0x12>
+ e52:	30 91 9f 00 	lds	r19, 0x009F	; 0x80009f <registerMap+0x13>
+ e56:	8b 81       	ldd	r24, Y+3	; 0x03
+ e58:	9c 81       	ldd	r25, Y+4	; 0x04
+ e5a:	28 17       	cp	r18, r24
+ e5c:	39 07       	cpc	r19, r25
+ e5e:	61 f0       	breq	.+24     	; 0xe78 <main+0x3a8>
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:298
+    EEPROM.put(LOCATION_ROTATION_LIMIT, (int16_t)registerMap.rotationLimit);
+ e60:	80 91 9e 00 	lds	r24, 0x009E	; 0x80009e <registerMap+0x12>
+ e64:	90 91 9f 00 	lds	r25, 0x009F	; 0x80009f <registerMap+0x13>
+ e68:	9a 83       	std	Y+2, r25	; 0x02
+ e6a:	89 83       	std	Y+1, r24	; 0x01
+ e6c:	be 01       	movw	r22, r28
+ e6e:	6f 5f       	subi	r22, 0xFF	; 255
+ e70:	7f 4f       	sbci	r23, 0xFF	; 255
+ e72:	84 e0       	ldi	r24, 0x04	; 4
+ e74:	90 e0       	ldi	r25, 0x00	; 0
+ e76:	fb db       	rcall	.-2058   	; 0x66e <int const& EEPROMClass::put<int>(int, int const&) [clone .isra.5]>
+loop():
+C:\Users\pete.lewis\Documents\GitHub\Qwiic_Dual_Encoder_Reader\Firmware\Qwiic_Dual_Encoder_Reader/Qwiic_Dual_Encoder_Reader.ino:252
+  Serial.print(registerNumber);
+
+  Serial.println();
+#endif
+
+  sleep_mode(); //Stop everything and go to sleep. Wake up from Encoder, Button, or I2C interrupts.
+ e78:	85 b7       	in	r24, 0x35	; 53
+ e7a:	80 62       	ori	r24, 0x20	; 32
+ e7c:	85 bf       	out	0x35, r24	; 53
+ e7e:	88 95       	sleep
+ e80:	85 b7       	in	r24, 0x35	; 53
+ e82:	8f 7d       	andi	r24, 0xDF	; 223
+ e84:	85 bf       	out	0x35, r24	; 53
+ e86:	48 cf       	rjmp	.-368    	; 0xd18 <main+0x248>
+
+00000e88 <eeprom_read_byte>:
+eeprom_read_byte():
+ e88:	e1 99       	sbic	0x1c, 1	; 28
+ e8a:	fe cf       	rjmp	.-4      	; 0xe88 <eeprom_read_byte>
+ e8c:	9f bb       	out	0x1f, r25	; 31
+ e8e:	8e bb       	out	0x1e, r24	; 30
+ e90:	e0 9a       	sbi	0x1c, 0	; 28
+ e92:	99 27       	eor	r25, r25
+ e94:	8d b3       	in	r24, 0x1d	; 29
+ e96:	08 95       	ret
+
+00000e98 <eeprom_write_byte>:
+eeprom_write_byte():
+ e98:	26 2f       	mov	r18, r22
+
+00000e9a <eeprom_write_r18>:
+ e9a:	e1 99       	sbic	0x1c, 1	; 28
+ e9c:	fe cf       	rjmp	.-4      	; 0xe9a <eeprom_write_r18>
+ e9e:	1c ba       	out	0x1c, r1	; 28
+ ea0:	9f bb       	out	0x1f, r25	; 31
+ ea2:	8e bb       	out	0x1e, r24	; 30
+ ea4:	2d bb       	out	0x1d, r18	; 29
+ ea6:	0f b6       	in	r0, 0x3f	; 63
+ ea8:	f8 94       	cli
+ eaa:	e2 9a       	sbi	0x1c, 2	; 28
+ eac:	e1 9a       	sbi	0x1c, 1	; 28
+ eae:	0f be       	out	0x3f, r0	; 63
+ eb0:	01 96       	adiw	r24, 0x01	; 1
+ eb2:	08 95       	ret
+
+00000eb4 <_exit>:
+exit():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2278
+ eb4:	f8 94       	cli
+
+00000eb6 <__stop_program>:
+__stop_program():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2280
+ eb6:	ff cf       	rjmp	.-2      	; 0xeb6 <__stop_program>

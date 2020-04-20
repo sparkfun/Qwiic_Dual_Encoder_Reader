@@ -2,7 +2,7 @@
   An I2C based Dual Encoder Reader
   By: Pete Lewis
   SparkFun Electronics 
-  Date: Jan 30th, 2020
+  Date: April 20th, 2020
   License: This code is public domain but you buy me a beer if you use this and we meet someday (Beerware license).
 
   This code was initially based off of the Qwiic Twist rotary encoder project:
@@ -14,11 +14,18 @@
   have turned. This is handy when you want to know how much your wheels have turned on a two-wheel robot, but also 
   useful for any project that might need two separate encoder inputs/sensors.
 
+  In order to talk to the ATTiny84 using a Raspberry Pi via Python, we have created a python package here:
+  https://github.com/sparkfun/Qwiic_Dual_Encoder_Reader_Py (pip install supported!)
+  
   This firmware is intened to be used on an ATTiny84, but can also be used on an ATMEGA328 for easier development.
 
   It is used on the ATTINY84 that lives on the SparkFun Auto pHAT for Raspberry Pi.
 
   Feel like supporting our work? Buy a board from SparkFun!
+  SparkFun Auto pHAT for Raspberry Pi:
+  https://www.sparkfun.com/products/16328
+
+  SparkFun Qwiic Twist:
   https://www.sparkfun.com/products/15083
 
   To install support for ATtiny84 in Arduino IDE: https://github.com/SpenceKonde/ATTinyCore/blob/master/Installation.md
@@ -27,7 +34,16 @@
   If you have Dave Mellis' ATtiny installed you may need to remove it from \Users\xx\AppData\Local\Arduino15\Packages
 
   To support 400kHz I2C communication reliably ATtiny84 needs to run at 8MHz. This requires user to
-  click on 'Burn Bootloader' before code is loaded.
+  click on 'Burn Bootloader' before code is loaded. Or if you prefer, you can change the fusebits to the
+  following with a different programming setup.
+
+  For reference on programming the ATTINY84:
+  FUSE BITS:
+  (Set fuses to run at 8MHz internal)
+  (Disable Brown Out Detect)
+  LowFuse 0xE2 
+  HighFuse 0xDF
+  ExtendedFuse 0xFF
 */
 
 #include <Wire.h>
